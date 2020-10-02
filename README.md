@@ -1,4 +1,4 @@
-# videojuegos-minion3
+# Miniom 3
 
 ## Mecanicas del juego:
 1.	Player puede duplicarse y generar un clon de sí mismo, este clon contara con tiempo limitado.
