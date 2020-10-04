@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Minion-3"
-config/icon="res://icon.png"
+run/main_scene="res://Nivel1/Nivel1.tscn"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="world"
 
 [rendering]
 
