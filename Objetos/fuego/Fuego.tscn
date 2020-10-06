@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Fuego.png" type="Texture" id=1]
+[ext_resource path="res://Objetos/pinches/Pinches.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.18267
+height = 5.11241
+
+[node name="Fuego" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.359306, 0.584569 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Pinche_body_entered"]
