@@ -18,8 +18,7 @@ var vivo = true
 var dobleSalto = 2
 
 func _ready():
-	sprite.play("stop")
-
+	pass
 
 func get_input():
 	if(vivo):

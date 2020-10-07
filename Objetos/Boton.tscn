@@ -37,6 +37,7 @@ frames = SubResource( 3 )
 animation = "Suelto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 1 )
 shape = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Boton_body_entered"]

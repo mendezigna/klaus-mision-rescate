@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Minion-3"
 run/main_scene="res://nivel/Nivel3/Nivel3.tscn"
+config/icon="res://assets/huesos.png"
 
 [input]
 
