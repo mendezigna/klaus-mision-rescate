@@ -4,41 +4,27 @@
 [ext_resource path="res://assets/pinche.png" type="Texture" id=2]
 
 [node name="Pinche" type="Area2D"]
+position = Vector2( 28.286, 17.1498 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_vertical_guides_": [ 8.13021 ]
+}
 
 [node name="Sprite1" type="Sprite" parent="."]
-position = Vector2( -23.8232, 0.323223 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D1" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( -23.6881, 0.707108 )
+position = Vector2( 0.112297, 0.707108 )
 polygon = PoolVector2Array( -7.99476, 6.68369, -4.20645, -1.87508, -0.277828, 5.28061, 3.65079, -2.71693, 7.71971, 6.824 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -8.10872, 0.323223 )
+position = Vector2( 16.3516, 0 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( -7.97358, 0.707108 )
-polygon = PoolVector2Array( -7.99476, 6.68369, -4.20645, -1.87508, -0.277828, 5.28061, 3.65079, -2.71693, 7.71971, 6.824 )
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 7.8499, 0.323223 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 8.16182, 0.707108 )
-polygon = PoolVector2Array( -7.99476, 6.68369, -4.20645, -1.87508, -0.277828, 5.28061, 3.65079, -2.71693, 7.71971, 6.824 )
-
-[node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 23.8449, 0.182915 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D4" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 24.1568, 0.5668 )
+position = Vector2( 16.4639, 0.409806 )
 polygon = PoolVector2Array( -7.99476, 6.68369, -4.20645, -1.87508, -0.277828, 5.28061, 3.65079, -2.71693, 7.71971, 6.824 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,7 +5,11 @@ var gravedad = -1.1
 
 func _process(delta):
 		position.y -= gravedad * vel * delta
-		vel += 3
+		vel = min(vel+3,80)
 
 func _on_body_entered2(body):
-	gravedad = 0
+	if(not body.is_in_group("player")):
+		gravedad = gravedad * -1 
+		rotation_degrees += 180
+	else:
+		gravedad = 0

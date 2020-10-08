@@ -15,7 +15,7 @@ var Clon = preload("res://Player/clon.tscn")
 var new_clon
 var activo = true
 var vivo = true
-var dobleSalto = 2
+var dobleSalto = 1
 
 func _ready():
 	pass
@@ -41,7 +41,7 @@ func get_input():
 			sprite.play("jump")
 			dobleSalto -= 1 
 		if is_on_floor():
-			dobleSalto = 2
+			dobleSalto = 1
 		if is_on_floor() and not left and not right and not jump:
 			sprite.play("stop")
 		
