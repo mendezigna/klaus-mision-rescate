@@ -12,22 +12,22 @@ region = Rect2( 0, 0, 16, 16 )
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 16 )
+region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -36,14 +36,14 @@ animations = [ {
 "name": "stop",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -53,38 +53,39 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=7]
-radius = 5.19683
-height = 2.19068
+radius = 5.05215
+height = 2.53609
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
 position = Vector2( -0.629959, 1.88988 )
-collision_mask = 2
+collision_mask = 3
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_horizontal_guides_": [ 598.658 ]
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 56.7537, 520.033 )
 frames = SubResource( 6 )
-animation = "jump"
+animation = "stop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 57.1817, 521.447 )
+position = Vector2( 0.158207, 2.00222 )
 rotation = -0.000596559
 shape = SubResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 56.9678, 521.672 )
+position = Vector2( -1.031, 0.0148315 )
 current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_left = 0
-limit_bottom = 650
+limit_bottom = 600
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 visible = false
-position = Vector2( 57.2083, 520.638 )
+
+[node name="PosicionClon" type="Position2D" parent="."]
+position = Vector2( 0.692301, -17.5266 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -16,6 +16,7 @@
 
 [node name="Nivel3" type="Node2D"]
 script = ExtResource( 5 )
+cantDeClones = 2
 
 [node name="Flecha" parent="." instance=ExtResource( 10 )]
 position = Vector2( 41.934, 272.143 )
@@ -39,12 +40,13 @@ position = Vector2( 166.698, 488.322 )
 position = Vector2( 182.693, 488.322 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -4, -82.679 )
+position = Vector2( 54.2972, 473.159 )
 
 [node name="Puerta" parent="." instance=ExtResource( 6 )]
 position = Vector2( 496.92, 337.295 )
 
 [node name="plataforma1" type="Node2D" parent="."]
+visible = false
 position = Vector2( -78.8922, 224.026 )
 __meta__ = {
 "_edit_group_": true
@@ -71,6 +73,7 @@ initial_offset = 1.0
 position = Vector2( 122.893, -15.1279 )
 
 [node name="plataforma2" type="Node2D" parent="."]
+visible = false
 position = Vector2( -102.599, 301.49 )
 __meta__ = {
 "_edit_group_": true

@@ -2,6 +2,7 @@ extends Area2D
 
 signal apretado
 
+var colision = 0
 var puede_apretar = false
 onready var sprite = $AnimatedSprite
 
@@ -19,9 +20,12 @@ func _ready():
 	pass
 
 func _on_Boton_body_entered(body):
-	puede_apretar = true
-
+	colision += 1
+	if colision == 1:
+		puede_apretar = true
 
 func _on_Boton_body_exited(body):
-	puede_apretar = false 
+	colision -= 1
+	if colision == 0:
+		puede_apretar = false 
 	

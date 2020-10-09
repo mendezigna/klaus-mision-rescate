@@ -30,6 +30,8 @@ animations = [ {
 extents = Vector2( 9.25, 8.87302 )
 
 [node name="Boton" type="Area2D"]
+modulate = Color( 1, 0, 0, 1 )
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

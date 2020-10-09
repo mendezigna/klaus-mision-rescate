@@ -1,24 +1,29 @@
 extends KinematicBody2D
-
 signal dejoLaPantalla
-
 onready var sprite = $AnimatedSprite
 
 var velocity = Vector2()
-
+##Moviemiento
 export var run_speed = 50
 export var jump_speed = -50
 export var gravity = 100
-
-var clonado = false
-var Clon = preload("res://Player/clon.tscn")
-var new_clon
-var activo = true
-var vivo = true
 var dobleSalto = 1
 
-func _ready():
-	pass
+##Crear clones
+var Clon = preload("res://Player/clon.tscn")
+var new_clon
+var clones = []
+var cantLimite = 0
+var count = 0
+
+##Para cambiar al player de nuevo
+var activo = true
+
+##Para saber que esta vivo
+var vivo = true
+
+func setCantLimiteClones(numero):
+	cantLimite = numero
 
 func get_input():
 	if(vivo):
@@ -55,11 +60,22 @@ func activar():
 	activo = true
 	$Camera2D.current = true
 
-func remove_clon():
-	if clonado:
-		var temp = new_clon
-		get_parent().remove_child(new_clon)
-		temp.queue_free()
+func remove_clon(clon):
+	var temp = clon
+	get_parent().remove_child(clon)
+	temp.queue_free()
+
+func agregarClon():
+	if clones.size() > 0:
+		new_clon.desactivar()
+	new_clon = Clon.instance()
+	new_clon.cambiarColor(count%4)
+	clones.append(new_clon)
+	get_parent().add_child(new_clon)
+	print($PosicionClon.global_position)
+	new_clon.position = $PosicionClon.global_position
+	desactivar()
+	new_clon.activar()
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -70,27 +86,19 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1), false, 4, PI/4, false)
 	
 	if Input.is_action_just_pressed("clonar"):
-		remove_clon()
-		new_clon = Clon.instance()
-		get_parent().add_child(new_clon)
-		new_clon.position = position
-		clonado = true
-		desactivar()
-		new_clon.activar()
-		
-	if Input.is_action_just_pressed("interactuar") and clonado:
-		if activo:
-			desactivar()
-			new_clon.activar()
-		else:
-			activar()
-			new_clon.desactivar()
+		count +=1
+		if clones.size() == cantLimite:
+			remove_clon(clones.pop_front())
+		agregarClon()
+	 
+
+	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
+		activar()
+		new_clon.desactivar()
 
 func murio():
 	sprite.play("dead")
 	vivo = false
-	
-
 
 func _on_VisibilityNotifier2D_screen_exited():
 	emit_signal("dejoLaPantalla")
