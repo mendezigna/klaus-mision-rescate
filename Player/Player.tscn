@@ -83,9 +83,5 @@ zoom = Vector2( 0.25, 0.25 )
 limit_left = 0
 limit_bottom = 600
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-visible = false
-
 [node name="PosicionClon" type="Position2D" parent="."]
 position = Vector2( 0.692301, -17.5266 )
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

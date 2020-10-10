@@ -1,14 +1,27 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Fuego.png" type="Texture" id=1]
-[ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+signal hit
+signal hitClone(clone)
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		emit_signal(\"hit\")
+	if body.is_in_group(\"clon\"):
+		emit_signal(\"hitClone\",body)
+		
+"
+
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 4.18267
 height = 5.11241
 
 [node name="Fuego" type="Area2D"]
-script = ExtResource( 2 )
+script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.375, -1.75 )
@@ -19,5 +32,5 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0.359306, 0.584569 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

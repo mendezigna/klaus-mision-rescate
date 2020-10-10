@@ -1,5 +1,5 @@
 extends KinematicBody2D
-signal dejoLaPantalla
+
 onready var sprite = $AnimatedSprite
 
 var velocity = Vector2()
@@ -56,11 +56,14 @@ func activar():
 	activo = true
 	$Camera2D.current = true
 	
-func matarClone():
-	new_clon.desactivar()
-	activar()
-	clones.erase(new_clon)
-	remove_clon(new_clon)
+func matarClone(clone):
+	if (clone != new_clon):
+		clone.desactivar()
+	else:
+		new_clon = null
+		activar()
+	clones.erase(clone)
+	remove_clon(clone)
 	
 
 func remove_clon(clon):
@@ -110,6 +113,3 @@ func morir():
 		if clones.size() > 0:
 			remove_clon(clones.pop_front())
 	activar()
-
-func _on_VisibilityNotifier2D_screen_exited():
-	emit_signal("dejoLaPantalla")
