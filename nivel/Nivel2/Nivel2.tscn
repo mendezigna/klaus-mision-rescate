@@ -4,15 +4,17 @@
 [ext_resource path="res://Objetos/plataforma.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nivel/Nivel2/Nivel2.gd" type="Script" id=5]
+[ext_resource path="res://nivel/Nivel.gd" type="Script" id=5]
 [ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nivel/Nivel3/Nivel3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=8]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 40.0461, 6.46326 )
+
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40.0461, 6.46326 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Nivel2" type="Node2D"]
 script = ExtResource( 5 )
@@ -37,7 +39,7 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
 position = Vector2( 183.814, 567.502 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Puerta" parent="." instance=ExtResource( 6 )]
 position = Vector2( 448.268, 341.096 )
@@ -55,7 +57,7 @@ collision_layer = 524288
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma1/StaticBody2D"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Plataforma" parent="plataforma1" instance=ExtResource( 2 )]
 position = Vector2( 0, 49.617 )
@@ -77,7 +79,7 @@ collision_layer = 524288
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma2/StaticBody2D"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Plataforma" parent="plataforma2" instance=ExtResource( 2 )]
 position = Vector2( -0.292877, 122.203 )

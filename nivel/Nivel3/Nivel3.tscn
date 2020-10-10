@@ -4,7 +4,7 @@
 [ext_resource path="res://Objetos/plataforma.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nivel/Nivel2/Nivel2.gd" type="Script" id=5]
+[ext_resource path="res://nivel/Nivel.gd" type="Script" id=5]
 [ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=8]
@@ -18,19 +18,59 @@
 script = ExtResource( 5 )
 cantDeClones = 2
 
-[node name="Flecha" parent="." instance=ExtResource( 10 )]
-position = Vector2( 41.934, 272.143 )
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 983040, -1610612732, 0, 983041, 1610612737, 0, 983042, 1610612737, 0, 983043, 1610612737, 0, 983044, -1610612732, 0, 983045, -1610612732, 0, 983051, -1610612732, 0, 1310729, 1610612743, 0, 1310730, 1, 0, 1310731, 1, 0, 1310732, 2, 0, 1376283, 0, 0, 1376284, 1, 0, 1376285, 1, 0, 1376286, 1, 0, 1376287, -1610612736, 0, 1441798, -1073741822, 0, 1441799, -1610612736, 0, 1441806, 0, 0, 1441807, 1, 0, 1441808, 2, 0, 1441815, 0, 0, 1441816, 1, 0, 1441817, 2, 0, 1441819, -1073741824, 0, 1441820, 1610612737, 0, 1441821, 1610612737, 0, 1441822, 1610612737, 0, 1441823, 1610612736, 0, 1507334, 1610612738, 0, 1507335, -1610612728, 0, 1507336, 1, 0, 1507337, 2, 0, 1507346, 0, 0, 1507347, 1, 0, 1507348, 1, 0, 1507349, 2, 0, 1507351, -1073741824, 0, 1507352, 6, 0, 1507353, -1073741819, 0, 1572871, 5, 0, 1572872, 6, 0, 1572873, -1073741819, 0, 1572875, 0, 0, 1572876, 1, 0, 1572877, 2, 0, 1572895, 1610612740, 0, 1703935, -1610612735, 0, 1638415, 1, 0, 1638431, 1610612740, 0, 1769471, -1610612735, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1703967, 1610612740, 0, 1835007, -1610612735, 0, 1769497, 0, 0, 1769498, 2, 0, 1769502, 0, 0, 1769503, 1610612744, 0, 1900543, -1610612735, 0, 1835038, 3, 0, 1835039, 1610612744, 0, 1966079, -1610612735, 0, 1900572, -1073741822, 0, 1900573, 1, 0, 1900574, 8, 0, 1900575, 1610612744, 0, 1966080, 0, 0, 1966081, 1, 0, 1966082, 1, 0, 1966083, 1, 0, 1966084, 1, 0, 1966085, 1, 0, 1966086, 1, 0, 1966087, 1, 0, 1966088, 1610612741, 0, 1966093, -1073741822, 0, 1966094, 1, 0, 1966095, 1, 0, 1966096, 1, 0, 1966097, 1, 0, 1966098, 1, 0, 1966099, 1, 0, 1966100, 1, 0, 1966101, 1, 0, 1966102, 1, 0, 1966103, 1, 0, 1966104, 1, 0, 1966105, 1, 0, 1966106, 1, 0, 1966107, 1, 0, 1966108, 1, 0, 1966109, 1, 0, 1966110, 1, 0, 1966111, 1, 0, 1966112, 1, 0, 1966113, 1, 0, 1966114, 1, 0, 1966115, 1, 0, 1966116, 1, 0, 1966117, 2, 0, 2031616, 3, 0, 2031617, 8, 0, 2031618, 8, 0, 2031619, 8, 0, 2031620, 8, 0, 2031621, 8, 0, 2031622, 8, 0, 2031623, 8, 0, 2031624, 4, 0, 2031625, 6, 0, 2031626, 6, 0, 2031627, 6, 0, 2031628, 6, 0, 2031629, 1610612740, 0, 2031630, 8, 0, 2031631, 8, 0, 2031632, 8, 0, 2031633, 8, 0, 2031634, 8, 0, 2031635, 8, 0, 2031636, 8, 0, 2031637, 8, 0, 2031638, 8, 0, 2031639, 8, 0, 2031640, 8, 0, 2031641, 8, 0, 2031642, 8, 0, 2031643, 8, 0, 2031644, 8, 0, 2031645, 8, 0, 2031646, 8, 0, 2031647, 8, 0, 2031648, 8, 0, 2031649, 8, 0, 2031650, 8, 0, 2031651, 8, 0, 2031652, 8, 0, 2031653, 4, 0, 2097152, 3, 0, 2097153, 8, 0, 2097154, 8, 0, 2097155, 8, 0, 2097156, 8, 0, 2097157, 8, 0, 2097158, 8, 0, 2097159, 8, 0, 2097160, 8, 0, 2097161, 8, 0, 2097162, 8, 0, 2097163, 8, 0, 2097164, 8, 0, 2097165, 8, 0, 2097166, 8, 0, 2097167, 8, 0, 2097168, 8, 0, 2097169, 8, 0, 2097170, 8, 0, 2097171, 8, 0, 2097172, 8, 0, 2097173, 8, 0, 2097174, 8, 0, 2097175, 8, 0, 2097176, 8, 0, 2097177, 8, 0, 2097178, 8, 0, 2097179, 8, 0, 2097180, 8, 0, 2097181, 8, 0, 2097182, 8, 0, 2097183, 8, 0, 2097184, 8, 0, 2097185, 8, 0, 2097186, 8, 0, 2097187, 8, 0, 2097188, 8, 0, 2097189, 4, 0, 2162688, 5, 0, 2162689, 6, 0, 2162690, 6, 0, 2162691, 6, 0, 2162692, 6, 0, 2162693, 6, 0, 2162694, 6, 0, 2162695, 6, 0, 2162696, 6, 0, 2162697, 6, 0, 2162698, 6, 0, 2162699, 6, 0, 2162700, 6, 0, 2162701, 6, 0, 2162702, 6, 0, 2162703, 6, 0, 2162704, 6, 0, 2162705, 6, 0, 2162706, 6, 0, 2162707, 6, 0, 2162708, 6, 0, 2162709, 6, 0, 2162710, 6, 0, 2162711, 6, 0, 2162712, 6, 0, 2162713, 6, 0, 2162714, 6, 0, 2162715, 6, 0, 2162716, 6, 0, 2162717, 6, 0, 2162718, 6, 0, 2162719, 6, 0, 2162720, 6, 0, 2162721, 6, 0, 2162722, 6, 0, 2162723, 6, 0, 2162724, 6, 0, 2162725, 7, 0 )
+
+[node name="Flecha1" parent="." instance=ExtResource( 10 )]
+position = Vector2( 13.9173, 292.268 )
+gravedadY = -2.0
 
 [node name="Flecha2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 61.426, 272.143 )
+position = Vector2( 23.4598, 292.113 )
+gravedadY = -2.0
 
 [node name="Flecha3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 23.0326, 272.143 )
+position = Vector2( 32.999, 292.035 )
+gravedadY = -2.0
 
-[node name="TileMap" parent="." instance=ExtResource( 1 )]
-tile_data = PoolIntArray( 1376266, 1, 0, 1376267, 1, 0, 1376268, 1, 0, 1441800, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441808, 1, 0, 1441819, 0, 0, 1441820, 1, 0, 1441821, 1, 0, 1441822, 1, 0, 1441823, 2, 0, 1507335, 1, 0, 1507336, 1, 0, 1507337, 1, 0, 1507347, 1, 0, 1507348, 1, 0, 1507349, 1, 0, 1507350, 1, 0, 1507353, 1, 0, 1507355, 5, 0, 1507356, 6, 0, 1507357, 6, 0, 1507358, 6, 0, 1507359, 7, 0, 1572875, 1, 0, 1572876, 1, 0, 1572877, 1, 0, 1638415, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1769497, 1, 0, 1769498, 1, 0, 1769502, 1, 0, 1835037, 1, 0, 1900572, 1, 0, 1966080, 0, 0, 1966081, 1, 0, 1966082, 1, 0, 1966083, 1, 0, 1966084, 1, 0, 1966085, 1, 0, 1966086, 1, 0, 1966087, 1, 0, 1966088, 1, 0, 1966092, 1, 0, 1966093, 1, 0, 1966094, 1, 0, 1966095, 1, 0, 1966096, 1, 0, 1966097, 1, 0, 1966098, 1, 0, 1966099, 1, 0, 1966100, 1, 0, 1966101, 1, 0, 1966102, 1, 0, 1966103, 1, 0, 1966104, 1, 0, 1966105, 1, 0, 1966106, 1, 0, 1966107, 1, 0, 1966108, 1, 0, 1966109, 1, 0, 1966110, 1, 0, 1966111, 1, 0, 1966112, 1, 0, 1966113, 1, 0, 1966114, 1, 0, 1966115, 1, 0, 1966116, 1, 0, 1966117, 2, 0, 2031616, 3, 0, 2031617, 8, 0, 2031618, 8, 0, 2031619, 8, 0, 2031620, 8, 0, 2031621, 8, 0, 2031622, 8, 0, 2031623, 8, 0, 2031624, 8, 0, 2031625, 8, 0, 2031626, 8, 0, 2031627, 8, 0, 2031628, 8, 0, 2031629, 8, 0, 2031630, 8, 0, 2031631, 8, 0, 2031632, 8, 0, 2031633, 8, 0, 2031634, 8, 0, 2031635, 8, 0, 2031636, 8, 0, 2031637, 8, 0, 2031638, 8, 0, 2031639, 8, 0, 2031640, 8, 0, 2031641, 8, 0, 2031642, 8, 0, 2031643, 8, 0, 2031644, 8, 0, 2031645, 8, 0, 2031646, 8, 0, 2031647, 8, 0, 2031648, 8, 0, 2031649, 8, 0, 2031650, 8, 0, 2031651, 8, 0, 2031652, 8, 0, 2031653, 4, 0, 2097152, 3, 0, 2097153, 8, 0, 2097154, 8, 0, 2097155, 8, 0, 2097156, 8, 0, 2097157, 8, 0, 2097158, 8, 0, 2097159, 8, 0, 2097160, 8, 0, 2097161, 8, 0, 2097162, 8, 0, 2097163, 8, 0, 2097164, 8, 0, 2097165, 8, 0, 2097166, 8, 0, 2097167, 8, 0, 2097168, 8, 0, 2097169, 8, 0, 2097170, 8, 0, 2097171, 8, 0, 2097172, 8, 0, 2097173, 8, 0, 2097174, 8, 0, 2097175, 8, 0, 2097176, 8, 0, 2097177, 8, 0, 2097178, 8, 0, 2097179, 8, 0, 2097180, 8, 0, 2097181, 8, 0, 2097182, 8, 0, 2097183, 8, 0, 2097184, 8, 0, 2097185, 8, 0, 2097186, 8, 0, 2097187, 8, 0, 2097188, 8, 0, 2097189, 4, 0, 2162688, 5, 0, 2162689, 6, 0, 2162690, 6, 0, 2162691, 6, 0, 2162692, 6, 0, 2162693, 6, 0, 2162694, 6, 0, 2162695, 6, 0, 2162696, 6, 0, 2162697, 6, 0, 2162698, 6, 0, 2162699, 6, 0, 2162700, 6, 0, 2162701, 6, 0, 2162702, 6, 0, 2162703, 6, 0, 2162704, 6, 0, 2162705, 6, 0, 2162706, 6, 0, 2162707, 6, 0, 2162708, 6, 0, 2162709, 6, 0, 2162710, 6, 0, 2162711, 6, 0, 2162712, 6, 0, 2162713, 6, 0, 2162714, 6, 0, 2162715, 6, 0, 2162716, 6, 0, 2162717, 6, 0, 2162718, 6, 0, 2162719, 6, 0, 2162720, 6, 0, 2162721, 6, 0, 2162722, 6, 0, 2162723, 6, 0, 2162724, 6, 0, 2162725, 7, 0 )
+[node name="Flecha4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 43.8584, 292.565 )
+gravedadY = -2.0
 
-[node name="Lava" parent="." instance=ExtResource( 9 )]
+[node name="Flecha5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 54.1656, 292.378 )
+gravedadY = -2.0
+
+[node name="Flecha6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 66.5306, 292.643 )
+gravedadY = -2.0
+
+[node name="Flecha7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 86.0227, 293.018 )
+gravedadY = -2.0
+
+[node name="FlechaL2a" parent="." instance=ExtResource( 10 )]
+position = Vector2( 297.533, 440.643 )
+
+[node name="FlechaL2b" parent="." instance=ExtResource( 10 )]
+position = Vector2( 316.434, 440.643 )
+
+[node name="FlechaL2c" parent="." instance=ExtResource( 10 )]
+position = Vector2( 335.926, 440.643 )
+
+[node name="FlechaL3a" parent="." instance=ExtResource( 10 )]
+position = Vector2( 176.86, 265.029 )
+
+[node name="FlechaL3b" parent="." instance=ExtResource( 10 )]
+position = Vector2( 190.949, 276.697 )
+
+[node name="FlechaL4a" parent="." instance=ExtResource( 10 )]
+position = Vector2( 281.973, 359.36 )
+rotation = -1.5708
+gravedadY = 0.0
+gravedadX = -1
+
+[node name="Lava1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 150.983, 488.322 )
 
 [node name="Lava2" parent="." instance=ExtResource( 9 )]
@@ -39,11 +79,18 @@ position = Vector2( 166.698, 488.322 )
 [node name="Lava3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 182.693, 488.322 )
 
+[node name="Lava4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 198.612, 488.322 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 54.2972, 473.159 )
+position = Vector2( 152.925, 308.2 )
+
+[node name="TimerDead" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="Puerta" parent="." instance=ExtResource( 6 )]
-position = Vector2( 496.92, 337.295 )
+position = Vector2( 498.044, 325.309 )
 
 [node name="plataforma1" type="Node2D" parent="."]
 visible = false
@@ -100,31 +147,61 @@ initial_offset = 1.0
 [node name="Boton" parent="plataforma2" instance=ExtResource( 4 )]
 position = Vector2( -90.6762, 117.947 )
 
-[node name="Pinche" parent="." instance=ExtResource( 7 )]
+[node name="Pinche1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 264.338, 375.875 )
 rotation = 3.14159
 
 [node name="Pinche2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 232.162, 345.05 )
 
-[node name="TimerDead" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="Pinche3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 424.657, 360.143 )
+rotation = -1.5708
 
-[node name="Fuego" parent="." instance=ExtResource( 8 )]
-position = Vector2( 120.507, 363.896 )
+[node name="Fuego1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 441.437, 473.231 )
+
+[node name="Fuego2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 99.1933, 346.322 )
+
+[node name="Fuego3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 124.732, 349.143 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Fuego4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 388.621, 346.321 )
+
+[node name="Fuego5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 388.621, 338.384 )
 
 [node name="TNT" parent="." instance=ExtResource( 11 )]
-[connection signal="hit" from="Flecha" to="." method="_on_game_over"]
+position = Vector2( 8.48531, 231.931 )
+[connection signal="hit" from="Flecha1" to="." method="_on_game_over"]
 [connection signal="hit" from="Flecha2" to="." method="_on_game_over"]
 [connection signal="hit" from="Flecha3" to="." method="_on_game_over"]
-[connection signal="hit" from="Lava" to="." method="_on_game_over"]
+[connection signal="hit" from="Flecha4" to="." method="_on_game_over"]
+[connection signal="hit" from="Flecha5" to="." method="_on_game_over"]
+[connection signal="hit" from="Flecha6" to="." method="_on_game_over"]
+[connection signal="hit" from="Flecha7" to="." method="_on_game_over"]
+[connection signal="hit" from="FlechaL2a" to="." method="_on_game_over"]
+[connection signal="hit" from="FlechaL2b" to="." method="_on_game_over"]
+[connection signal="hit" from="FlechaL2c" to="." method="_on_game_over"]
+[connection signal="hit" from="FlechaL3a" to="." method="_on_game_over"]
+[connection signal="hit" from="FlechaL3b" to="." method="_on_game_over"]
+[connection signal="hit" from="FlechaL4a" to="." method="_on_game_over"]
+[connection signal="hit" from="Lava1" to="." method="_on_game_over"]
 [connection signal="hit" from="Lava2" to="." method="_on_game_over"]
 [connection signal="hit" from="Lava3" to="." method="_on_game_over"]
+[connection signal="hit" from="Lava4" to="." method="_on_game_over"]
 [connection signal="dejoLaPantalla" from="Player" to="." method="_on_game_over"]
+[connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
 [connection signal="apretado" from="plataforma1/Boton" to="." method="_on_Boton_apretado"]
 [connection signal="apretado" from="plataforma2/Boton" to="." method="_on_Boton2_apretado"]
-[connection signal="hit" from="Pinche" to="." method="_on_game_over"]
+[connection signal="hit" from="Pinche1" to="." method="_on_game_over"]
 [connection signal="hit" from="Pinche2" to="." method="_on_game_over"]
-[connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
-[connection signal="hit" from="Fuego" to="." method="_on_game_over"]
+[connection signal="hit" from="Pinche3" to="." method="_on_game_over"]
+[connection signal="hit" from="Fuego1" to="." method="_on_game_over"]
+[connection signal="hit" from="Fuego2" to="." method="_on_game_over"]
+[connection signal="hit" from="Fuego3" to="." method="_on_game_over"]
+[connection signal="hit" from="Fuego4" to="." method="_on_game_over"]
+[connection signal="hit" from="Fuego5" to="." method="_on_game_over"]

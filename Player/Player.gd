@@ -7,7 +7,6 @@ var velocity = Vector2()
 export var run_speed = 50
 export var jump_speed = -50
 export var gravity = 100
-var dobleSalto = 1
 
 ##Crear clones
 var Clon = preload("res://Player/clon.tscn")
@@ -20,13 +19,13 @@ var count = 0
 var activo = true
 
 ##Para saber que esta vivo
-var vivo = true
+var estaVivo = true
 
 func setCantLimiteClones(numero):
 	cantLimite = numero
 
 func get_input():
-	if(vivo):
+	if (estaVivo):
 		var right = Input.is_action_pressed('ui_right')
 		var left = Input.is_action_pressed('ui_left')
 		var jump = Input.is_action_just_pressed('ui_up')
@@ -41,12 +40,9 @@ func get_input():
 			if is_on_floor():
 				sprite.play("walk")
 			sprite.set_flip_h(true)
-		if (dobleSalto > 0) and jump:
+		if is_on_floor() and jump:
 			velocity.y = jump_speed
 			sprite.play("jump")
-			dobleSalto -= 1 
-		if is_on_floor():
-			dobleSalto = 1
 		if is_on_floor() and not left and not right and not jump:
 			sprite.play("stop")
 		
@@ -98,7 +94,14 @@ func _physics_process(delta):
 
 func murio():
 	sprite.play("dead")
-	vivo = false
+	estaVivo = false
+	#elimina el primer clon
+	if clones.size() > 0:
+		remove_clon(clones.pop_front())
+		#elimina el segundo clon
+		if clones.size() > 0:
+			remove_clon(clones.pop_front())
+	activar()
 
 func _on_VisibilityNotifier2D_screen_exited():
 	emit_signal("dejoLaPantalla")

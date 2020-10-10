@@ -7,7 +7,6 @@
 position = Vector2( 28.286, 17.1498 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_vertical_guides_": [ 8.13021 ]
 }
 
@@ -20,7 +19,7 @@ position = Vector2( 0.112297, 0.707108 )
 polygon = PoolVector2Array( -7.99476, 6.68369, -4.20645, -1.87508, -0.277828, 5.28061, 3.65079, -2.71693, 7.71971, 6.824 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 16.3516, 0 )
+position = Vector2( 15.998, 0 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
