@@ -9,8 +9,6 @@
 [ext_resource path="res://nivel/Nivel3/Nivel3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=8]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.0461, 6.46326 )
 
@@ -98,6 +96,7 @@ wait_time = 2.0
 one_shot = true
 [connection signal="body_entered" from="Lava" to="Lava" method="_on_body_entered"]
 [connection signal="hit" from="Lava" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Lava" to="." method="_on_delete_clone"]
 [connection signal="dejoLaPantalla" from="Player" to="." method="_on_game_over"]
 [connection signal="apretado" from="plataforma1/Boton" to="." method="_on_Boton_apretado"]
 [connection signal="apretado" from="plataforma2/Boton" to="." method="_on_Boton2_apretado"]

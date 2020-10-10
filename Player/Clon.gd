@@ -32,6 +32,9 @@ func get_input():
 	if is_on_floor() and not left and not right and not jump:
 		$AnimatedSprite.play("stop")
 
+func morir():
+	queue_free()
+
 func desactivar():
 	activo = false
 	$AnimatedSprite.play("stop")

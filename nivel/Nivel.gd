@@ -16,8 +16,10 @@ func _on_Boton2_apretado():
 
 func _on_game_over():
 	$TimerDead.start()
-	player.murio()
+	$Player.morir()
 
 func _on_TimerDead_timeout():
 	get_tree().reload_current_scene()
 
+func _on_delete_clone():
+	$Player.matarClone()

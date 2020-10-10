@@ -55,6 +55,13 @@ func desactivar():
 func activar():
 	activo = true
 	$Camera2D.current = true
+	
+func matarClone():
+	new_clon.desactivar()
+	activar()
+	clones.erase(new_clon)
+	remove_clon(new_clon)
+	
 
 func remove_clon(clon):
 	var temp = clon
@@ -62,7 +69,7 @@ func remove_clon(clon):
 	temp.queue_free()
 
 func agregarClon():
-	if clones.size() > 0:
+	if clones.size() > 0 && new_clon != null:
 		new_clon.desactivar()
 	new_clon = Clon.instance()
 	new_clon.cambiarColor(count%4)
@@ -84,6 +91,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("clonar"):
 		count +=1
 		if clones.size() == cantLimite:
+			print(clones.size())
 			remove_clon(clones.pop_front())
 		agregarClon()
 	 
@@ -92,7 +100,7 @@ func _physics_process(delta):
 		activar()
 		new_clon.desactivar()
 
-func murio():
+func morir():
 	sprite.play("dead")
 	estaVivo = false
 	#elimina el primer clon
