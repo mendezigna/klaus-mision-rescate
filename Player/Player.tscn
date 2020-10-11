@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/huesos.png" type="Texture" id=3]
+[ext_resource path="res://assets/playerBlanco1.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -85,3 +86,21 @@ limit_bottom = 600
 
 [node name="PosicionClon" type="Position2D" parent="."]
 position = Vector2( 0.692301, -17.5266 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+
+[node name="playerBlanco1" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 10.6434, 8.52259 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 18.75
+margin_top = 2.79646
+margin_right = 76.75
+margin_bottom = 16.7965
+text = "Restantes: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

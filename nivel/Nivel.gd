@@ -22,4 +22,4 @@ func _on_TimerDead_timeout():
 	get_tree().reload_current_scene()
 
 func _on_delete_clone(clone):
-	$Player.matarClone(clone)
+	$Player.remove_clon(clone)

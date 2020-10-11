@@ -24,6 +24,11 @@ var estaVivo = true
 
 func setCantLimiteClones(numero):
 	cantLimite = numero
+	setLabelText()
+
+func setLabelText():
+	$CanvasLayer/Label.text = "Restantes: " + str(cantLimite - clones.size())
+
 
 func get_input():
 	if (estaVivo):
@@ -56,22 +61,18 @@ func desactivar():
 func activar():
 	activo = true
 	$Camera2D.current = true
-	
-func matarClone(clone):
-	if (clone != new_clon):
-		clone.desactivar()
-	else:
-		new_clon = null
-		activar()
-	clones.erase(clone)
-	remove_clon(clone)
-	
 
 func remove_clon(clon):
+	if clon == new_clon:
+		new_clon = null
 	colors.append(clon.modulate.to_html())
+	clones.erase(clon)
 	var temp = clon
+	clon.hide()
 	get_parent().remove_child(clon)
 	temp.queue_free()
+	setLabelText()
+	activar()
 
 func agregarClon():
 	if clones.size() > 0 && new_clon != null:
@@ -83,6 +84,13 @@ func agregarClon():
 	new_clon.position = $PosicionClon.global_position
 	desactivar()
 	new_clon.activar()
+	setLabelText()
+
+func remover_clones():
+	for clon in get_tree().get_nodes_in_group("clon"):
+		remove_clon(clon)
+		clon.desactivar()
+		print("hola")
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -92,22 +100,17 @@ func _physics_process(delta):
 		get_input()
 	velocity = move_and_slide(velocity, Vector2(0, -1), false, 4, PI/4, false)
 	
-	if Input.is_action_just_pressed("clonar"):
-		count +=1
-		if clones.size() == cantLimite:
-			print(clones.size())
-			remove_clon(clones.pop_front())
+	if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
 		agregarClon()
 	 
-
 	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
 		activar()
 		new_clon.desactivar()
+	
+	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
+		remover_clones()
 
 func morir():
 	sprite.play("dead")
 	estaVivo = false
-	#elimina el primer clon
-	for clon in clones:
-		remove_clon(clon)
-	activar()
+	remover_clones()
