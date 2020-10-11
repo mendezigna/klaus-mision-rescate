@@ -12,8 +12,6 @@
 [ext_resource path="res://Objetos/explosivo/TNT.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nivel/Nivel.gd" type="Script" id=11]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Nivel3" type="Node2D"]

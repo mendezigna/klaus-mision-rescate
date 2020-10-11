@@ -2,14 +2,15 @@ extends KinematicBody2D
 
 onready var sprite = $AnimatedSprite
 
-var velocity = Vector2()
 ##Moviemiento
+var velocity = Vector2()
 export var run_speed = 50
 export var jump_speed = -50
 export var gravity = 100
 
 ##Crear clones
 var Clon = preload("res://Player/clon.tscn")
+var colors = ["fffffb00", "ffd74b4b", "ff4f7ddf", "ffb76fd8"]
 var new_clon
 var clones = []
 var cantLimite = 0
@@ -67,6 +68,7 @@ func matarClone(clone):
 	
 
 func remove_clon(clon):
+	colors.append(clon.modulate.to_html())
 	var temp = clon
 	get_parent().remove_child(clon)
 	temp.queue_free()
@@ -75,10 +77,9 @@ func agregarClon():
 	if clones.size() > 0 && new_clon != null:
 		new_clon.desactivar()
 	new_clon = Clon.instance()
-	new_clon.cambiarColor(count%4)
+	new_clon.modulate = colors.pop_front()
 	clones.append(new_clon)
 	get_parent().add_child(new_clon)
-	print($PosicionClon.global_position)
 	new_clon.position = $PosicionClon.global_position
 	desactivar()
 	new_clon.activar()
@@ -107,9 +108,6 @@ func morir():
 	sprite.play("dead")
 	estaVivo = false
 	#elimina el primer clon
-	if clones.size() > 0:
-		remove_clon(clones.pop_front())
-		#elimina el segundo clon
-		if clones.size() > 0:
-			remove_clon(clones.pop_front())
+	for clon in clones:
+		remove_clon(clon)
 	activar()
