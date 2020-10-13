@@ -22,10 +22,12 @@ var activo = true
 ##Para saber que esta vivo
 var estaVivo = true
 
+##Se limita la cantidad de clones
 func setCantLimiteClones(numero):
 	cantLimite = numero
 	setLabelText()
 
+##
 func setLabelText():
 	$CanvasLayer/Label.text = "Restantes: " + str(cantLimite - clones.size())
 
@@ -90,7 +92,6 @@ func remover_clones():
 	for clon in get_tree().get_nodes_in_group("clon"):
 		remove_clon(clon)
 		clon.desactivar()
-		print("hola")
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -105,7 +106,8 @@ func _physics_process(delta):
 	 
 	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
 		activar()
-		new_clon.desactivar()
+		if new_clon != null:
+			new_clon.desactivar()
 	
 	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
 		remover_clones()

@@ -12,10 +12,13 @@ func _ready():
 ##Cuando el boton se apreta, la  plataforma sube.
 ##Cada boton interactua con su plataforma.
 func _on_Boton_apretado():
-	plataforma1.apply_central_impulse(Vector2(0, -3))
+	plataforma1.move_and_slide(Vector2(0,-30))
 
 func _on_Boton2_apretado():
-	plataforma2.apply_central_impulse(Vector2(0, -30))
+	plataforma2.move_and_slide(Vector2(0,-15))
+
+func _on_Boton3_apretado():
+	plataforma1.move_and_slide(Vector2(0,-3))
 
 ##Cuando se pierde, se inicializa un timer para dar unos segundos antes de arrancar el juego de nuevo.
 ##Se le informa al jugador que murio.
@@ -27,6 +30,9 @@ func _on_game_over():
 func _on_TimerDead_timeout():
 	get_tree().reload_current_scene()
 
-##Se borra el clone dado.
+##Se borra el clon tras su muerte.
 func _on_delete_clone(clone):
 	$Player.remove_clon(clone)
+
+func _on_Boton4_apretado():
+	pass # Replace with function body.

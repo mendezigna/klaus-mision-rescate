@@ -49,9 +49,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 5.19683
-height = 3.09471
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 4.41315, 4.76034 )
 
 [node name="Clon" type="KinematicBody2D" groups=[
 "clon",
@@ -69,13 +68,12 @@ frames = SubResource( 6 )
 animation = "stop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 0.0716709, -0.501653 )
+position = Vector2( -0.0953728, 1.39151 )
 rotation = -0.000596559
 shape = SubResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0.914536, 1.07703 )
+position = Vector2( 0, -20 )
 current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_left = 0

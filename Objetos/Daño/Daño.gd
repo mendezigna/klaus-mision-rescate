@@ -9,3 +9,4 @@ func _on_body_entered(body):
 	if body.is_in_group("clon"):
 		emit_signal("hitClone",body)
 		
+
