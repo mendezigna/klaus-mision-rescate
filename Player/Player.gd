@@ -6,7 +6,7 @@ onready var sprite = $AnimatedSprite
 var velocity = Vector2()
 export var run_speed = 50
 export var jump_speed = -50
-export var gravity = 100
+export var gravity = 98
 
 ##Crear clones
 var Clon = preload("res://Player/clon.tscn")

@@ -8,11 +8,17 @@ export var cantDeClones = 3
 ##Cuando se inicia, se le setea una cantidad limite de clones al jugador.
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
+	
+	$PlatBot/Plataforma.start(0, 0, 0, 140)
+	#plataforma1.start(50, 0, 0, 0)
 
 ##Cuando el boton se apreta, la  plataforma sube.
 ##Cada boton interactua con su plataforma.
 func _on_Boton_apretado():
-	plataforma1.move_and_slide(Vector2(0,-30))
+	plataforma1.subir(0.5)
+
+func _on_Boton_suelto():
+	plataforma1.bajar(0.5)
 
 func _on_Boton2_apretado():
 	plataforma2.move_and_slide(Vector2(0,-15))
@@ -35,4 +41,7 @@ func _on_delete_clone(clone):
 	$Player.remove_clon(clone)
 
 func _on_Boton4_apretado():
-	pass # Replace with function body.
+	$PlatBot/Plataforma.derecha(0.5)
+
+func _on_Boton4_suelto():
+	$PlatBot/Plataforma.izquierda(0.5)
