@@ -30,18 +30,18 @@ func _on_TimerDead_timeout():
 func _on_delete_clone(clone):
 	player.remove_clon(clone)
 
-
 func _on_BotonV1_apretado():
 	plataformaV1.subir(0.5)
-
 
 func _on_BotonV1_suelto():
 	plataformaV1.bajar(0.5)
 
-
 func _on_BotonV2_apretado():
 	plataformaV2.subir(0.5)
 
-
 func _on_BotonV2_suelto():
 	plataformaV2.bajar(0.5)
+
+func _win_game(body):
+	if body.is_in_group("player"):
+		player.win()

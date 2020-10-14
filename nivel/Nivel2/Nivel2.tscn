@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Objetos/Daño/lava/Lava.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objetos/explosivo/TNT.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nivel/Nivel2/Nivel2.gd" type="Script" id=11]
+[ext_resource path="res://nivel/Nivel3/Nivel3.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -101,8 +102,10 @@ position = Vector2( 182.693, 488.322 )
 [node name="Lava4" parent="Lava" instance=ExtResource( 1 )]
 position = Vector2( 198.612, 488.322 )
 
-[node name="TimerDead" type="Timer" parent="."]
-wait_time = 2.0
+[node name="TimerDead" type="Timer" parent="." groups=[
+"time",
+]]
+wait_time = 3.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -110,6 +113,7 @@ position = Vector2( 28.9327, 467.936 )
 
 [node name="Puerta" parent="." instance=ExtResource( 3 )]
 position = Vector2( 689.588, 321.604 )
+next_level = ExtResource( 12 )
 
 [node name="plataforma1" type="Node2D" parent="."]
 visible = false

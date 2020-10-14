@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/huesos.png" type="Texture" id=3]
 [ext_resource path="res://assets/playerBlanco1.png" type="Texture" id=4]
+[ext_resource path="res://Interface/GameOver.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -102,3 +103,7 @@ text = "Restantes: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Perdiste" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="Perdiste" instance=ExtResource( 5 )]

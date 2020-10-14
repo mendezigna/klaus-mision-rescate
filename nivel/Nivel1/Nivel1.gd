@@ -10,7 +10,7 @@ func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	plataforma1.start(50, 0, 0, 0)
 	plataforma2.start(115, 0, 0, 0)
-	
+
 ##Cuando el boton se apreta, la  plataforma sube.
 ##Cada boton interactua con su plataforma.
 func _on_Boton_apretado():

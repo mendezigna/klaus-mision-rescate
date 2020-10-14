@@ -1,6 +1,10 @@
 extends KinematicBody2D
 
 onready var sprite = $AnimatedSprite
+onready var interface = $Perdiste/GameOver
+onready var interfaceLabel = $Perdiste/GameOver/GameOver
+onready var interfaceTimer = $Perdiste/GameOver/MostrarReloj
+onready var playAgain = $Perdiste/GameOver/Button
 
 ##Moviemiento
 var velocity = Vector2()
@@ -22,6 +26,9 @@ var activo = true
 ##Para saber que esta vivo
 var estaVivo = true
 
+func _ready():
+	interface.hide()
+
 ##Se limita la cantidad de clones
 func setCantLimiteClones(numero):
 	cantLimite = numero
@@ -37,7 +44,7 @@ func get_input():
 		var right = Input.is_action_pressed('ui_right')
 		var left = Input.is_action_pressed('ui_left')
 		var jump = Input.is_action_just_pressed('ui_up')
-		
+
 		if right:
 			velocity.x += run_speed
 			if is_on_floor():
@@ -53,7 +60,6 @@ func get_input():
 			sprite.play("jump")
 		if is_on_floor() and not left and not right and not jump:
 			sprite.play("stop")
-		
 
 func desactivar():
 	activo = false
@@ -102,6 +108,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1), false, 4, PI/4, false)
 	
 	if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
+		get_tree().get_nodes_in_group("label")[0].text = "SHIFT: \nvolver a klaus"
 		agregarClon()
 	 
 	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
@@ -111,8 +118,17 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
 		remover_clones()
+	interfaceTimer.text = "Timer: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
 
 func morir():
 	sprite.play("dead")
 	estaVivo = false
 	remover_clones()
+	interface.show()
+	playAgain.hide()
+	
+func win():
+	interfaceLabel.text = "YOU WIN!!"
+	interface.show()
+	desactivar()
+	interfaceTimer.hide()
