@@ -75,10 +75,7 @@ func remove_clon(clon):
 		new_clon = null
 	colors.append(clon.modulate.to_html())
 	clones.erase(clon)
-	var temp = clon
-	clon.hide()
-	get_parent().remove_child(clon)
-	temp.queue_free()
+	clon.morir()
 	setLabelText()
 	activar()
 
@@ -96,8 +93,8 @@ func agregarClon():
 
 func remover_clones():
 	for clon in get_tree().get_nodes_in_group("clon"):
-		remove_clon(clon)
 		clon.desactivar()
+		remove_clon(clon)
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -108,7 +105,6 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1), false, 4, PI/4, false)
 	
 	if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
-		get_tree().get_nodes_in_group("label")[0].text = "SHIFT: \nvolver a klaus"
 		agregarClon()
 	 
 	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
@@ -118,7 +114,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
 		remover_clones()
-	interfaceTimer.text = "Timer: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
+	interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
 
 func morir():
 	sprite.play("dead")
@@ -126,6 +122,7 @@ func morir():
 	remover_clones()
 	interface.show()
 	playAgain.hide()
+	$AudioMuerte.play()
 	
 func win():
 	interfaceLabel.text = "YOU WIN!!"

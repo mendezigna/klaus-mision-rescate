@@ -34,10 +34,10 @@ __meta__ = {
 }
 
 [node name="MostrarReloj" type="Label" parent="."]
-margin_left = 464.0
-margin_top = 384.0
-margin_right = 504.0
-margin_bottom = 415.0
+margin_left = 412.5
+margin_top = 383.0
+margin_right = 452.5
+margin_bottom = 414.0
 custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1

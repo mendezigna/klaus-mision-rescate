@@ -9,6 +9,7 @@ func _ready():
 func _on_game_over():
 	$TimerDead.start()
 	player.morir()
+	$AudioStreamPlayer2D.stop()
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():

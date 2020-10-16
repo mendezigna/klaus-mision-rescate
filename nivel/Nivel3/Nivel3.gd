@@ -21,6 +21,7 @@ func _on_Boton_suelto():
 func _on_game_over():
 	$TimerDead.start()
 	player.morir()
+	$AudioStreamPlayer2D.stop()
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():
@@ -45,3 +46,5 @@ func _on_BotonV2_suelto():
 func _win_game(body):
 	if body.is_in_group("player"):
 		player.win()
+		$AudioStreamPlayer2D.stop()
+		$win.play()

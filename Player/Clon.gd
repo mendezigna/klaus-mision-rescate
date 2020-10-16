@@ -6,30 +6,35 @@ export var run_speed = 50
 export var jump_speed = -50
 export var gravity = 100
 var activo = true
+var estaVivo = true
 
 func get_input():
-	var right = Input.is_action_pressed('ui_right')
-	var left = Input.is_action_pressed('ui_left')
-	var jump = Input.is_action_just_pressed('ui_up')
-	
-	if right:
-		velocity.x += run_speed
-		if is_on_floor():
-			$AnimatedSprite.play("walk")
-		$AnimatedSprite.set_flip_h(false)
-	if left:
-		velocity.x -= run_speed
-		if is_on_floor():
-			$AnimatedSprite.play("walk")
-		$AnimatedSprite.set_flip_h(true)
-	if is_on_floor() and jump:
-		velocity.y = jump_speed
-		$AnimatedSprite.play("jump")
-	if is_on_floor() and not left and not right and not jump:
-		$AnimatedSprite.play("stop")
+	if estaVivo:
+		var right = Input.is_action_pressed('ui_right')
+		var left = Input.is_action_pressed('ui_left')
+		var jump = Input.is_action_just_pressed('ui_up')
+		
+		if right:
+			velocity.x += run_speed
+			if is_on_floor():
+				$AnimatedSprite.play("walk")
+			$AnimatedSprite.set_flip_h(false)
+		if left:
+			velocity.x -= run_speed
+			if is_on_floor():
+				$AnimatedSprite.play("walk")
+			$AnimatedSprite.set_flip_h(true)
+		if is_on_floor() and jump:
+			velocity.y = jump_speed
+			$AnimatedSprite.play("jump")
+		if is_on_floor() and not left and not right and not jump:
+			$AnimatedSprite.play("stop")
 
 func morir():
-	queue_free()
+	$AnimatedSprite.play("disappear")
+	estaVivo = false
+	$CollisionShape2D.set_deferred("disabled", true)
+	$Muerte.start()
 
 func desactivar():
 	activo = false
@@ -41,8 +46,13 @@ func activar():
 	$Camera2D.current = true
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
+	if estaVivo:
+		velocity.y += gravity * delta
 	velocity.x = 0
 	if activo:
 		get_input()
 		velocity = move_and_slide(velocity, Vector2(0, -1), false, 4, PI/4, false)
+
+
+func _on_Muerte_timeout():
+	queue_free()
