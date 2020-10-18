@@ -122,6 +122,7 @@ func morir():
 	remover_clones()
 	interface.show()
 	playAgain.hide()
+	pararMusica()
 	$AudioMuerte.play()
 	
 func win():
@@ -129,3 +130,8 @@ func win():
 	interface.show()
 	desactivar()
 	interfaceTimer.hide()
+	pararMusica()
+	
+func pararMusica():
+	$AudioFondo.stop()
+

@@ -11,6 +11,7 @@ func _ready():
 	plataforma1.start(50, 0, 0, 0)
 	plataforma2.start(115, 0, 0, 0)
 	
+	
 func _physics_process(delta):
 		if Input.is_action_just_pressed("clonar"):
 			get_tree().get_nodes_in_group("label")[0].text = "SHIFT: \nvolver a klaus"
@@ -32,7 +33,6 @@ func _on_Boton2_suelto():
 func _on_game_over():
 	$TimerDead.start()
 	player.morir()
-	$AudioStreamPlayer2D.stop()
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():

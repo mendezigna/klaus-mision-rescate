@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=9]
 [ext_resource path="res://nivel/Nivel2/Nivel2.gd" type="Script" id=11]
 [ext_resource path="res://nivel/Nivel3/Nivel3.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/Musica.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.1824, 10 )
@@ -153,8 +152,6 @@ position = Vector2( 373.236, 332.188 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 37.5, 468.501 )
-
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 13 )]
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 1 )

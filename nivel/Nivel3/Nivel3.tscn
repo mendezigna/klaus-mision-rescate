@@ -172,8 +172,6 @@ shape = SubResource( 2 )
 ]]
 wait_time = 3.0
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 11 )]
-
 [node name="win" parent="." instance=ExtResource( 11 )]
 stream = ExtResource( 13 )
 autoplay = false
