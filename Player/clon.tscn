@@ -8,27 +8,22 @@
 [ext_resource path="res://assets/playerBlanco1.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 14, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 14, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 15, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 16, 16 )
 
@@ -73,13 +68,6 @@ animation = "stop"
 position = Vector2( -0.00698245, 2.01023 )
 rotation = -0.000596559
 shape = SubResource( 7 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -20 )
-current = true
-zoom = Vector2( 0.32, 0.32 )
-limit_left = 0
-limit_bottom = 600
 
 [node name="Muerte" type="Timer" parent="."]
 wait_time = 0.5

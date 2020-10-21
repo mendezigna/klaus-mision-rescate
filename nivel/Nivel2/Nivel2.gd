@@ -5,7 +5,12 @@ export var cantDeClones = 3
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
-
+	
+func _physics_process(delta):
+	if player.activo:
+		$Camera2D.position =  player.position
+	elif player.new_clon != null:
+		$Camera2D.position =  player.new_clon.position
 func _on_game_over():
 	$TimerDead.start()
 	player.morir()

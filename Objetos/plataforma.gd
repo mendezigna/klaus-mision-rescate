@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends KinematicBody2D
 
 var max_top
 var max_bottom
@@ -13,7 +13,6 @@ func start(top = 0, bottom = 0, left = 0, right = 0):
 	max_right = global_position.x + right
 	
 func subir(cant):
-
 	if global_position.y > max_top:
 		position.y -= cant
 

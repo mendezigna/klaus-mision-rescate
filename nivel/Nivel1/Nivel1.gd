@@ -15,6 +15,10 @@ func _ready():
 func _physics_process(delta):
 		if Input.is_action_just_pressed("clonar"):
 			get_tree().get_nodes_in_group("label")[0].text = "SHIFT: \nvolver a klaus"
+		if player.activo:
+			$Camera2D.position =  player.position
+		elif player.new_clon != null:
+			$Camera2D.position =  player.new_clon.position
 
 ##Cuando el boton se apreta, la  plataforma sube.
 ##Cada boton interactua con su plataforma.

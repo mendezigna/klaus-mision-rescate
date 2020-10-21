@@ -11,7 +11,13 @@ func _ready():
 	plataformaH.start(0, 0, 0, 140)
 	plataformaV1.start(95, 0, 0, 0)
 	plataformaV2.start(95, 0, 0, 0)
-	
+
+func _physics_process(delta):
+	if player.activo:
+		$Camera2D.position =  player.position
+	elif player.new_clon != null:
+		$Camera2D.position =  player.new_clon.position
+
 func _on_Boton_apretado():
 	plataformaH.derecha(0.5)
 

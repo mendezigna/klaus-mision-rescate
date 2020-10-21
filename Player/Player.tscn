@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
@@ -7,32 +7,27 @@
 [ext_resource path="res://Interface/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/gameover.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/Musica.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/House_In_a_Forest_Loop.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/Letras/gameovercre1.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -41,14 +36,14 @@ animations = [ {
 "name": "stop",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -59,6 +54,9 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 4.08798, 4.57889 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 8 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -79,13 +77,6 @@ position = Vector2( -0.0522537, 3.4053 )
 rotation = -0.000596559
 shape = SubResource( 7 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -20 )
-current = true
-zoom = Vector2( 0.32, 0.32 )
-limit_left = 0
-limit_bottom = 600
-
 [node name="PosicionClon" type="Position2D" parent="."]
 position = Vector2( 0.692301, -17.5266 )
 
@@ -102,6 +93,7 @@ margin_left = 18.75
 margin_top = 2.79646
 margin_right = 76.75
 margin_bottom = 16.7965
+custom_fonts/font = SubResource( 8 )
 text = "Restantes: 0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,10 +104,8 @@ __meta__ = {
 [node name="GameOver" parent="Perdiste" instance=ExtResource( 5 )]
 visible = false
 
-[node name="AudioFondo" type="AudioStreamPlayer" parent="." instance=ExtResource( 7 )]
-stream = ExtResource( 8 )
+[node name="AudioFondo" parent="." instance=ExtResource( 7 )]
 volume_db = -15.0
-autoplay = true
 
 [node name="AudioMuerte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )

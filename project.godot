@@ -19,6 +19,11 @@ config/name="Minion-3"
 run/main_scene="res://Main/Main.tscn"
 config/icon="res://assets/huesos.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [input]
 
 ui_left={
@@ -73,7 +78,6 @@ reiniciar_clones={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

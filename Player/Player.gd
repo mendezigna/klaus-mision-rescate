@@ -64,11 +64,9 @@ func get_input():
 func desactivar():
 	activo = false
 	sprite.play("stop")
-	$Camera2D.current = false
 
 func activar():
 	activo = true
-	$Camera2D.current = true
 
 func remove_clon(clon):
 	if clon == new_clon:
@@ -98,12 +96,27 @@ func remover_clones():
 
 func _physics_process(delta):
 	velocity.x = 0
-	velocity.y += gravity * delta
+	var snap = 3
 
 	if activo:
 		get_input()
-	velocity = move_and_slide(velocity, Vector2(0, -1), false, 4, PI/4, false)
-	
+
+	if velocity.y != 0:
+		snap = Vector2(0,0)
+		if estaVivo:
+			sprite.play("jump")
+
+	move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
+
+	if is_on_floor():
+		velocity.y = 0 
+	else:
+		velocity.y += gravity * delta
+
+	if is_on_ceiling():
+		velocity.y = 0 
+		
+
 	if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
 		agregarClon()
 	 
