@@ -9,7 +9,7 @@
 [ext_resource path="res://TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objetos/Daño/flecha/Flecha.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objetos/ParticulasLava.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objetos/particlasLava.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nivel/Nivel2/Nivel2.gd" type="Script" id=11]
 [ext_resource path="res://nivel/Nivel3/Nivel3.tscn" type="PackedScene" id=12]
 
@@ -29,15 +29,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="lava" type="Area2D" parent="."]
 script = ExtResource( 1 )
 
-[node name="Particles2D" parent="Area2D" instance=ExtResource( 10 )]
-position = Vector2( 371.149, 489.335 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lava"]
 position = Vector2( 367.696, 502.046 )
 shape = SubResource( 1 )
+
+[node name="CPUParticles2D" parent="lava" instance=ExtResource( 10 )]
+position = Vector2( 364.779, 490.852 )
 
 [node name="Plataforma" parent="." instance=ExtResource( 4 )]
 position = Vector2( 339.344, 321.452 )
@@ -167,9 +167,9 @@ position = Vector2( 37.5, 468.501 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 37.42, 469.271 )
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="hit" from="Area2D" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Area2D" to="." method="_on_delete_clone"]
+[connection signal="body_entered" from="lava" to="lava" method="_on_body_entered"]
+[connection signal="hit" from="lava" to="." method="_on_game_over"]
+[connection signal="hitClone" from="lava" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Felchas/Flecha1" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Felchas/Flecha1" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Felchas/Flecha2" to="." method="_on_game_over"]

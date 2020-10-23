@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.603774, 196.364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.669811, 0.672727 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.558 )
+colors = PoolColorArray( 0.901961, 0.282353, 0.180392, 1, 0.160784, 0.121569, 0.121569, 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 10
+lifetime = 0.5
+emission_shape = 2
+emission_rect_extents = Vector2( 50, 1 )
+gravity = Vector2( 0, -98 )
+initial_velocity_random = 1.0
+angular_velocity_curve = SubResource( 1 )
+scale_amount = 1.5
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )

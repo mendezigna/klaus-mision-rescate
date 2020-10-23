@@ -11,7 +11,7 @@
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/Letras/baby blocks.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://Objetos/ParticulasLava.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objetos/particlasLava.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.0461, 6.46326 )
@@ -35,11 +35,12 @@ __meta__ = {
 position = Vector2( 40.0769, -38.8524 )
 script = ExtResource( 8 )
 
-[node name="Particles2D" parent="Lava" instance=ExtResource( 12 )]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
 position = Vector2( 301.718, 603.174 )
 shape = SubResource( 1 )
+
+[node name="CPUParticles2D" parent="Lava" instance=ExtResource( 12 )]
+position = Vector2( 305.47, 595.207 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 position = Vector2( 158.3, -3.84024 )
@@ -59,6 +60,9 @@ position = Vector2( 821.916, 356.393 )
 
 [node name="Fuego" parent="." instance=ExtResource( 10 )]
 position = Vector2( 168.986, 470.54 )
+
+[node name="Sprite" parent="Fuego" index="1"]
+frame = 1
 
 [node name="Puerta" parent="." instance=ExtResource( 4 )]
 position = Vector2( 968.854, 338.297 )
