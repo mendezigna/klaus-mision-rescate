@@ -12,6 +12,7 @@ func _ready():
 	plataforma2.start(115, 0, 0, 0)
 	
 	
+# warning-ignore:unused_argument
 func _physics_process(delta):
 		if Input.is_action_just_pressed("clonar"):
 			get_tree().get_nodes_in_group("label")[0].text = "SHIFT: \nvolver a klaus"

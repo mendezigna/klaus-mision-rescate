@@ -12,6 +12,7 @@ func _ready():
 	plataformaV1.start(95, 0, 0, 0)
 	plataformaV2.start(95, 0, 0, 0)
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	if player.activo:
 		$Camera2D.position =  player.position
@@ -30,6 +31,7 @@ func _on_game_over():
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():
+# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 
 ##Se borra el clon tras su muerte.

@@ -6,6 +6,7 @@ export var cantDeClones = 3
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	if player.activo:
 		$Camera2D.position =  player.position

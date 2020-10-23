@@ -16,6 +16,7 @@ export var gravity = 98
 var Clon = preload("res://Player/clon.tscn")
 var colors = ["fffffb00", "ffd74b4b", "ff4f7ddf", "ffb76fd8"]
 var new_clon
+var jumping = false
 var clones = []
 var cantLimite = 0
 var count = 0
@@ -57,6 +58,7 @@ func get_input():
 			sprite.set_flip_h(true)
 		if is_on_floor() and jump:
 			velocity.y = jump_speed
+			jumping = true
 			sprite.play("jump")
 		if is_on_floor() and not left and not right and not jump:
 			sprite.play("stop")
@@ -81,7 +83,7 @@ func agregarClon():
 	if clones.size() > 0 && new_clon != null:
 		new_clon.desactivar()
 	new_clon = Clon.instance()
-	new_clon.modulate = colors.pop_front()
+	new_clon.cambiarColor(colors.pop_front())
 	clones.append(new_clon)
 	get_parent().add_child(new_clon)
 	new_clon.position = $PosicionClon.global_position
@@ -105,11 +107,17 @@ func _physics_process(delta):
 		snap = Vector2(0,0)
 		if estaVivo:
 			sprite.play("jump")
+	elif velocity.x == 0 and estaVivo:
+		sprite.play("stop")
 
+# warning-ignore:return_value_discarded
 	move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
 
 	if is_on_floor():
-		velocity.y = 0 
+		velocity.y = 0
+		if jumping:
+			jumping = false
+			$CPUParticles2D.emitting = true 
 	else:
 		velocity.y += gravity * delta
 
@@ -128,6 +136,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
 		remover_clones()
 	interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
+
+
 
 func morir():
 	sprite.play("dead")

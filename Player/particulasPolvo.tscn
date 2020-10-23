@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Curve" id=9]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -305.64 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0.028169, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0197532 ), 0.0, 0.0, 0, 0 ]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+position = Vector2( 0.25, 8 )
+emitting = false
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.9
+lifetime_randomness = 1.0
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 5, 1 )
+direction = Vector2( 100, 0 )
+spread = 104.46
+gravity = Vector2( 0, 0 )
+initial_velocity = 5.0
+angle_curve = SubResource( 9 )
+scale_amount = 1.2
+scale_amount_curve = SubResource( 10 )
+color = Color( 0.811765, 0.776471, 0.721569, 1 )
