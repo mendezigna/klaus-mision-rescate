@@ -56,7 +56,6 @@ func _physics_process(delta):
 			snap = Vector2(0,0)
 			if estaVivo:
 				sprite.play("jump")
-				sprite.modulate
 # warning-ignore:return_value_discarded
 		if estaVivo:
 			move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
