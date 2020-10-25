@@ -124,17 +124,17 @@ func _physics_process(delta):
 	if is_on_ceiling():
 		velocity.y = 0 
 		
-
-	if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
-		agregarClon()
+	if (estaVivo):
+		if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
+			agregarClon()
 	 
-	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
-		activar()
-		if new_clon != null:
-			new_clon.desactivar()
+		if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
+			activar()
+			if new_clon != null:
+				new_clon.desactivar()
 	
-	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
-		remover_clones()
+		if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
+			remover_clones()
 	interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
 
 
