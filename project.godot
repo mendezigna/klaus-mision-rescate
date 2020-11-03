@@ -15,9 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Minion-3"
+config/name="Boss"
 run/main_scene="res://Main/Main.tscn"
-config/icon="res://assets/huesos.png"
+config/icon="res://assets/playerBlanco1.png"
 
 [display]
 

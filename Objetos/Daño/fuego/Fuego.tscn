@@ -5,7 +5,7 @@
 [ext_resource path="res://Objetos/particulas.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=4]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
@@ -13,7 +13,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 3.27118
 height = 5.14605
 
@@ -28,12 +28,13 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -17.9368, -10.3859 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
+frame = 1
 playing = true
 centered = false
 flip_h = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -0.131067, 0.0131798 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

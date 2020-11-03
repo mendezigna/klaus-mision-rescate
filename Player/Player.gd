@@ -5,6 +5,7 @@ onready var interface = $Perdiste/GameOver
 onready var interfaceLabel = $Perdiste/GameOver/GameOver
 onready var interfaceTimer = $Perdiste/GameOver/MostrarReloj
 onready var playAgain = $Perdiste/GameOver/Button
+onready var collision = $CollisionShape2D
 
 ##Moviemiento
 var velocity = Vector2()
@@ -48,24 +49,35 @@ func get_input():
 
 		if right:
 			velocity.x += run_speed
-			if is_on_floor():
+			if is_on_floor() and sprite.animation != "land" and sprite.animation != "summon":
 				sprite.play("walk")
+				sprite.offset.x = -3
+				sprite.offset.y = 0
 			sprite.set_flip_h(false)
 		if left:
 			velocity.x -= run_speed
-			if is_on_floor():
+			if is_on_floor() and sprite.animation != "land" and sprite.animation != "summon":
 				sprite.play("walk")
+				sprite.offset.x = 3
+				sprite.offset.y = 0
 			sprite.set_flip_h(true)
 		if is_on_floor() and jump:
 			velocity.y = jump_speed
 			jumping = true
 			sprite.play("jump")
-		if is_on_floor() and not left and not right and not jump:
+			sprite.offset.x = 0
+			sprite.offset.y = 3
+		if is_on_floor() and not left and not right and not jump and sprite.animation != "land" and sprite.animation != "summon":
 			sprite.play("stop")
+			sprite.offset.x = 0
+			sprite.offset.y = 0
 
 func desactivar():
 	activo = false
-	sprite.play("stop")
+	if sprite.animation != "land" and sprite.animation != "summon":
+		sprite.play("stop")
+		sprite.offset.x = 0
+		sprite.offset.y = 0
 
 func activar():
 	activo = true
@@ -102,20 +114,31 @@ func _physics_process(delta):
 
 	if activo:
 		get_input()
-
-	if velocity.y != 0:
-		snap = Vector2(0,0)
-		if estaVivo:
-			sprite.play("jump")
-	elif velocity.x == 0 and estaVivo:
-		sprite.play("stop")
+	if estaVivo:
+		if velocity.y != 0:
+			snap = Vector2(0,0)
+			if velocity.y > 0 :
+				sprite.play("falling")
+				if velocity.x > 0 or !sprite.flip_h:
+					sprite.offset.x = -2
+				elif velocity.x < 0 or sprite.flip_h:
+					sprite.offset.x = 2
+				sprite.offset.y = 3.5
+			
+		elif velocity.x == 0 and sprite.animation != "summon" and sprite.animation != "land":
+			sprite.play("stop")
+			sprite.offset.x = 0
+			sprite.offset.y = 0
 
 # warning-ignore:return_value_discarded
 	move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
 
 	if is_on_floor():
 		velocity.y = 0
-		if jumping:
+		if jumping and estaVivo:
+			sprite.play("land")
+			sprite.offset.x = 0
+			sprite.offset.y = 0
 			jumping = false
 			$CPUParticles2D.emitting = true 
 	else:
@@ -125,8 +148,9 @@ func _physics_process(delta):
 		velocity.y = 0 
 		
 	if (estaVivo):
-		if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite:
+		if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite and is_on_floor():
 			agregarClon()
+			sprite.play("summon")
 	 
 		if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
 			activar()
@@ -140,13 +164,14 @@ func _physics_process(delta):
 
 
 func morir():
-	sprite.play("dead")
-	estaVivo = false
-	remover_clones()
-	interface.show()
-	playAgain.hide()
-	pararMusica()
-	$AudioMuerte.play()
+	if estaVivo:
+		sprite.play("dead")
+		estaVivo = false
+		remover_clones()
+		interface.show()
+		playAgain.hide()
+		pararMusica()
+		$AudioMuerte.play()
 	
 func win():
 	interfaceLabel.text = "YOU WIN!!"
@@ -158,3 +183,10 @@ func win():
 func pararMusica():
 	$AudioFondo.stop()
 
+
+func _on_AnimatedSprite_animation_finished():
+	if sprite.animation != "dead" and sprite.animation != "walk" and sprite.animation != "jump" and sprite.animation != "falling":
+		sprite.play("stop")
+		sprite.offset.x = 0
+		sprite.offset.y = 0
+	sprite.stop()

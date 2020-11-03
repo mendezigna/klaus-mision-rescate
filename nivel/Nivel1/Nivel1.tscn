@@ -23,10 +23,10 @@ font_data = ExtResource( 11 )
 script = ExtResource( 7 )
 
 [node name="Fondo" type="ColorRect" parent="."]
-margin_left = -0.353516
-margin_top = -6.19888e-06
-margin_right = 1021.65
-margin_bottom = 623.0
+margin_left = -0.103516
+margin_top = 0.499994
+margin_right = 1021.9
+margin_bottom = 623.5
 color = Color( 0.0901961, 0.0784314, 0.105882, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
