@@ -16,6 +16,8 @@
 [ext_resource path="res://Objetos/Camera2D.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objetos/particlasLava.tscn" type="PackedScene" id=15]
 
+
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.75868
 
