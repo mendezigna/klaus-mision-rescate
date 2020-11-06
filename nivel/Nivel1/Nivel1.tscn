@@ -516,6 +516,7 @@ points = PoolVector2Array( 0, 0.5, 32, 0.5, 32, 32.5, 0, 32.5 )
 font_data = ExtResource( 11 )
 
 [node name="Nivel1" type="Node2D"]
+position = Vector2( 6.17355, 0 )
 script = ExtResource( 7 )
 
 [node name="Background" type="Node2D" parent="."]
@@ -551,7 +552,7 @@ position = Vector2( 968.854, 338.297 )
 position = Vector2( -681.048, 165.826 )
 
 [node name="Lava 1" type="Node2D" parent="Daño/Lava"]
-position = Vector2( 0.841827, 6.45416 )
+position = Vector2( 7.01535, 6.45416 )
 __meta__ = {
 "_edit_group_": true
 }

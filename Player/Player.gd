@@ -144,8 +144,6 @@ func _physics_process(delta):
 	else:
 		velocity.y += gravity * delta
 
-	if is_on_ceiling():
-		velocity.y = 0 
 		
 	if (estaVivo):
 		if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite and is_on_floor():

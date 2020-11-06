@@ -12,6 +12,7 @@ func _physics_process(delta):
 		$Camera2D.position =  player.position
 	elif player.new_clon != null:
 		$Camera2D.position =  player.new_clon.position
+		
 func _on_game_over():
 	$TimerDead.start()
 	player.morir()
