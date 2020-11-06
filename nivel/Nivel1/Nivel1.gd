@@ -2,8 +2,8 @@ extends Node2D
 
 onready var player = $Player
 export var cantDeClones = 3
-onready var plataforma1 = $plataforma1/Plataforma
-onready var plataforma2 = $plataforma2/Plataforma
+onready var plataforma1 = $Plataformas/plataforma1/Plataforma
+onready var plataforma2 = $Plataformas/plataforma2/Plataforma
 
 
 func _ready():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lava.png-801f069ddedcd561140a418f54dbe5b8.stex"
+path="res://.import/lavaAnimacion.png-c47c5e1012aba2cde0876ee7f1a3aafc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BoosAssets/efects/lava.png"
-dest_files=[ "res://.import/lava.png-801f069ddedcd561140a418f54dbe5b8.stex" ]
+source_file="res://BoosAssets/background/lavaAnimacion.png"
+dest_files=[ "res://.import/lavaAnimacion.png-c47c5e1012aba2cde0876ee7f1a3aafc.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Small_Fireball_10x26.png-8f34d5a88d3ae029144eecf7bb1f8f7e.stex"
+path="res://.import/lava.png-07c04a45fe13b87a2b518e759c06794c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BoosAssets/efects/Small_Fireball_10x26.png"
-dest_files=[ "res://.import/Small_Fireball_10x26.png-8f34d5a88d3ae029144eecf7bb1f8f7e.stex" ]
+source_file="res://BoosAssets/background/lava.png"
+dest_files=[ "res://.import/lava.png-07c04a45fe13b87a2b518e759c06794c.stex" ]
 
 [params]
 
