@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Player/Clon.gd" type="Script" id=1]
 [ext_resource path="res://Player/humo.png" type="Texture" id=2]
-[ext_resource path="res://stop.png" type="Texture" id=3]
-[ext_resource path="res://volar.png" type="Texture" id=4]
-[ext_resource path="res://caminar.png" type="Texture" id=5]
-[ext_resource path="res://bajada.png" type="Texture" id=6]
+[ext_resource path="res://BoosAssets/minion/stop.png" type="Texture" id=3]
+[ext_resource path="res://BoosAssets/minion/volar.png" type="Texture" id=4]
+[ext_resource path="res://BoosAssets/minion/caminar.png" type="Texture" id=5]
+[ext_resource path="res://BoosAssets/minion/bajada.png" type="Texture" id=6]
 [ext_resource path="res://Player/humo-frame1.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -195,7 +195,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 30 )
 animation = "stop"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
