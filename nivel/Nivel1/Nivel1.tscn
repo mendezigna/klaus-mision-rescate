@@ -1,5 +1,6 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=35 format=2]
 
+[ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=4]
@@ -11,10 +12,6 @@
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/Letras/baby blocks.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://BoosAssets/background/mainlev_build.png" type="Texture" id=13]
-[ext_resource path="res://BoosAssets/background/background3.png" type="Texture" id=14]
-[ext_resource path="res://BoosAssets/background/background2.png" type="Texture" id=15]
-[ext_resource path="res://BoosAssets/background/background4a.png" type="Texture" id=16]
-[ext_resource path="res://BoosAssets/background/background1.png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0.5, 32, 0.5, 32, 32.5, 0, 32.5 )
@@ -518,32 +515,9 @@ font_data = ExtResource( 11 )
 [node name="Nivel1" type="Node2D"]
 position = Vector2( 6.17355, 0 )
 script = ExtResource( 7 )
+cantDeClones = 4
 
-[node name="Background" type="Node2D" parent="."]
-position = Vector2( -13.3046, -54.4867 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="background1" type="Sprite" parent="Background"]
-position = Vector2( 519.31, 336.446 )
-scale = Vector2( 1.07841, 1.00295 )
-texture = ExtResource( 17 )
-
-[node name="background2" type="Sprite" parent="Background"]
-position = Vector2( 518.449, 363.701 )
-scale = Vector2( 1.07805, 1.00295 )
-texture = ExtResource( 15 )
-
-[node name="background3" type="Sprite" parent="Background"]
-position = Vector2( 518.755, 347.683 )
-scale = Vector2( 1.07474, 1.06969 )
-texture = ExtResource( 14 )
-
-[node name="background4a" type="Sprite" parent="Background"]
-position = Vector2( 516.696, 309.254 )
-scale = Vector2( 1.07582, 1.04419 )
-texture = ExtResource( 16 )
+[node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="Daño" type="Node2D" parent="."]
 position = Vector2( 968.854, 338.297 )
@@ -552,7 +526,7 @@ position = Vector2( 968.854, 338.297 )
 position = Vector2( -681.048, 165.826 )
 
 [node name="Lava 1" type="Node2D" parent="Daño/Lava"]
-position = Vector2( 7.01535, 6.45416 )
+position = Vector2( -4.7572, 5.61334 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -633,7 +607,7 @@ position = Vector2( 971.315, 271.56 )
 next_level = ExtResource( 6 )
 
 [node name="Piso" type="TileMap" parent="."]
-position = Vector2( 0, -59.4604 )
+position = Vector2( -11.2246, -59.4604 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -646,19 +620,19 @@ position = Vector2( -3.1748, -60.3212 )
 position = Vector2( 340.894, 484.013 )
 
 [node name="Plataforma" parent="Plataformas/plataforma1" instance=ExtResource( 5 )]
-position = Vector2( -2.69788, 57.305 )
+position = Vector2( -11.2109, 57.7019 )
 
 [node name="Boton" parent="Plataformas/plataforma1" instance=ExtResource( 2 )]
-position = Vector2( -73.3145, -11.6505 )
+position = Vector2( -90.9733, -11.6505 )
 
 [node name="plataforma2" type="Node2D" parent="Plataformas"]
 position = Vector2( 524.323, 350.741 )
 
 [node name="Plataforma" parent="Plataformas/plataforma2" instance=ExtResource( 5 )]
-position = Vector2( -12.185, 122.203 )
+position = Vector2( -25.3682, 121.361 )
 
 [node name="Boton" parent="Plataformas/plataforma2" instance=ExtResource( 2 )]
-position = Vector2( -75.0679, 118.474 )
+position = Vector2( -82.636, 120.997 )
 
 [node name="Instrucciones" type="Node2D" parent="."]
 position = Vector2( -6.34961, -60.3212 )

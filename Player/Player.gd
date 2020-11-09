@@ -15,7 +15,7 @@ export var gravity = 98
 
 ##Crear clones
 var Clon = preload("res://Player/clon.tscn")
-var colors = ["fffffb00", "ffd74b4b", "ff4f7ddf", "ffb76fd8"]
+var colors = ["ff3737", "ff4f7ddf", "00ff00", "ffb76fd8"]
 var new_clon
 var jumping = false
 var clones = []

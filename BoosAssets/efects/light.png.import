@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bajada.png-dd18849330e99c6e1771448457db15de.stex"
+path="res://.import/light.png-cef5e8d594a8be22e544645d2671a7db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BoosAssets/minion/bajada.png"
-dest_files=[ "res://.import/bajada.png-dd18849330e99c6e1771448457db15de.stex" ]
+source_file="res://BoosAssets/efects/light.png"
+dest_files=[ "res://.import/light.png-cef5e8d594a8be22e544645d2671a7db.stex" ]
 
 [params]
 

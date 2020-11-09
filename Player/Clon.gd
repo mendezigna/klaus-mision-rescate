@@ -20,17 +20,31 @@ func get_input():
 			velocity.x += run_speed
 			if is_on_floor():
 				sprite.play("walk")
+				sprite.offset.y = 0
+				sprite.offset.x = 0
 			sprite.set_flip_h(false)
 		if left:
 			velocity.x -= run_speed
 			if is_on_floor():
 				sprite.play("walk")
+				sprite.offset.y = 0
+				sprite.offset.x = 0
 			sprite.set_flip_h(true)
 		if is_on_floor() and jump:
 			velocity.y = jump_speed
 			sprite.play("jump")
 			jumping = true
+			if!sprite.flip_h:
+				sprite.offset.x = 8
+			else:
+				sprite.offset.x = -14
+			sprite.offset.y = 0
 		if is_on_floor() and not left and not right and not jump:
+			if!sprite.flip_h:
+				sprite.offset.x = 0
+			else:
+				sprite.offset.x = -6
+			sprite.offset.y = 0
 			sprite.play("stop")
 
 func morir():
@@ -41,6 +55,11 @@ func morir():
 
 func desactivar():
 	activo = false
+	if!sprite.flip_h:
+		sprite.offset.x = 0
+	else:
+		sprite.offset.x = -6
+	sprite.offset.y = 0
 	sprite.play("stop")
 
 func activar():
@@ -54,13 +73,10 @@ func _physics_process(delta):
 		get_input()
 		if velocity.y != 0:
 			snap = Vector2(0,0)
-			if estaVivo:
-				sprite.play("jump")
+
 # warning-ignore:return_value_discarded
 		if estaVivo:
 			move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
-
-		
 
 	if is_on_floor():
 		velocity.y = 0 
@@ -71,9 +87,19 @@ func _physics_process(delta):
 
 	if is_on_ceiling():
 		velocity.y = 0 
+	
+	if estaVivo and velocity.y > 0 :
+		sprite.play("land")
+		if velocity.x > 0 or !sprite.flip_h:
+			sprite.offset.x = 0
+		elif velocity.x < 0 or sprite.flip_h:
+			sprite.offset.x = -6
+		sprite.offset.y = -22
 
 func cambiarColor(color):
 	modulate = color
 
 func _on_Muerte_timeout():
 	queue_free()
+	
+

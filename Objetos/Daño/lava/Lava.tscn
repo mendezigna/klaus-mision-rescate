@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://BoosAssets/background/lavaAnimacion.png" type="Texture" id=1]
+[ext_resource path="res://BoosAssets/efects/light.png" type="Texture" id=2]
 [ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -35,6 +36,7 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,4 +44,11 @@ visible = false
 modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
 position = Vector2( 0, 1.41421 )
 shape = SubResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+color = Color( 1, 0.827451, 0.745098, 1 )
+energy = 0.5
+shadow_enabled = true
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

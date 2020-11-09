@@ -75,6 +75,7 @@ reiniciar_clones={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="world"
+2d_physics/layer_3="clon"
 
 [rendering]
 
