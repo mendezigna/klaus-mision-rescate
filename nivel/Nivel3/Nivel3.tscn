@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objetos/Daño/Daño.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/mascota.png" type="Texture" id=3]
+[ext_resource path="res://Objetos/Mascota/Mascota.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/plataforma.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=6]
@@ -16,12 +16,7 @@
 [ext_resource path="res://Objetos/Camera2D.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objetos/particlasLava.tscn" type="PackedScene" id=15]
 
-
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 6.75868
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 112.396, 10 )
 
 [node name="Nivel3" type="Node2D"]
@@ -156,23 +151,15 @@ position = Vector2( 1053.74, 411.442 )
 [node name="Fuego3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1111.02, 411.455 )
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Mascota" type="Sprite" parent="Area2D"]
-position = Vector2( 1222.18, 410.232 )
-texture = ExtResource( 3 )
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1222.31, 410.036 )
-shape = SubResource( 1 )
+[node name="Mascota" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1212.33, 408.994 )
 
 [node name="Lava" type="Area2D" parent="."]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
 position = Vector2( 480.03, 363.487 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CPUParticles2D" parent="Lava" instance=ExtResource( 15 )]
 position = Vector2( 420.613, 351.536 )
@@ -257,7 +244,6 @@ limit_right = 100000
 [connection signal="hitClone" from="Fuego2" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Fuego3" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Fuego3" to="." method="_on_delete_clone"]
-[connection signal="body_entered" from="Area2D" to="." method="_win_game"]
 [connection signal="body_entered" from="Lava" to="Lava" method="_on_body_entered"]
 [connection signal="hit" from="Lava" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Lava" to="." method="_on_delete_clone"]

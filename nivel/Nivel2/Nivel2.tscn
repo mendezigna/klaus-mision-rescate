@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Objetos/Daño/lava/Lava.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -71,11 +71,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=19]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=27]
-points = PoolVector2Array( 0, 0, 176, 0, 176, 16, 0, 16 )
-
 [sub_resource type="ConvexPolygonShape2D" id=28]
-points = PoolVector2Array( 0, 0, 48, 0, 48, 16, 0, 16 )
+points = PoolVector2Array( 8.84265, -0.0637932, 48, 0, 48, 16, 8.50616, 15.8624 )
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 16, 0, 16 )
@@ -606,27 +603,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 26/z_index = 0
-27/name = "mainlev_build.png 27"
-27/texture = ExtResource( 15 )
-27/tex_offset = Vector2( 0, 0 )
-27/modulate = Color( 1, 1, 1, 1 )
-27/region = Rect2( 752, 16, 176, 16 )
-27/tile_mode = 0
-27/occluder_offset = Vector2( 0, 0 )
-27/navigation_offset = Vector2( 0, 0 )
-27/shape_offset = Vector2( 0, 0 )
-27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-27/shape = SubResource( 27 )
-27/shape_one_way = false
-27/shape_one_way_margin = 1.0
-27/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 27 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-27/z_index = 0
 28/name = "mainlev_build.png 28"
 28/texture = ExtResource( 15 )
 28/tex_offset = Vector2( 0, 0 )
@@ -758,7 +734,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 script = ExtResource( 11 )
 
 [node name="Background" parent="." instance=ExtResource( 14 )]
-position = Vector2( -20.7209, 68.2058 )
+position = Vector2( -17.9148, 62.5935 )
 
 [node name="Daño" type="Node2D" parent="."]
 
@@ -960,7 +936,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 441.888, 302.453 )
+position = Vector2( 166.885, 459.597 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 37.42, 469.271 )
