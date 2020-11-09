@@ -518,6 +518,7 @@ script = ExtResource( 7 )
 cantDeClones = 4
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8.56881, 0.31498 )
 
 [node name="Daño" type="Node2D" parent="."]
 position = Vector2( 968.854, 338.297 )
