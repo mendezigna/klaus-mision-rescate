@@ -88,7 +88,7 @@ visible = true
 position = Vector2( 6.62205, -0.525583 )
 
 [node name="Pinche5" parent="Daño/Pinches" instance=ExtResource( 6 )]
-position = Vector2( -77.0974, 50.3819 )
+position = Vector2( -77.0974, 49.5882 )
 rotation = -1.5708
 
 [node name="Flechas" type="Node2D" parent="Daño"]

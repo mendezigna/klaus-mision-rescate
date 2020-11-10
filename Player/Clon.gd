@@ -48,7 +48,9 @@ func get_input():
 			sprite.play("stop")
 
 func morir():
-	sprite.play("disappear")
+	$Aparicion.show()
+	$Aparicion.play("dead")
+	sprite.hide()
 	estaVivo = false
 	$CollisionShape2D.set_deferred("disabled", true)
 	$Muerte.start()
@@ -64,6 +66,7 @@ func desactivar():
 
 func activar():
 	activo = true
+	
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -102,4 +105,9 @@ func cambiarColor(color):
 func _on_Muerte_timeout():
 	queue_free()
 	
+func _ready():
+	$Aparicion.play("aparecer")
 
+
+func _on_Aparicion_animation_finished():
+	$Aparicion.hide()
