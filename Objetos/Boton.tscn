@@ -29,7 +29,8 @@ extents = Vector2( 8.67722, 7.22422 )
 
 [node name="Boton" type="Area2D"]
 modulate = Color( 0.768627, 0.733333, 0.686275, 1 )
-collision_layer = 4
+collision_layer = 8
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

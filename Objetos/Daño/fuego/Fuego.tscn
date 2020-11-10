@@ -270,7 +270,7 @@ __meta__ = {
 position = Vector2( -3.76571, -13.0517 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 61 )
-frame = 27
+frame = 37
 playing = true
 centered = false
 flip_h = true
@@ -283,6 +283,5 @@ shape = SubResource( 62 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 color = Color( 1, 0.94902, 0.666667, 1 )
-energy = 0.5
 shadow_enabled = true
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
