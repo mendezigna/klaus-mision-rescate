@@ -624,8 +624,6 @@ tile_data = PoolIntArray( 32, -1073741816, 0, 33, 19, 0, 34, 19, 0, 35, 19, 0, 3
 
 [node name="PlataformasFlotantes" parent="." instance=ExtResource( 12 )]
 position = Vector2( -715.091, -283.955 )
-collision_layer = 2
-collision_mask = 0
 tile_data = PoolIntArray( 2883662, -536870886, 0, 3407933, -1073741798, 0, 3407940, -536870886, 0, 3407957, 1073741850, 0, 3407962, -536870886, 0, 3539007, -1073741798, 0, 3539010, -536870886, 0 )
 
 [node name="Plataformas" type="Node2D" parent="."]
