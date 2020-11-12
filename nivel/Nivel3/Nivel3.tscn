@@ -94,66 +94,6 @@ position = Vector2( 1162.09, 374.179 )
 [node name="Flecha2" parent="Daño/Flechas" instance=ExtResource( 8 )]
 position = Vector2( 1169.3, 374.253 )
 
-[node name="Plataformas" type="Node2D" parent="Daño"]
-
-[node name="Plataformas Estaticas" type="Node2D" parent="Daño/Plataformas"]
-
-[node name="Plataforma1" type="Node2D" parent="Daño/Plataformas/Plataformas Estaticas"]
-position = Vector2( 232.037, 473.445 )
-
-[node name="Plataforma" parent="Daño/Plataformas/Plataformas Estaticas/Plataforma1" instance=ExtResource( 4 )]
-position = Vector2( -8, -50.6994 )
-
-[node name="Pinche" parent="Daño/Plataformas/Plataformas Estaticas/Plataforma1" instance=ExtResource( 6 )]
-position = Vector2( -12.2378, -64.1217 )
-
-[node name="Plataforma5" type="Node2D" parent="Daño/Plataformas/Plataformas Estaticas"]
-position = Vector2( 1.53846, -18.5459 )
-
-[node name="Plataforma5" parent="Daño/Plataformas/Plataformas Estaticas/Plataforma5" instance=ExtResource( 4 )]
-position = Vector2( 170.701, 357.778 )
-
-[node name="Pinche4" parent="Daño/Plataformas/Plataformas Estaticas/Plataforma5" instance=ExtResource( 6 )]
-position = Vector2( 155.681, 341.619 )
-
-[node name="Plataforma2" parent="Daño/Plataformas/Plataformas Estaticas" instance=ExtResource( 4 )]
-position = Vector2( 168.536, 453.994 )
-
-[node name="Plataforma3" parent="Daño/Plataformas/Plataformas Estaticas" instance=ExtResource( 4 )]
-position = Vector2( 171.201, 397.24 )
-
-[node name="Plataforma4" parent="Daño/Plataformas/Plataformas Estaticas" instance=ExtResource( 4 )]
-position = Vector2( 224.037, 369.052 )
-
-[node name="PlataformasMoviles" type="Node2D" parent="Daño/Plataformas"]
-position = Vector2( 7.97571, -1.05945 )
-
-[node name="PlatBot" type="Node2D" parent="Daño/Plataformas/PlataformasMoviles"]
-
-[node name="Boton" parent="Daño/Plataformas/PlataformasMoviles/PlatBot" instance=ExtResource( 5 )]
-position = Vector2( 10.1082, 265.193 )
-
-[node name="Plataforma" parent="Daño/Plataformas/PlataformasMoviles/PlatBot" instance=ExtResource( 4 )]
-position = Vector2( 76.7038, 266.977 )
-
-[node name="PlatBot2" type="Node2D" parent="Daño/Plataformas/PlataformasMoviles"]
-position = Vector2( 332.188, -18.5459 )
-
-[node name="Boton" parent="Daño/Plataformas/PlataformasMoviles/PlatBot2" instance=ExtResource( 5 )]
-position = Vector2( -53.4435, 268.193 )
-
-[node name="Plataforma" parent="Daño/Plataformas/PlataformasMoviles/PlatBot2" instance=ExtResource( 4 )]
-position = Vector2( 88.925, 364.178 )
-
-[node name="PlatBot3" type="Node2D" parent="Daño/Plataformas/PlataformasMoviles"]
-position = Vector2( 351.688, -19.5459 )
-
-[node name="Boton" parent="Daño/Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 5 )]
-position = Vector2( -3.5349, 269.693 )
-
-[node name="Plataforma" parent="Daño/Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 4 )]
-position = Vector2( 184.742, 365.082 )
-
 [node name="Pinches" type="Node2D" parent="Daño"]
 position = Vector2( 574.995, 280 )
 
@@ -219,6 +159,66 @@ tile_data = PoolIntArray( 25, -2147483629, 0, 26, -2147483629, 0, 27, -214748362
 position = Vector2( -703.841, -303.844 )
 tile_data = PoolIntArray( 2359338, 19, 0, 2359339, -1073741798, 0, 2359340, 23, 0, 2424878, 21, 0, 2490413, 19, 0, 2490415, 21, 0, 2490464, 536870938, 0, 2490467, 26, 0, 2555951, -1073741798, 0, 2621553, -2147483622, 0, 2621562, -1610612710, 0, 2949242, -536870886, 0, 3211324, -536870886, 0 )
 
+[node name="Plataformas" type="Node2D" parent="."]
+
+[node name="Plataformas Estaticas" type="Node2D" parent="Plataformas"]
+
+[node name="Plataforma1" type="Node2D" parent="Plataformas/Plataformas Estaticas"]
+position = Vector2( 232.037, 473.445 )
+
+[node name="Plataforma" parent="Plataformas/Plataformas Estaticas/Plataforma1" instance=ExtResource( 4 )]
+position = Vector2( -8, -50.6994 )
+
+[node name="Pinche" parent="Plataformas/Plataformas Estaticas/Plataforma1" instance=ExtResource( 6 )]
+position = Vector2( -12.2378, -64.1217 )
+
+[node name="Plataforma5" type="Node2D" parent="Plataformas/Plataformas Estaticas"]
+position = Vector2( 1.53846, -18.5459 )
+
+[node name="Plataforma5" parent="Plataformas/Plataformas Estaticas/Plataforma5" instance=ExtResource( 4 )]
+position = Vector2( 170.701, 357.778 )
+
+[node name="Pinche4" parent="Plataformas/Plataformas Estaticas/Plataforma5" instance=ExtResource( 6 )]
+position = Vector2( 155.681, 341.619 )
+
+[node name="Plataforma2" parent="Plataformas/Plataformas Estaticas" instance=ExtResource( 4 )]
+position = Vector2( 168.536, 453.994 )
+
+[node name="Plataforma3" parent="Plataformas/Plataformas Estaticas" instance=ExtResource( 4 )]
+position = Vector2( 171.201, 397.24 )
+
+[node name="Plataforma4" parent="Plataformas/Plataformas Estaticas" instance=ExtResource( 4 )]
+position = Vector2( 224.037, 369.052 )
+
+[node name="PlataformasMoviles" type="Node2D" parent="Plataformas"]
+position = Vector2( 7.97571, -1.05945 )
+
+[node name="PlatBot" type="Node2D" parent="Plataformas/PlataformasMoviles"]
+
+[node name="Boton" parent="Plataformas/PlataformasMoviles/PlatBot" instance=ExtResource( 5 )]
+position = Vector2( 10.3582, 267.443 )
+
+[node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot" instance=ExtResource( 4 )]
+position = Vector2( 76.7038, 266.977 )
+
+[node name="PlatBot2" type="Node2D" parent="Plataformas/PlataformasMoviles"]
+position = Vector2( 332.188, -18.5459 )
+
+[node name="Boton" parent="Plataformas/PlataformasMoviles/PlatBot2" instance=ExtResource( 5 )]
+position = Vector2( -52.9435, 270.068 )
+
+[node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot2" instance=ExtResource( 4 )]
+position = Vector2( 88.925, 364.178 )
+
+[node name="PlatBot3" type="Node2D" parent="Plataformas/PlataformasMoviles"]
+position = Vector2( 351.688, -19.5459 )
+
+[node name="Boton" parent="Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 5 )]
+position = Vector2( -3.39458, 270.815 )
+
+[node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 4 )]
+position = Vector2( 184.742, 365.082 )
+
 [node name="Mascota" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1212.33, 408.994 )
 
@@ -259,16 +259,6 @@ limit_right = 100000
 [connection signal="hitClone" from="Daño/Flechas/Flecha" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Flechas/Flecha2" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Flechas/Flecha2" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Plataformas/Plataformas Estaticas/Plataforma1/Pinche" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Plataformas/Plataformas Estaticas/Plataforma1/Pinche" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Plataformas/Plataformas Estaticas/Plataforma5/Pinche4" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Plataformas/Plataformas Estaticas/Plataforma5/Pinche4" to="." method="_on_delete_clone"]
-[connection signal="apretado" from="Daño/Plataformas/PlataformasMoviles/PlatBot/Boton" to="." method="_on_Boton_apretado"]
-[connection signal="suelto" from="Daño/Plataformas/PlataformasMoviles/PlatBot/Boton" to="." method="_on_Boton_suelto"]
-[connection signal="apretado" from="Daño/Plataformas/PlataformasMoviles/PlatBot2/Boton" to="." method="_on_BotonV1_apretado"]
-[connection signal="suelto" from="Daño/Plataformas/PlataformasMoviles/PlatBot2/Boton" to="." method="_on_BotonV1_suelto"]
-[connection signal="apretado" from="Daño/Plataformas/PlataformasMoviles/PlatBot3/Boton" to="." method="_on_BotonV2_apretado"]
-[connection signal="suelto" from="Daño/Plataformas/PlataformasMoviles/PlatBot3/Boton" to="." method="_on_BotonV2_suelto"]
 [connection signal="hit" from="Daño/Pinches/Pinches1/Pinche2" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Pinches/Pinches1/Pinche2" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Pinches/Pinches1/Pinche3" to="." method="_on_game_over"]
@@ -299,4 +289,14 @@ limit_right = 100000
 [connection signal="hitClone" from="Daño/Fuegoo/Fuego3" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Fuegoo/Fuego" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Fuegoo/Fuego" to="." method="_on_delete_clone"]
+[connection signal="hit" from="Plataformas/Plataformas Estaticas/Plataforma1/Pinche" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Plataformas/Plataformas Estaticas/Plataforma1/Pinche" to="." method="_on_delete_clone"]
+[connection signal="hit" from="Plataformas/Plataformas Estaticas/Plataforma5/Pinche4" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Plataformas/Plataformas Estaticas/Plataforma5/Pinche4" to="." method="_on_delete_clone"]
+[connection signal="apretado" from="Plataformas/PlataformasMoviles/PlatBot/Boton" to="." method="_on_Boton_apretado"]
+[connection signal="suelto" from="Plataformas/PlataformasMoviles/PlatBot/Boton" to="." method="_on_Boton_suelto"]
+[connection signal="apretado" from="Plataformas/PlataformasMoviles/PlatBot2/Boton" to="." method="_on_BotonV1_apretado"]
+[connection signal="suelto" from="Plataformas/PlataformasMoviles/PlatBot2/Boton" to="." method="_on_BotonV1_suelto"]
+[connection signal="apretado" from="Plataformas/PlataformasMoviles/PlatBot3/Boton" to="." method="_on_BotonV2_apretado"]
+[connection signal="suelto" from="Plataformas/PlataformasMoviles/PlatBot3/Boton" to="." method="_on_BotonV2_suelto"]
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
