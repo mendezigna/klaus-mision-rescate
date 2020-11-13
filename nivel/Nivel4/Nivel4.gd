@@ -5,12 +5,17 @@ export var cantDeClones = 3
 onready var plataformaH = $Plataformas/PlataformasMoviles/PlatBot/Plataforma
 onready var plataformaV1 = $Plataformas/PlataformasMoviles/PlatBot2/Plataforma
 onready var plataformaV2 = $Plataformas/PlataformasMoviles/PlatBot3/Plataforma
-
+export var test = false
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	plataformaH.start(0, 0, 0, 140)
 	plataformaV1.start(95, 0, 0, 0)
 	plataformaV2.start(95, 0, 0, 0)
+	if test:
+		for light in get_tree().get_nodes_in_group("light"):
+			light.enabled = false
+			$Background/CanvasModulate.visible = false
+			$Background2/CanvasModulate.visible = false
 
 # warning-ignore:unused_argument
 func _physics_process(delta):

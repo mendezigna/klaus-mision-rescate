@@ -517,7 +517,6 @@ font_data = ExtResource( 11 )
 position = Vector2( 6.17355, 0 )
 script = ExtResource( 7 )
 cantDeClones = 4
-test = true
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( -7.07049, 13.3543 )
@@ -704,9 +703,6 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
-
-[node name="AudioFondo" parent="Player" index="7"]
-volume_db = -80.0
 
 [node name="AudioMuerte" parent="Player" index="8"]
 volume_db = -80.0
