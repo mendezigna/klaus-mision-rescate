@@ -53,6 +53,7 @@ func morir():
 	sprite.hide()
 	estaVivo = false
 	$CollisionShape2D.set_deferred("disabled", true)
+	$CollisionShape2D2.set_deferred("disabled", true)
 	$Muerte.start()
 
 func desactivar():
