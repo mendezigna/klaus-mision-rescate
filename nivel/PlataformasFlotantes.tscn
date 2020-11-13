@@ -95,9 +95,9 @@ polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=31]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="OccluderPolygon2D" id=32]
+[sub_resource type="OccluderPolygon2D" id=57]
 closed = false
-polygon = PoolVector2Array( 2.16827, 4.54269, 8.19641, 16, 47.5804, 15.3934, 47.5804, 0.12204, 9.00024, 0 )
+polygon = PoolVector2Array( 48, 16, 30.6288, 15.6948, 15.5584, 16, 11.5396, 15.6948, 8.52551, 14.3552, 7.85571, 9.66663, 5.51147, 8.99683, 2.16248, 5.64786, 4.50677, 1.62909, 7.52087, 0, 47.7086, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=33]
 points = PoolVector2Array( 8.84265, -0.0637932, 48, 0, 48, 16, 8.50616, 15.8624 )
@@ -692,8 +692,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 28/modulate = Color( 1, 1, 1, 1 )
 28/region = Rect2( 752, 16, 48, 16 )
 28/tile_mode = 0
-28/occluder_offset = Vector2( 0, 0 )
-28/occluder = SubResource( 32 )
+28/occluder_offset = Vector2( 10, 0 )
+28/occluder = SubResource( 57 )
 28/navigation_offset = Vector2( 0, 0 )
 28/shape_offset = Vector2( 0, 0 )
 28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -707,7 +707,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape": SubResource( 33 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-28/z_index = 0
+28/z_index = 10
 29/name = "mainlev_build.png 29"
 29/texture = ExtResource( 1 )
 29/tex_offset = Vector2( 0, 0 )
