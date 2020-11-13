@@ -19,6 +19,7 @@ func _physics_process(delta):
 		
 func _on_game_over():
 	$TimerDead.start()
+	boss.playerMurio()
 	player.morir()
 
 ##Cuando el tiempo se termine, reinicia el nivel.

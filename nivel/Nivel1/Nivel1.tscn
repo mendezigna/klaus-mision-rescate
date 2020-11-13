@@ -693,7 +693,7 @@ margin_top = 255.442
 margin_right = 766.216
 margin_bottom = 309.442
 custom_fonts/font = SubResource( 22 )
-text = "SHIFFT
+text = "SHIFT
 para que los clones
 floten"
 align = 1
