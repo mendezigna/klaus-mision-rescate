@@ -20,6 +20,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_vertical_guides_": [ 2271.29 ]
 }
+test = true
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1.56469, 1.5239 )

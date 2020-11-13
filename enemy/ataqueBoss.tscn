@@ -1,7 +1,8 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://BoosAssets/efects/Iceball_84x9.png" type="Texture" id=1]
 [ext_resource path="res://enemy/ataqueBoss.gd" type="Script" id=2]
+[ext_resource path="res://BoosAssets/efects/light.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -252,22 +253,32 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=62]
-extents = Vector2( 8.94455, 3.125 )
+extents = Vector2( 5.81496, 2.25092 )
 
-[node name="Area2D" type="Area2D"]
+[node name="ataqueBoss" type="Area2D"]
 collision_layer = 16
 collision_mask = 2147483653
 script = ExtResource( 2 )
 
+[node name="Light2D" type="Light2D" parent="." groups=[
+"light",
+]]
+position = Vector2( -1.84496, 0.5 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+energy = 0.43
+mode = 2
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -36.4932, 0.5 )
+scale = Vector2( 0.739044, 0.744656 )
 frames = SubResource( 61 )
 animation = "fuego"
+frame = 22
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.94455, 0.5 )
+position = Vector2( 24.3756, 0.0214481 )
 shape = SubResource( 62 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hit" from="." to="." method="_on_Area2D_hit"]

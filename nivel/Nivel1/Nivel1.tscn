@@ -517,6 +517,7 @@ font_data = ExtResource( 11 )
 position = Vector2( 6.17355, 0 )
 script = ExtResource( 7 )
 cantDeClones = 4
+test = true
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( -7.07049, 13.3543 )

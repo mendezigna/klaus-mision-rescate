@@ -3,10 +3,17 @@ extends Node2D
 onready var boss = $Boss
 onready var player = $Player
 export var cantDeClones = 3
+export var test = false
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	boss.personajePosition(player.position)
+	
+	if test:
+		for light in get_tree().get_nodes_in_group("light"):
+			light.enabled = false
+			$Background/CanvasModulate.visible = false
+			$Background2/CanvasModulate.visible = false
 	
 
 # warning-ignore:unused_argument
