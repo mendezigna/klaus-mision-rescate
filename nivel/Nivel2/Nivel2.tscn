@@ -218,13 +218,10 @@ position = Vector2( 711.588, 295.569 )
 next_level = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-<<<<<<< HEAD
 position = Vector2( 291.399, 465.902 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 15 )]
-=======
 position = Vector2( 455.273, 431.536 )
->>>>>>> 112dfe390fb1139a5b24b906eed9da7db9eda3c1
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 37.42, 469.271 )
