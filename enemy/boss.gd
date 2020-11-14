@@ -27,7 +27,7 @@ func playerMurio():
 	sprite.offset.y = -25
 
 func _on_Cooldown_timeout():
-	if playerVivo:
+	if playerVivo && yaSeMostro:
 		sprite.play("attack")
 		sprite.offset.x = 20
 		sprite.offset.y = -10

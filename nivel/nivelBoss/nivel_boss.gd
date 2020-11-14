@@ -20,7 +20,9 @@ func _ready():
 			$Background/CanvasModulate.visible = false
 			$Background2/CanvasModulate.visible = false
 	
-	player.desactivar()
+	player.puedeComenzarNivel(false)
+#	$Background/CanvasModulate.hide()
+#	$Background2/CanvasModulate.hide()
 	enfocar_al_boss_y_mostrar_el_nivel()
 	
 
@@ -42,7 +44,7 @@ func _on_TiempoDePresentacionDelBoss_timeout():
 
 func mostrar_el_nivel():
 	$Camera2D.limit_smoothed = false
-	$Camera2D.smoothing_speed = 0.2
+	$Camera2D.smoothing_speed = 0.3
 	aumentandoZoom = true
 	$Camera2D.position = $Puerta.position
 	$PresentarElNivel/TiempoDePresentacionDelNivel.start()
@@ -71,7 +73,9 @@ func _on_TiempoDePresentacionDelNivel_timeout():
 	$Camera2D.smoothing_speed = 5
 	disminuyendoZoom = true
 	yaSePresentoElNivel = true
-	player.activar()
+	player.puedeComenzarNivel(true)
+#	$Background/CanvasModulate.show()
+#	$Background2/CanvasModulate.show()
 
 
 

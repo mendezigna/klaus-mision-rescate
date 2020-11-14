@@ -263,23 +263,27 @@ script = ExtResource( 2 )
 [node name="Light2D" type="Light2D" parent="." groups=[
 "light",
 ]]
-position = Vector2( -1.84496, 0.5 )
+position = Vector2( 24.6433, -0.130672 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
-energy = 0.43
+color = Color( 0.741176, 0.984314, 0.980392, 1 )
 mode = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.739044, 0.744656 )
 frames = SubResource( 61 )
 animation = "fuego"
-frame = 25
+frame = 50
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 24.3756, 0.0214481 )
 shape = SubResource( 62 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 21.0462, 0 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hit" from="." to="." method="_on_Area2D_hit"]
 [connection signal="hitClone" from="." to="." method="_on_Area2D_hitClone"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_Visibility_screen_exited"]

@@ -15,3 +15,8 @@ func _on_Area2D_hit():
 	
 func _on_Area2D_hitClone(clone):
 	get_parent()._on_delete_clone(clone)
+
+
+func _on_Visibility_screen_exited():
+	print("hola")
+	queue_free()

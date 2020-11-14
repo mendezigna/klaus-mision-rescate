@@ -27,6 +27,12 @@ var index = 0;
 ##Para cambiar al player de nuevo
 var activo = true
 
+var puedeComenzarNivel = true
+
+func puedeComenzarNivel(valor):
+	puedeComenzarNivel = valor
+	
+
 ##Para saber que esta vivo
 var estaVivo = true
 
@@ -43,22 +49,23 @@ func setLabelText():
 	$CanvasLayer/Label.text = "Restantes: " + str(cantLimite - clones.size())
 
 func _physics_process(delta):
-	velocity.x = 0
-	var snap = 3
-	siEstaActivo()
-	if estaVivo:
-		if velocity.y != 0:
-			snap = Vector2(0,0)
-			caer()
-		elif velocity.x == 0 and sprite.animation != "summon" and sprite.animation != "land":
-			parar()
-		clonar()
-		manejarPlayer()
-		reiniciarClones()
-	# warning-ignore:return_value_discarded
-	move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
-	siEstaEnElPiso(delta)
-	interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
+	if (puedeComenzarNivel):
+		velocity.x = 0
+		var snap = 3
+		siEstaActivo()
+		if estaVivo:
+			if velocity.y != 0:
+				snap = Vector2(0,0)
+				caer()
+			elif velocity.x == 0 and sprite.animation != "summon" and sprite.animation != "land":
+				parar()
+			clonar()
+			manejarPlayer()
+			reiniciarClones()
+		# warning-ignore:return_value_discarded
+		move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
+		siEstaEnElPiso(delta)
+		interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
 
 func siEstaActivo():
 	if activo:

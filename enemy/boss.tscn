@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://BoosAssets/Enemy/demon-Files/PNG/demon-attack.png" type="Texture" id=1]
 [ext_resource path="res://BoosAssets/Enemy/demon-Files/PNG/demon-idle.png" type="Texture" id=2]
 [ext_resource path="res://BoosAssets/Enemy/demon-Files/PNG/demon-attack-no-breath.png" type="Texture" id=3]
 [ext_resource path="res://enemy/boss.gd" type="Script" id=4]
+[ext_resource path="res://Objetos/Light.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -136,7 +137,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 26 )
 animation = "idle"
-frame = 3
+frame = 5
 playing = true
 flip_h = true
 
@@ -149,7 +150,10 @@ wait_time = 6.0
 autostart = true
 
 [node name="TiempoParaEmpezar" type="Timer" parent="."]
-wait_time = 18.5
+wait_time = 12.0
+one_shot = true
+
+[node name="Light2D" parent="." instance=ExtResource( 5 )]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
