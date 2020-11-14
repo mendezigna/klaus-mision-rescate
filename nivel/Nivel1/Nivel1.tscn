@@ -704,11 +704,23 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
 
-[node name="AudioFondo" parent="Player" index="7"]
+[node name="AudioFondo" parent="Player" index="5"]
 volume_db = -80.0
 
-[node name="AudioMuerte" parent="Player" index="8"]
+[node name="AudioMuerte" parent="Player" index="6"]
 volume_db = -80.0
+
+[node name="Orbe1" parent="Player" index="10"]
+frame = 1
+
+[node name="Orbe3" parent="Player" index="11"]
+frame = 0
+
+[node name="Orbe4" parent="Player" index="12"]
+frame = 2
+
+[node name="Orbe2" parent="Player" index="13"]
+frame = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 73.0896, 401.169 )
