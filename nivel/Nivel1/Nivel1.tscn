@@ -1,11 +1,10 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objetos/plataforma.tscn" type="PackedScene" id=5]
-[ext_resource path="res://nivel/Nivel2/Nivel2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nivel/Nivel1/Nivel1.gd" type="Script" id=7]
 [ext_resource path="res://Objetos/Daño/lava/Lava.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=9]
@@ -611,7 +610,6 @@ position = Vector2( -793.815, 78.7394 )
 
 [node name="Puerta" parent="." instance=ExtResource( 4 )]
 position = Vector2( 971.315, 271.56 )
-next_level = ExtResource( 6 )
 
 [node name="Piso" type="TileMap" parent="."]
 position = Vector2( -11.2246, -59.4604 )
@@ -693,7 +691,7 @@ margin_top = 255.442
 margin_right = 766.216
 margin_bottom = 309.442
 custom_fonts/font = SubResource( 22 )
-text = "SHIFT
+text = "SHIFFT
 para que los clones
 floten"
 align = 1
@@ -704,14 +702,10 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
 
-<<<<<<< HEAD
 [node name="AudioFondo" parent="Player" index="5"]
 volume_db = -80.0
 
 [node name="AudioMuerte" parent="Player" index="6"]
-=======
-[node name="AudioMuerte" parent="Player" index="8"]
->>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 volume_db = -80.0
 
 [node name="Orbe1" parent="Player" index="10"]

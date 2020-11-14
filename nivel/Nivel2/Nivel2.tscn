@@ -200,7 +200,7 @@ position = Vector2( 333.458, 315.566 )
 position = Vector2( -7.55948, 1.25995 )
 
 [node name="Plataforma3" parent="Plataformas" instance=ExtResource( 4 )]
-position = Vector2( 171.347, 27.6018 )
+position = Vector2( 172.536, 28.791 )
 
 [node name="Suelo" type="Node2D" parent="."]
 position = Vector2( 711.588, 305.104 )
@@ -218,13 +218,9 @@ position = Vector2( 711.588, 295.569 )
 next_level = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-<<<<<<< HEAD
-position = Vector2( 446.004, 465.985 )
-=======
 position = Vector2( 291.399, 465.902 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 15 )]
->>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 37.42, 469.271 )
