@@ -6,7 +6,8 @@ export var cantDeClones = 3
 export var test = false
 onready var plataforma1 = $plataformas/plataforma1/Plataforma
 var yaSePresentoElNivel = false
-
+var aumentandoZoom = false
+var disminuyendoZoom = false
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
@@ -21,7 +22,7 @@ func _ready():
 	
 	player.desactivar()
 	enfocar_al_boss_y_mostrar_el_nivel()
-	player.activar()
+	
 
 
 func enfocar_al_boss_y_mostrar_el_nivel():
@@ -40,16 +41,44 @@ func _on_TiempoDePresentacionDelBoss_timeout():
 
 
 func mostrar_el_nivel():
-#	while(true):
-#		$Camera2D.position = 
-	yaSePresentoElNivel = true
+	$Camera2D.limit_smoothed = false
+	$Camera2D.smoothing_speed = 0.2
+	aumentandoZoom = true
+	$Camera2D.position = $Puerta.position
+	$PresentarElNivel/TiempoDePresentacionDelNivel.start()
+	
+	
+func aumentar_zoom():
+	if (aumentandoZoom && $Camera2D.zoom.x <= 0.8):
+		$Camera2D.zoom.x += 0.01
+		$Camera2D.zoom.y += 0.01
+	else:
+		aumentandoZoom = false
 	
 
+func disminuirZoom():
+	if (disminuyendoZoom && $Camera2D.zoom.x >= 0.45):
+		$Camera2D.zoom.x -= 0.01
+		$Camera2D.zoom.y -= 0.01
+	else:
+		disminuyendoZoom = false
+	
+
+
+
+func _on_TiempoDePresentacionDelNivel_timeout():
+	$Camera2D.limit_smoothed = true
+	$Camera2D.smoothing_speed = 5
+	disminuyendoZoom = true
+	yaSePresentoElNivel = true
+	player.activar()
 
 
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
+	aumentar_zoom()
+	disminuirZoom()
 	if yaSePresentoElNivel:
 		if player.activo:
 			$Camera2D.position =  player.position
@@ -85,6 +114,7 @@ func _on_Boton_apretado():
 
 func _on_Boton_suelto():
 	plataforma1.bajar(0.5)
+
 
 
 
