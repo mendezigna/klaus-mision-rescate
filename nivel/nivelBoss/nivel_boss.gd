@@ -10,10 +10,10 @@ var yaSePresentoElNivel = false
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
-	boss.personajePosition(player.position)
+	boss.personaje_Position(player.position)
 	plataforma1.start(300, 0, 0, 0)
 	
-	if test:
+	if get_node("/root/Global").test:
 		for light in get_tree().get_nodes_in_group("light"):
 			light.enabled = false
 			$Background/CanvasModulate.visible = false
@@ -42,7 +42,8 @@ func _on_TiempoDePresentacionDelBoss_timeout():
 func mostrar_el_nivel():
 #	while(true):
 #		$Camera2D.position = 
-	pass
+	yaSePresentoElNivel = true
+	
 
 
 
@@ -54,7 +55,8 @@ func _physics_process(delta):
 			$Camera2D.position =  player.position
 		elif player.new_clon != null:
 			$Camera2D.position =  player.new_clon.position
-		boss.personajePosition(player.position)
+		boss.personaje_Position(player.position)
+
 
 
 func _on_game_over():

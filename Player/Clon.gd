@@ -8,7 +8,7 @@ export var gravity = 100
 onready var sprite = $AnimatedSprite
 var activo = true
 var estaVivo = true
-var jumping = false
+var jumping = false	
 
 func get_input():
 	if estaVivo:
@@ -53,7 +53,6 @@ func morir():
 	sprite.hide()
 	estaVivo = false
 	$CollisionShape2D.set_deferred("disabled", true)
-	$CollisionShape2D2.set_deferred("disabled", true)
 	$Muerte.start()
 
 func desactivar():
@@ -108,6 +107,8 @@ func _on_Muerte_timeout():
 	
 func _ready():
 	$Aparicion.play("aparecer")
+	if get_node("/root/Global").test:
+		$Light2D.enabled = false
 
 
 func _on_Aparicion_animation_finished():

@@ -17,7 +17,7 @@ func _physics_process(delta):
 			position.x += 0.5
 		position.y = personajePosition.y
 
-func personajePosition(position):
+func personaje_Position(position):
 	personajePosition = position
 	
 func playerMurio():

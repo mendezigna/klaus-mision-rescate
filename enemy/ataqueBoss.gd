@@ -1,5 +1,9 @@
 extends "res://Objetos/Daño/Daño.gd"
 
+func _ready():
+	if get_node("/root/Global").test:
+		$Light2D.enabled = false
+
 func start(positionx, positiony):
 	global_position = Vector2(positionx, positiony)
 
