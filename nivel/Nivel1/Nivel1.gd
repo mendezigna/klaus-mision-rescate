@@ -11,7 +11,7 @@ func _ready():
 	plataforma1.start(50, 0, 0, 0)
 	plataforma2.start(115, 0, 0, 0)
 	
-	if test:
+	if get_node("/root/Global").test:
 		for light in get_tree().get_nodes_in_group("light"):
 			light.enabled = false
 			$Background/CanvasModulate.visible = false

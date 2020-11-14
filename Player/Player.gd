@@ -163,12 +163,13 @@ func remover_clones():
 func remove_clon(clon):
 	if clon == new_clon:
 		new_clon = null
+		activar()
 	colors.append(clon.modulate.to_html())
 	clones.erase(clon)
 	orbes[clones.size()].show()
 	clon.morir()
 	setLabelText()
-	activar()
+	
 
 func activar():
 	activo = true

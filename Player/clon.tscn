@@ -485,7 +485,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 30 )
 animation = "stop"
-frame = 2
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

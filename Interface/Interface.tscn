@@ -43,6 +43,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label2" type="Label" parent="."]
+margin_left = 78.8938
+margin_top = 554.555
+margin_right = 375.894
+margin_bottom = 618.555
+custom_fonts/font = SubResource( 1 )
+text = "Luces"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameName" type="Label" parent="."]
 margin_left = 328.0
 margin_top = 184.0
@@ -79,4 +90,15 @@ flip_h = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 8.58497
+margin_top = 546.673
+margin_right = 84.585
+margin_bottom = 586.673
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="StartBtn" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_CheckButton_pressed"]

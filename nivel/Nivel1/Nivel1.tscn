@@ -709,16 +709,16 @@ volume_db = -80.0
 volume_db = -80.0
 
 [node name="Orbe1" parent="Player" index="10"]
-frame = 1
+frame = 0
 
 [node name="Orbe3" parent="Player" index="11"]
-frame = 0
-
-[node name="Orbe4" parent="Player" index="12"]
 frame = 2
 
+[node name="Orbe4" parent="Player" index="12"]
+frame = 1
+
 [node name="Orbe2" parent="Player" index="13"]
-frame = 0
+frame = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 73.0896, 401.169 )
