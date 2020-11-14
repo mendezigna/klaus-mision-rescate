@@ -12,6 +12,7 @@ func _ready():
 	plataformaV1.start(95, 0, 0, 0)
 	plataformaV2.start(95, 0, 0, 0)
 
+
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	if player.activo:

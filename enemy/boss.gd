@@ -6,11 +6,16 @@ var personajePosition
 onready var sprite = $AnimatedSprite
 var playerVivo = true
 var atacando = false
+var yaSeMostro = false
+
+func _ready():
+	$TiempoParaEmpezar.start()
 
 func _physics_process(delta):
-	if playerVivo and !atacando:
-		position.x += 0.5
-	position.y = personajePosition.y
+	if yaSeMostro:
+		if playerVivo and !atacando:
+			position.x += 0.5
+		position.y = personajePosition.y
 
 func personajePosition(position):
 	personajePosition = position
@@ -45,3 +50,7 @@ func _on_AnimatedSprite_animation_finished():
 		sprite.play("idle")
 		sprite.offset.x = 0
 		sprite.offset.y = 0
+
+
+func _on_TiempoParaEmpezar_timeout():
+	yaSeMostro = true

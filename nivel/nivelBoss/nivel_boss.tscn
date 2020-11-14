@@ -15,6 +15,9 @@
 
 [node name="nivel_boss" type="Node2D"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_vertical_guides_": [ 3646.98 ]
+}
 test = true
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
@@ -35,9 +38,6 @@ scale = Vector2( 1.89946, 1.34121 )
 [node name="background4a" parent="Background" index="3"]
 position = Vector2( 910, 313 )
 scale = Vector2( 1.89903, 1.3322 )
-
-[node name="CanvasModulate" parent="Background" index="4"]
-visible = false
 
 [node name="Background2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1817.92, -4.68259 )
@@ -159,6 +159,16 @@ tile_data = PoolIntArray( -65497, -1073741816, 0, -65496, 21, 0, 39, -1073741816
 position = Vector2( -704.088, -304.604 )
 tile_data = PoolIntArray( 2883691, 33, 0, 2883692, 32, 0, 2883696, 33, 0, 2883697, 32, 0, 2883701, 33, 0, 2883702, 32, 0, 3080288, 1610612762, 0, 3211351, -1073741798, 0, 3211358, 1610612762, 0, 3473513, -1073741798, 0, 3473528, 1610612762, 0, 3473533, -1073741798, 0, 3473542, 1610612762, 0 )
 
+[node name="PresentarElNivel" type="Node2D" parent="."]
+position = Vector2( 73.9469, 400.896 )
+
+[node name="TiempoDePresentacionDelPersonaje" type="Timer" parent="PresentarElNivel"]
+one_shot = true
+
+[node name="TiempoDePresentacionDelBoss" type="Timer" parent="PresentarElNivel"]
+wait_time = 2.0
+one_shot = true
+
 [node name="Boss" parent="." instance=ExtResource( 5 )]
 position = Vector2( 56.1904, 388.066 )
 
@@ -215,6 +225,8 @@ limit_right = 3500
 [connection signal="hitClone" from="pinches/pinches2/Pinche3" to="." method="_on_delete_clone"]
 [connection signal="apretado" from="plataformas/plataforma1/Boton" to="." method="_on_Boton_apretado"]
 [connection signal="suelto" from="plataformas/plataforma1/Boton" to="." method="_on_Boton_suelto"]
+[connection signal="timeout" from="PresentarElNivel/TiempoDePresentacionDelPersonaje" to="." method="_on_TiempoDePresentacionDelPersonaje_timeout"]
+[connection signal="timeout" from="PresentarElNivel/TiempoDePresentacionDelBoss" to="." method="_on_TiempoDePresentacionDelBoss_timeout"]
 [connection signal="hit" from="Boss" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Boss" to="." method="_on_delete_clone"]
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
