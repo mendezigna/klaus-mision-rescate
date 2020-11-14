@@ -217,10 +217,14 @@ tile_data = PoolIntArray( 1310744, 536870943, 0, 1310745, 536870940, 0, 1310746,
 position = Vector2( 711.588, 295.569 )
 next_level = ExtResource( 12 )
 
-[node name="TimerDead" parent="." instance=ExtResource( 15 )]
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
+<<<<<<< HEAD
 position = Vector2( 446.004, 465.985 )
+=======
+position = Vector2( 291.399, 465.902 )
+
+[node name="TimerDead" parent="." instance=ExtResource( 15 )]
+>>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 37.42, 469.271 )
@@ -291,5 +295,6 @@ limit_right = 100000
 [connection signal="hitClone" from="Daño/Lava/Lava 1/Lava4" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Lava/Lava 1/Lava5" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Lava/Lava 1/Lava5" to="." method="_on_delete_clone"]
+[connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
 
 [editable path="Daño/Pinches/Pinche4"]

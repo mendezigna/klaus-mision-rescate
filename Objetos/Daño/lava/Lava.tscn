@@ -45,7 +45,9 @@ modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
 position = Vector2( 0, 1.41421 )
 shape = SubResource( 6 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Light2D" type="Light2D" parent="." groups=[
+"light",
+]]
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 color = Color( 1, 0.827451, 0.745098, 1 )

@@ -693,7 +693,7 @@ margin_top = 255.442
 margin_right = 766.216
 margin_bottom = 309.442
 custom_fonts/font = SubResource( 22 )
-text = "SHIFFT
+text = "SHIFT
 para que los clones
 floten"
 align = 1
@@ -704,10 +704,14 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
 
+<<<<<<< HEAD
 [node name="AudioFondo" parent="Player" index="5"]
 volume_db = -80.0
 
 [node name="AudioMuerte" parent="Player" index="6"]
+=======
+[node name="AudioMuerte" parent="Player" index="8"]
+>>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 volume_db = -80.0
 
 [node name="Orbe1" parent="Player" index="10"]

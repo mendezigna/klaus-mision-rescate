@@ -270,7 +270,6 @@ __meta__ = {
 position = Vector2( -3.76571, -13.0517 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 61 )
-frame = 38
 playing = true
 centered = false
 flip_h = true
@@ -279,7 +278,9 @@ flip_h = true
 position = Vector2( -0.131067, 0.0131798 )
 shape = SubResource( 62 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Light2D" type="Light2D" parent="." groups=[
+"light",
+]]
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 color = Color( 1, 0.94902, 0.666667, 1 )

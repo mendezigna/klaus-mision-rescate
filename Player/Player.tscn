@@ -53,6 +53,7 @@ atlas = ExtResource( 2 )
 region = Rect2( 100, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=11]
+<<<<<<< HEAD
 atlas = ExtResource( 2 )
 region = Rect2( 150, 74, 50, 37 )
 
@@ -91,6 +92,46 @@ region = Rect2( 200, 37, 50, 37 )
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 2 )
 region = Rect2( 250, 37, 50, 37 )
+=======
+atlas = ExtResource( 3 )
+region = Rect2( 0, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 400, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 450, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 100, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 150, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 200, 74, 50, 37 )
+>>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 2 )
@@ -152,20 +193,35 @@ animations = [ {
 "name": "dead",
 "speed": 9.0
 }, {
+<<<<<<< HEAD
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+=======
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+>>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 "loop": false,
-"name": "jump",
-"speed": 10.0
+"name": "dead",
+"speed": 9.0
 }, {
+<<<<<<< HEAD
 "frames": [ SubResource( 13 ), SubResource( 14 ) ],
+=======
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+>>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 "loop": false,
 "name": "land",
 "speed": 10.0
 }, {
+<<<<<<< HEAD
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+=======
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+>>>>>>> 979605aced4e267ca2a6e430cb892ef61cede3df
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
@@ -243,7 +299,9 @@ stream = ExtResource( 6 )
 position = Vector2( -0.280327, 16.4853 )
 scale_amount = 1.4
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Light2D" type="Light2D" parent="." groups=[
+"light",
+]]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 10 )
 energy = 0.77

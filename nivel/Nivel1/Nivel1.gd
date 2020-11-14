@@ -4,12 +4,18 @@ onready var player = $Player
 export var cantDeClones = 3
 onready var plataforma1 = $Plataformas/plataforma1/Plataforma
 onready var plataforma2 = $Plataformas/plataforma2/Plataforma
-
+export var test = false
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	plataforma1.start(50, 0, 0, 0)
 	plataforma2.start(115, 0, 0, 0)
+	
+	if test:
+		for light in get_tree().get_nodes_in_group("light"):
+			light.enabled = false
+			$Background/CanvasModulate.visible = false
+	
 	
 	
 # warning-ignore:unused_argument
