@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objetos/plataforma.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nivel/Nivel2/Nivel2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nivel/Nivel1/Nivel1.gd" type="Script" id=7]
 [ext_resource path="res://Objetos/Daño/lava/Lava.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=9]
@@ -515,7 +516,6 @@ font_data = ExtResource( 11 )
 [node name="Nivel1" type="Node2D"]
 position = Vector2( 6.17355, 0 )
 script = ExtResource( 7 )
-cantDeClones = 4
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( -7.07049, 13.3543 )
@@ -610,6 +610,7 @@ position = Vector2( -793.815, 78.7394 )
 
 [node name="Puerta" parent="." instance=ExtResource( 4 )]
 position = Vector2( 971.315, 271.56 )
+next_level = ExtResource( 6 )
 
 [node name="Piso" type="TileMap" parent="."]
 position = Vector2( -11.2246, -59.4604 )
@@ -663,10 +664,10 @@ __meta__ = {
 [node name="Clonar" type="Label" parent="Instrucciones" groups=[
 "label",
 ]]
-margin_left = 306.571
-margin_top = 389.27
-margin_right = 375.571
-margin_bottom = 408.27
+margin_left = 296.672
+margin_top = 406.948
+margin_right = 365.672
+margin_bottom = 425.948
 custom_fonts/font = SubResource( 22 )
 text = "E clonar"
 __meta__ = {
@@ -674,10 +675,10 @@ __meta__ = {
 }
 
 [node name="MatarClon" type="Label" parent="Instrucciones"]
-margin_left = 431.061
-margin_top = 374.875
-margin_right = 537.061
-margin_bottom = 409.875
+margin_left = 399.241
+margin_top = 393.967
+margin_right = 505.241
+margin_bottom = 428.967
 custom_fonts/font = SubResource( 22 )
 text = "R borrar 
 todos los clones"
@@ -686,12 +687,12 @@ __meta__ = {
 }
 
 [node name="UtilizaElClon" type="Label" parent="Instrucciones"]
-margin_left = 642.216
-margin_top = 255.442
-margin_right = 766.216
-margin_bottom = 309.442
+margin_left = 637.266
+margin_top = 264.634
+margin_right = 761.266
+margin_bottom = 318.634
 custom_fonts/font = SubResource( 22 )
-text = "SHIFFT
+text = "SHIFT
 para que los clones
 floten"
 align = 1
@@ -702,22 +703,7 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
 
-[node name="AudioFondo" parent="Player" index="5"]
-volume_db = -80.0
-
-[node name="AudioMuerte" parent="Player" index="6"]
-volume_db = -80.0
-
-[node name="Orbe1" parent="Player" index="10"]
-frame = 0
-
-[node name="Orbe3" parent="Player" index="11"]
-frame = 2
-
-[node name="Orbe4" parent="Player" index="12"]
-frame = 1
-
-[node name="Orbe2" parent="Player" index="13"]
+[node name="AnimatedSprite" parent="Player" index="0"]
 frame = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -3,27 +3,29 @@ extends Node2D
 onready var boss = $Boss
 onready var player = $Player
 export var cantDeClones = 3
-export var test = false
 onready var plataforma1 = $plataformas/plataforma1/Plataforma
 var yaSePresentoElNivel = false
 var aumentandoZoom = false
 var disminuyendoZoom = false
+onready var global = get_node("/root/Global")
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
+	global.activarMusica()
 	boss.personaje_Position(player.position)
 	plataforma1.start(300, 0, 0, 0)
 	
-	if get_node("/root/Global").test:
+	if global.test:
 		for light in get_tree().get_nodes_in_group("light"):
 			light.enabled = false
 			$Background/CanvasModulate.visible = false
 			$Background2/CanvasModulate.visible = false
 	
-	player.puedeComenzarNivel(false)
-#	$Background/CanvasModulate.hide()
-#	$Background2/CanvasModulate.hide()
-	enfocar_al_boss_y_mostrar_el_nivel()
+	if !global.animacionBossHecha:
+		player.puedeComenzarNivel(false)
+	#	$Background/CanvasModulate.hide()
+	#	$Background2/CanvasModulate.hide()
+		enfocar_al_boss_y_mostrar_el_nivel()
 	
 
 
@@ -35,6 +37,7 @@ func enfocar_al_boss_y_mostrar_el_nivel():
 
 func _on_TiempoDePresentacionDelPersonaje_timeout():
 	$Camera2D.position =  boss.position
+	boss.reir()
 	$PresentarElNivel/TiempoDePresentacionDelBoss.start()
 
 
@@ -74,6 +77,7 @@ func _on_TiempoDePresentacionDelNivel_timeout():
 	disminuyendoZoom = true
 	yaSePresentoElNivel = true
 	player.puedeComenzarNivel(true)
+	global.animacionBossHecha = true
 #	$Background/CanvasModulate.show()
 #	$Background2/CanvasModulate.show()
 
@@ -83,7 +87,7 @@ func _on_TiempoDePresentacionDelNivel_timeout():
 func _physics_process(delta):
 	aumentar_zoom()
 	disminuirZoom()
-	if yaSePresentoElNivel:
+	if yaSePresentoElNivel or global.animacionBossHecha:
 		if player.activo:
 			$Camera2D.position =  player.position
 		elif player.new_clon != null:
@@ -91,11 +95,11 @@ func _physics_process(delta):
 		boss.personaje_Position(player.position)
 
 
-
 func _on_game_over():
 	$TimerDead.start()
 	boss.playerMurio()
 	player.morir()
+	global.desactivarMusica()
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():
@@ -112,13 +116,8 @@ func _win_game(body):
 		player.win()
 		$win.play()
 
-
 func _on_Boton_apretado():
 	plataforma1.subir(0.5)
 
 func _on_Boton_suelto():
 	plataforma1.bajar(0.5)
-
-
-
-

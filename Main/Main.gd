@@ -2,8 +2,7 @@ extends Node2D
 export (PackedScene) var firstLevel
 
 func _ready():
-	$AudioFondo.playing = true
-	
+	get_node("/root/Global").activarMusica()
 
 func _on_Interface_start():
 # warning-ignore:return_value_discarded

@@ -12,7 +12,7 @@ func _ready():
 	$TiempoParaEmpezar.start()
 
 func _physics_process(delta):
-	if yaSeMostro:
+	if yaSeMostro or get_node("/root/Global").animacionBossHecha:
 		if playerVivo and !atacando:
 			position.x += 0.5
 		position.y = personajePosition.y
@@ -22,6 +22,9 @@ func personaje_Position(position):
 	
 func playerMurio():
 	playerVivo = false
+	reir()
+	
+func reir():
 	sprite.play("attack no fire")
 	sprite.offset.x = 10
 	sprite.offset.y = -25

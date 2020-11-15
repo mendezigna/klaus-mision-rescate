@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://BoosAssets/player/main2.1.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://BoosAssets/minion/stop.png" type="Texture" id=4]
 [ext_resource path="res://Interface/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/gameover.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Musica.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Letras/gameovercre1.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Player/particulasPolvo.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objetos/Light.tscn" type="PackedScene" id=10]
@@ -30,43 +29,43 @@ region = Rect2( 150, 0, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 100, 74, 50, 37 )
+region = Rect2( 400, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 150, 74, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
-region = Rect2( 200, 74, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 400, 74, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
 region = Rect2( 450, 74, 50, 37 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 333, 50, 37 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 50, 333, 50, 37 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 100, 333, 50, 37 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 150, 333, 50, 37 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 200, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 100, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 150, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 200, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
@@ -147,20 +146,20 @@ animations = [ {
 "name": "stop",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": false,
-"name": "jump",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": false,
 "name": "land",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": false,
 "name": "dead",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
@@ -235,9 +234,6 @@ __meta__ = {
 [node name="GameOver" parent="Perdiste" instance=ExtResource( 5 )]
 visible = false
 
-[node name="AudioFondo" parent="." instance=ExtResource( 7 )]
-volume_db = -15.0
-
 [node name="AudioMuerte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 
@@ -245,7 +241,9 @@ stream = ExtResource( 6 )
 position = Vector2( -0.280327, 16.4853 )
 scale_amount = 1.4
 
-[node name="Light2D" parent="." instance=ExtResource( 10 )]
+[node name="Light2D" parent="." groups=[
+"light",
+] instance=ExtResource( 10 )]
 
 [node name="Orbe1" parent="." instance=ExtResource( 13 )]
 modulate = Color( 0.752941, 0.054902, 0.054902, 1 )

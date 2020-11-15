@@ -199,7 +199,7 @@ func win():
 	pararMusica()
 	
 func pararMusica():
-	$AudioFondo.stop()
+	get_node("/root/Global").desactivarMusica()
 
 func _on_AnimatedSprite_animation_finished():
 	if sprite.animation != "dead" and sprite.animation != "walk" and sprite.animation != "jump" and sprite.animation != "falling":
