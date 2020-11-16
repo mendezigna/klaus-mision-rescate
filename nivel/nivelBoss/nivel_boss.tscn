@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objetos/Antorchas/Antorcha.tscn" type="PackedScene" id=17]
 [ext_resource path="res://BoosAssets/background/props1.png" type="Texture" id=18]
+[ext_resource path="res://nivel/nivelFinal/nivelFinal.tscn" type="PackedScene" id=19]
 
 [node name="nivel_boss" type="Node2D"]
 script = ExtResource( 6 )
@@ -471,6 +472,7 @@ limit_right = 3500
 
 [node name="Puerta" parent="." instance=ExtResource( 16 )]
 position = Vector2( 3317.14, 358.809 )
+next_level = ExtResource( 19 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 8 )]
 [connection signal="hit" from="lavas/lava1/Lava" to="." method="_on_game_over"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Musica.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objetos/Puerta.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://nivel/PlataformasFlotantes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=6]
@@ -12,19 +12,24 @@
 [ext_resource path="res://Objetos/Camera2D.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=11]
 [ext_resource path="res://nivel/Nivel4/Nivel4.gd" type="Script" id=12]
-[ext_resource path="res://assets/win.wav" type="AudioStream" id=13]
+[ext_resource path="res://nivel/nivelBoss/nivel_boss.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/peligro.png" type="Texture" id=14]
-[ext_resource path="res://Objetos/Mascota/Mascota.tscn" type="PackedScene" id=15]
 [ext_resource path="res://nivel/Piso.tscn" type="PackedScene" id=16]
 
 [node name="Nivel3" type="Node2D"]
 script = ExtResource( 12 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( -5.39278, 25.839 )
 
 [node name="Background2" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 968.366, 33.1064 )
+
+[node name="Puerta" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1207.01, 393.651 )
+next_level = ExtResource( 13 )
 
 [node name="Daño" type="Node2D" parent="."]
 
@@ -219,10 +224,6 @@ position = Vector2( -3.39458, 270.815 )
 [node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 7 )]
 position = Vector2( 184.742, 365.082 )
 
-[node name="win" parent="." instance=ExtResource( 3 )]
-stream = ExtResource( 13 )
-autoplay = false
-
 [node name="peligro" type="Node2D" parent="."]
 position = Vector2( 583.471, 263.049 )
 
@@ -240,9 +241,6 @@ texture = ExtResource( 14 )
 
 [node name="peligro4" type="Sprite" parent="peligro"]
 texture = ExtResource( 14 )
-
-[node name="Mascota" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1212.33, 408.994 )
 
 [node name="TimerDead" type="Timer" parent="." groups=[
 "time",
