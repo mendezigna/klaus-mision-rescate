@@ -7,12 +7,15 @@ onready var sprite = $AnimatedSprite
 var playerVivo = true
 var atacando = false
 var yaSeMostro = false
-
+onready var global = get_node("/root/Global")
 func _ready():
-	$TiempoParaEmpezar.start()
+	if global.animacionBossHecha:
+		$Cooldown.start()
+	else:
+		$TiempoParaEmpezar.start()
 
 func _physics_process(delta):
-	if yaSeMostro or get_node("/root/Global").animacionBossHecha:
+	if yaSeMostro or global.animacionBossHecha:
 		if playerVivo and !atacando:
 			position.x += 0.5
 		position.y = personajePosition.y
@@ -30,7 +33,7 @@ func reir():
 	sprite.offset.y = -25
 
 func _on_Cooldown_timeout():
-	if playerVivo && yaSeMostro:
+	if playerVivo && (yaSeMostro or get_node("/root/Global").animacionBossHecha):
 		sprite.play("attack")
 		sprite.offset.x = 20
 		sprite.offset.y = -10
@@ -57,3 +60,4 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_TiempoParaEmpezar_timeout():
 	yaSeMostro = true
+	$Cooldown.start()

@@ -6,8 +6,8 @@ var animacionBossHecha = false
 
 func desactivarMusica():
 	musicaActiva = false
-	$AudioStreamPlayer2D.playing = false
+	$MusicaDeFondo.playing = false
 	
 func activarMusica():
 	musicaActiva = true
-	$AudioStreamPlayer2D.playing = true
+	$MusicaDeFondo.playing = true

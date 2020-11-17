@@ -704,7 +704,7 @@ __meta__ = {
 position = Vector2( 73.4766, 381.39 )
 
 [node name="AnimatedSprite" parent="Player" index="0"]
-frame = 1
+frame = 2
 
 [node name="Orbe0" parent="Player" index="7"]
 playing = false

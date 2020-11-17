@@ -205,7 +205,7 @@ func morir():
 		$AudioMuerte.play()
 	
 func win():
-	interfaceLabel.text = "YOU WIN!!"
+	interfaceLabel.text = "Ganaste!!"
 	interface.show()
 	desactivar()
 	interfaceTimer.hide()

@@ -37,7 +37,6 @@ func _on_delete_clone(clone):
 func _win_game(body):
 	if body.is_in_group("player"):
 		player.win()
-		$win.play()
 
 
 func _on_colision1_body_entered(body):

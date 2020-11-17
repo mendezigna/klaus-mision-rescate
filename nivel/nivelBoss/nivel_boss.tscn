@@ -263,8 +263,8 @@ position = Vector2( 820.772, -235.463 )
 [node name="Fondo" type="Sprite" parent="Antorchas/Antorcha4"]
 modulate = Color( 0.698039, 0.780392, 0.858824, 1 )
 self_modulate = Color( 0.54902, 0.713726, 0.878431, 1 )
-position = Vector2( 666.257, 368.348 )
-scale = Vector2( 1.35954, 1.24203 )
+position = Vector2( 663.782, 349.245 )
+scale = Vector2( 1.2822, 1.48081 )
 texture = ExtResource( 18 )
 vframes = 8
 hframes = 20
@@ -476,12 +476,10 @@ next_level = ExtResource( 19 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 8 )]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -5.0
 autoplay = true
-max_distance = 6000.0
-attenuation = 0.00306478
 [connection signal="hit" from="Lavas/lava1/Lava" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Lavas/lava1/Lava" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Lavas/lava1/Lava2" to="." method="_on_game_over"]

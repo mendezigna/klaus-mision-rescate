@@ -2,7 +2,9 @@
 
 [ext_resource path="res://BoosAssets/efects/light.png" type="Texture" id=1]
 
-[node name="Light2D" type="Light2D"]
+[node name="Light2D" type="Light2D" groups=[
+"light",
+]]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 energy = 0.77

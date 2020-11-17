@@ -12,6 +12,7 @@ onready var global = get_node("/root/Global")
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	global.desactivarMusica()
+	$AudioStreamPlayer2D.playing = true
 	boss.personaje_Position(player.position)
 	plataforma1.start(300, 0, 0, 0)
 	
@@ -100,6 +101,7 @@ func _on_game_over():
 	boss.playerMurio()
 	player.morir()
 	global.desactivarMusica()
+	$AudioStreamPlayer2D.playing = false
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():
