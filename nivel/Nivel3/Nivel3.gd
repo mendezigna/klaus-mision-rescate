@@ -77,4 +77,3 @@ func _on_game_over():
 	$TimerDead.start()
 	player.morir()
 
-
