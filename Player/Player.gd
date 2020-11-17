@@ -15,38 +15,45 @@ export var gravity = 98
 
 ##Crear clones
 var Clon = preload("res://Player/clon.tscn")
-var Orbe = preload("res://Player/Orbe.tscn")
 var colors = ["ff3737", "ff4f7ddf", "00ff00", "ffb76fd8"]
-var orbes = []
 var new_clon
 var jumping = false
 var clones = []
 var cantLimite = 0
 var count = 0
 var index = 0;
+
 ##Para cambiar al player de nuevo
 var activo = true
 
 var puedeComenzarNivel = true
 
-func puedeComenzarNivel(valor):
-	puedeComenzarNivel = valor
-	
+##Orbe
+var Orbe = preload("res://Player/Orbe.tscn")
+var orbes = []
+var clonesMuertos = 0
+var clonesActivos = 0
 
 ##Para saber que esta vivo
 var estaVivo = true
-
+var algo
 func _ready():
 	interface.hide()
-	orbes = [$Orbe1, $Orbe2, $Orbe3, $Orbe4]
-
+	orbes = [$Orbe0, $Orbe2, $Orbe3, $Orbe4]
+	
 ##Se limita la cantidad de clones
 func setCantLimiteClones(numero):
 	cantLimite = numero
+	aparecerTodosLosOrbes()
+	if colors.size() > cantLimite:
+		colors.pop_back()
 	setLabelText()
 
 func setLabelText():
 	$CanvasLayer/Label.text = "Restantes: " + str(cantLimite - clones.size())
+	
+func puedeComenzarNivel(valor):
+	puedeComenzarNivel = valor
 
 func _physics_process(delta):
 	if (puedeComenzarNivel):
@@ -147,13 +154,18 @@ func agregarClon():
 		new_clon.desactivar()
 	new_clon = Clon.instance()
 	new_clon.cambiarColor(colors.pop_front())
-	orbes[clones.size()].hide()
+	desactivarOrbe()
 	clones.append(new_clon)
 	get_parent().add_child(new_clon)
 	new_clon.position = $PosicionClon.global_position
 	desactivar()
 	new_clon.activar()
 	setLabelText()
+
+func desactivarOrbe():
+	clonesActivos += 1
+	if clonesActivos <= cantLimite - clonesMuertos:
+		orbes[clones.size() + clonesMuertos].hide()
 
 func desactivar():
 	activo = false
@@ -166,17 +178,30 @@ func remover_clones():
 	for clon in get_tree().get_nodes_in_group("clon"):
 		clon.desactivar()
 		remove_clon(clon)
+		aparecerTodosLosOrbes()
 
+func aparecerTodosLosOrbes():
+	clonesMuertos = 0
+	clonesActivos = 0
+	for num in range(cantLimite):
+		orbes[num].show()
+		
 func remove_clon(clon):
 	if clon == new_clon:
 		new_clon = null
 		activar()
 	colors.append(clon.modulate.to_html())
 	clones.erase(clon)
-	orbes[clones.size()].show()
+	activarOrbe()
 	clon.morir()
 	setLabelText()
-	
+
+func activarOrbe():
+	clonesActivos -= 1
+	orbes[clones.size() + clonesMuertos].show()
+	clonesMuertos += 1 
+	if (clonesMuertos == cantLimite - clonesActivos):
+		clonesMuertos = 0
 
 func activar():
 	activo = true
