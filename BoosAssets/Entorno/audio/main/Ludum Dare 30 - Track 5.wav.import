@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ludum Dare 30 - Track 5.wav-ed15a7a80f974848516374c56c2fd426.sample"
+
+[deps]
+
+source_file="res://BoosAssets/Entorno/audio/main/Ludum Dare 30 - Track 5.wav"
+dest_files=[ "res://.import/Ludum Dare 30 - Track 5.wav-ed15a7a80f974848516374c56c2fd426.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

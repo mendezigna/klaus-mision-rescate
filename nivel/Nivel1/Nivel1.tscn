@@ -664,10 +664,10 @@ __meta__ = {
 [node name="Clonar" type="Label" parent="Instrucciones" groups=[
 "label",
 ]]
-margin_left = 296.672
-margin_top = 406.948
-margin_right = 365.672
-margin_bottom = 425.948
+margin_left = 293.844
+margin_top = 412.605
+margin_right = 362.844
+margin_bottom = 431.605
 custom_fonts/font = SubResource( 22 )
 text = "E clonar"
 __meta__ = {
@@ -675,10 +675,10 @@ __meta__ = {
 }
 
 [node name="MatarClon" type="Label" parent="Instrucciones"]
-margin_left = 399.241
-margin_top = 393.967
-margin_right = 505.241
-margin_bottom = 428.967
+margin_left = 404.898
+margin_top = 377.704
+margin_right = 510.898
+margin_bottom = 412.704
 custom_fonts/font = SubResource( 22 )
 text = "R borrar 
 todos los clones"
@@ -704,7 +704,7 @@ __meta__ = {
 position = Vector2( 73.4766, 381.39 )
 
 [node name="AnimatedSprite" parent="Player" index="0"]
-frame = 0
+frame = 1
 
 [node name="Orbe0" parent="Player" index="7"]
 playing = false

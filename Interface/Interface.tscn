@@ -40,6 +40,9 @@ scale = Vector2( 1.07497, 1.29602 )
 position = Vector2( 515.657, 308.64 )
 scale = Vector2( 1.07749, 1.31403 )
 
+[node name="CanvasModulate" parent="Background" index="4"]
+visible = false
+
 [node name="Label" type="Label" parent="."]
 margin_left = 368.0
 margin_top = 368.0
