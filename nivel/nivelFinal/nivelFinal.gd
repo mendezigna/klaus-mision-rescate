@@ -41,8 +41,10 @@ func _win_game(body):
 
 
 func _on_colision1_body_entered(body):
-	$Player.puedeComenzarNivel(false)
-	$Mascota.caminar()
+	$Player.remover_clones()
+	if body.is_in_group("player"):
+		$Player.puedeComenzarNivel(false)
+		$Mascota.caminar()
 
 
 

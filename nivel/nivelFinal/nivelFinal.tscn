@@ -13,7 +13,7 @@
 [ext_resource path="res://assets/win.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 13.5681 )
+extents = Vector2( 10, 79.9249 )
 
 [node name="NivelFinal" type="Node2D"]
 position = Vector2( -15.8919, 0 )
@@ -51,6 +51,7 @@ position = Vector2( 461.947, 287.5 )
 stream = ExtResource( 11 )
 
 [node name="Colisiones" type="Node2D" parent="."]
+position = Vector2( -4.23785, -63.5678 )
 
 [node name="colision1" type="Area2D" parent="Colisiones"]
 position = Vector2( 458.205, 339.411 )
@@ -69,4 +70,3 @@ shape = SubResource( 1 )
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
 [connection signal="body_entered" from="Colisiones/colision1" to="." method="_on_colision1_body_entered"]
 [connection signal="area_entered" from="Colisiones/colision2" to="." method="_on_colision2_entered"]
-[connection signal="body_entered" from="Colisiones/colision2" to="." method="_on_colision2_body_entered"]

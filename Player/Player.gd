@@ -50,6 +50,11 @@ func setCantLimiteClones(numero):
 
 func puedeComenzarNivel(valor):
 	puedeComenzarNivel = valor
+	if(!valor):
+		$AnimatedSprite.play("stop")
+		$AnimatedSprite.offset.x = 0
+		$AnimatedSprite.offset.y = 0
+		
 
 func _physics_process(delta):
 	if (puedeComenzarNivel):

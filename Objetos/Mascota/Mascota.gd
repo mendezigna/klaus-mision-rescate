@@ -18,9 +18,9 @@ func caminar():
 func _physics_process(delta):
 	if (!estaSentado):
 		if (estaCaminando):
-			position.x -= 0.2
+			position.x -= 0.4
 		else: 
-			position.x -= 0.5
+			position.x -= 0.7
 
 
 func rencuentro():
@@ -29,4 +29,5 @@ func rencuentro():
 
 
 func _on_Mascota_body_entered(body):
-	rencuentro()
+	if body.is_in_group("player"):
+		rencuentro()
