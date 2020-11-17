@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Its_Time_To_Run.ogg-5dc6ffbe8b3d167b3b2c8e2425841fe1.oggstr"
+
+[deps]
+
+source_file="res://assets/Its_Time_To_Run.ogg"
+dest_files=[ "res://.import/Its_Time_To_Run.ogg-5dc6ffbe8b3d167b3b2c8e2425841fe1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

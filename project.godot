@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="Boss"
 run/main_scene="res://Main/Main.tscn"
-config/icon="res://assets/playerBlanco1.png"
 
 [autoload]
 

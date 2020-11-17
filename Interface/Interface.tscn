@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Interface/Interface.gd" type="Script" id=1]
 [ext_resource path="res://assets/Letras/3Dventure.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/playerVerde.png" type="Texture" id=3]
 [ext_resource path="res://assets/Letras/baby blocks.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/background2.png" type="Texture" id=5]
 [ext_resource path="res://assets/Letras/gameovercre1.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://BoosAssets/player/main.png" type="Texture" id=8]
@@ -42,27 +40,15 @@ scale = Vector2( 1.07497, 1.29602 )
 position = Vector2( 515.657, 308.64 )
 scale = Vector2( 1.07749, 1.31403 )
 
-[node name="CanvasModulate" parent="Background" index="4"]
-visible = false
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-margin_right = 1024.0
-margin_bottom = 600.0
-texture = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label" type="Label" parent="."]
-margin_left = 376.0
+margin_left = 368.0
 margin_top = 368.0
-margin_right = 673.0
+margin_right = 665.0
 margin_bottom = 432.0
 custom_fonts/font = SubResource( 1 )
 text = "Ayuda a Klaus a 
 rescatar a su mascota"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -110,19 +96,6 @@ texture = ExtResource( 8 )
 flip_h = true
 vframes = 10
 hframes = 10
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-margin_left = 678.0
-margin_top = 184.0
-margin_right = 742.0
-margin_bottom = 240.0
-texture = ExtResource( 3 )
-expand = true
-flip_h = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CheckButton" type="CheckButton" parent="."]
 margin_left = 8.58497

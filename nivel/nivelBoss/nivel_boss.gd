@@ -11,7 +11,7 @@ onready var global = get_node("/root/Global")
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
-	global.activarMusica()
+	global.desactivarMusica()
 	boss.personaje_Position(player.position)
 	plataforma1.start(300, 0, 0, 0)
 	

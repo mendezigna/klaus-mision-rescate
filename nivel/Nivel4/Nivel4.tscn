@@ -13,7 +13,7 @@
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=11]
 [ext_resource path="res://nivel/Nivel4/Nivel4.gd" type="Script" id=12]
 [ext_resource path="res://nivel/nivelBoss/nivel_boss.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/peligro.png" type="Texture" id=14]
+[ext_resource path="res://BoosAssets/Entorno/warning.webp" type="Texture" id=14]
 [ext_resource path="res://BoosAssets/wall.tscn" type="PackedScene" id=15]
 [ext_resource path="res://nivel/Piso.tscn" type="PackedScene" id=16]
 
@@ -213,7 +213,7 @@ position = Vector2( 332.188, -18.5459 )
 position = Vector2( -52.9435, 270.068 )
 
 [node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot2" instance=ExtResource( 7 )]
-position = Vector2( 88.925, 364.178 )
+position = Vector2( 98.8663, 363.701 )
 
 [node name="PlatBot3" type="Node2D" parent="Plataformas/PlataformasMoviles"]
 position = Vector2( 351.688, -19.5459 )
@@ -222,24 +222,29 @@ position = Vector2( 351.688, -19.5459 )
 position = Vector2( -3.39458, 270.815 )
 
 [node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 7 )]
-position = Vector2( 184.742, 365.082 )
+position = Vector2( 194.683, 364.605 )
 
 [node name="peligro" type="Node2D" parent="."]
 position = Vector2( 583.471, 263.049 )
 
 [node name="peligro" type="Sprite" parent="peligro"]
 position = Vector2( 176.126, -31.0005 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 14 )
 
 [node name="peligro2" type="Sprite" parent="peligro"]
-position = Vector2( -174.814, -3.33045 )
+position = Vector2( -167.471, -7.04883 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 14 )
 
 [node name="peligro3" type="Sprite" parent="peligro"]
-position = Vector2( -94.965, -1.271 )
+position = Vector2( -83.2402, -6.66504 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 14 )
 
 [node name="peligro4" type="Sprite" parent="peligro"]
+position = Vector2( -7.4707, -7.04883 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 14 )
 
 [node name="TimerDead" type="Timer" parent="." groups=[
@@ -248,7 +253,7 @@ texture = ExtResource( 14 )
 wait_time = 3.0
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 17.6496, 461.772 )
+position = Vector2( 57.6923, 462.887 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 13.2434, 471.521 )
