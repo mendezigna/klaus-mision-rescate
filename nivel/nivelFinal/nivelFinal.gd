@@ -38,3 +38,13 @@ func _win_game(body):
 	if body.is_in_group("player"):
 		player.win()
 		$win.play()
+
+
+func _on_colision1_body_entered(body):
+	$Player.puedeComenzarNivel(false)
+	$Mascota.caminar()
+
+
+
+func _on_colision2_entered(area):
+	$Mascota.correr()
