@@ -104,7 +104,7 @@ __meta__ = {
 }
 
 [node name="main" type="Sprite" parent="."]
-position = Vector2( 710.704, 205.331 )
+position = Vector2( 801.473, 247.855 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 flip_h = true
