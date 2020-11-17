@@ -1,36 +1,40 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Orbe.gd" type="Script" id=1]
 [ext_resource path="res://nivel/Nivel1/4-colors-of-glowing-balls-2.png" type="Texture" id=2]
+[ext_resource path="res://nivel/Nivel1/4-colors-of-glowing-balls-1.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 352, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 32, 32 )
+region = Rect2( 352, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 160, 0, 32, 32 )
+region = Rect2( 160, 128, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=39]
+[sub_resource type="SpriteFrames" id=40]
 animations = [ {
-"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"frames": [ SubResource( 39 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "default",
-"speed": 4.0
+"speed": 3.0
 } ]
 
 [node name="Orbe1" type="AnimatedSprite"]
-modulate = Color( 1, 0.215686, 0.215686, 1 )
 position = Vector2( -19.4602, -11.25 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 39 )
-frame = 2
+frames = SubResource( 40 )
 playing = true
 script = ExtResource( 1 )

@@ -40,7 +40,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Light2D2" type="Light2D" groups=[
+[node name="Antorcha" type="Light2D" groups=[
 "light",
 ]]
 position = Vector2( 481.677, 316.038 )
@@ -52,7 +52,6 @@ color = Color( 0.976471, 0.984314, 0.729412, 1 )
 position = Vector2( 4.17053, 26.4318 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 8 )
-frame = 2
 playing = true
 
 [node name="groundtorch2" type="Sprite" parent="."]

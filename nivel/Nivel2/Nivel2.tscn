@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Objetos/Daño/lava/Lava.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Objetos/Camera2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nivel/PlataformasFlotantes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objetos/Daño/flecha/Flecha.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objetos/Antorchas/Antorcha.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=9]
 [ext_resource path="res://BoosAssets/efects/light.png" type="Texture" id=10]
 [ext_resource path="res://nivel/Nivel2/Nivel2.gd" type="Script" id=11]
@@ -17,12 +17,25 @@
 [ext_resource path="res://Player/TimerDead.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objetos/Daño/araña/Araña.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objetos/Daño/murcielago/murcielago.tscn" type="PackedScene" id=17]
+[ext_resource path="res://BoosAssets/wall.tscn" type="PackedScene" id=18]
 
 [node name="Nivel2" type="Node2D"]
 script = ExtResource( 11 )
 
 [node name="Background" parent="." instance=ExtResource( 14 )]
 position = Vector2( -17.9148, 62.5935 )
+
+[node name="props2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 170.105, 283.279 )
+scale = Vector2( 1.24534, 2.1528 )
+flip_v = true
+
+[node name="props3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 518.854, 504.137 )
+scale = Vector2( 0.58522, 0.815465 )
+
+[node name="Antorcha" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 384 )
 
 [node name="Daño" type="Node2D" parent="."]
 
@@ -36,7 +49,7 @@ position = Vector2( 442.812, 476.231 )
 position = Vector2( 103.11, 362.394 )
 
 [node name="Fuego3" parent="Daño/Fuego" instance=ExtResource( 9 )]
-position = Vector2( 126.077, 368.673 )
+position = Vector2( 129.077, 368.673 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="Fuego6" parent="Daño/Fuego" instance=ExtResource( 9 )]
@@ -94,65 +107,6 @@ position = Vector2( 6.62205, -0.525583 )
 position = Vector2( -77.0974, 49.5882 )
 rotation = -1.5708
 
-[node name="Flechas" type="Node2D" parent="Daño"]
-position = Vector2( 0, 6.10352e-05 )
-
-[node name="FlechasL" type="Node2D" parent="Daño/Flechas"]
-position = Vector2( 168.595, 117.558 )
-
-[node name="Flecha1" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( -48.2232, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha7" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( -29.2197, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha2" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( -38.6807, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha3" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( 68.2659, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha4" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( 77.7996, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha8" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( 58.3541, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha5" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( 18.4567, 291.738 )
-gravedadY = -2.0
-
-[node name="Flecha6" parent="Daño/Flechas/FlechasL" instance=ExtResource( 8 )]
-position = Vector2( 8.45944, 291.738 )
-gravedadY = -2.0
-
-[node name="FlechasR" type="Node2D" parent="Daño/Flechas"]
-position = Vector2( 205.403, -2.4447 )
-
-[node name="FlechaL2a" parent="Daño/Flechas/FlechasR" instance=ExtResource( 8 )]
-position = Vector2( 289.755, 440.643 )
-
-[node name="FlechaL2b" parent="Daño/Flechas/FlechasR" instance=ExtResource( 8 )]
-position = Vector2( 321.03, 440.643 )
-
-[node name="FlechaL2c" parent="Daño/Flechas/FlechasR" instance=ExtResource( 8 )]
-position = Vector2( 351.482, 440.643 )
-
-[node name="FlechaL3a" parent="Daño/Flechas/FlechasR" instance=ExtResource( 8 )]
-position = Vector2( 168.176, 265.913 )
-
-[node name="FlechaL4a" parent="Daño/Flechas/FlechasR" instance=ExtResource( 8 )]
-position = Vector2( 318.229, 333.427 )
-rotation = -1.5708
-gravedadY = 0.0
-gravedadX = -1
-
 [node name="Lava" type="Node2D" parent="Daño"]
 
 [node name="Lava 1" type="Node2D" parent="Daño/Lava"]
@@ -198,7 +152,42 @@ mode = 2
 [node name="Araña2" type="Node2D" parent="Daño"]
 
 [node name="Araña" parent="Daño/Araña2" instance=ExtResource( 16 )]
-position = Vector2( 85, 409 )
+position = Vector2( 120.381, 408.697 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña2" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 139.494, 409.169 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña3" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 181.261, 408.933 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña4" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 226.803, 409.169 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña5" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 246.152, 408.933 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña6" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 501.646, 436.544 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña7" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 550.646, 436.544 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Araña8" parent="Daño/Araña2" instance=ExtResource( 16 )]
+position = Vector2( 373.946, 263.846 )
 collision_layer = 3
 collision_mask = 3
 
@@ -232,7 +221,7 @@ position = Vector2( 711.588, 295.569 )
 next_level = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 39.426, 460.952 )
+position = Vector2( 39.902, 466.01 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 15 )]
 
@@ -269,32 +258,6 @@ limit_right = 100000
 [connection signal="hitClone" from="Daño/Pinches/Pinche4" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Pinches/Pinche5" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Pinches/Pinche5" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha1" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha1" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha7" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha7" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha2" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha2" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha3" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha3" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha4" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha4" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha8" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha8" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha5" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha5" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasL/Flecha6" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasL/Flecha6" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasR/FlechaL2a" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasR/FlechaL2a" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasR/FlechaL2b" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasR/FlechaL2b" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasR/FlechaL2c" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasR/FlechaL2c" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasR/FlechaL3a" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasR/FlechaL3a" to="." method="_on_delete_clone"]
-[connection signal="hit" from="Daño/Flechas/FlechasR/FlechaL4a" to="." method="_on_game_over"]
-[connection signal="hitClone" from="Daño/Flechas/FlechasR/FlechaL4a" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Lava/Lava 1/Lava" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Lava/Lava 1/Lava" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Lava/Lava 1/Lava2" to="." method="_on_game_over"]
@@ -307,6 +270,30 @@ limit_right = 100000
 [connection signal="hitClone" from="Daño/Lava/Lava 1/Lava5" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Daño/Araña2/Araña" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Daño/Araña2/Araña" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña2" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña2" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña2" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña3" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña3" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña3" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña4" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña4" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña4" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña5" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña5" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña5" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña6" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña6" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña6" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña7" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña7" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña7" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Araña2/Araña8" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Araña2/Araña8" to="." method="_on_delete_clone"]
+[connection signal="input_event" from="Daño/Araña2/Araña8" to="." method="_on_body_entered"]
+[connection signal="hit" from="Daño/Murcielago/Murcielago" to="." method="_on_game_over"]
+[connection signal="hitClone" from="Daño/Murcielago/Murcielago" to="." method="_on_delete_clone"]
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
 
 [editable path="Daño/Pinches/Pinche4"]

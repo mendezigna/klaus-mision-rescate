@@ -10,4 +10,5 @@ script = ExtResource( 2 )
 firstLevel = ExtResource( 3 )
 
 [node name="Interface" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -1 )
 [connection signal="start" from="Interface" to="." method="_on_Interface_start"]

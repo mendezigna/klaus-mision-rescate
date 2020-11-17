@@ -39,19 +39,15 @@ var estaVivo = true
 var algo
 func _ready():
 	interface.hide()
-	orbes = [$Orbe0, $Orbe2, $Orbe3, $Orbe4]
-	
+	orbes = [$Orbe0, $Orbe1, $Orbe2, $Orbe3]
+
 ##Se limita la cantidad de clones
 func setCantLimiteClones(numero):
 	cantLimite = numero
 	aparecerTodosLosOrbes()
 	if colors.size() > cantLimite:
 		colors.pop_back()
-	setLabelText()
 
-func setLabelText():
-	$CanvasLayer/Label.text = "Restantes: " + str(cantLimite - clones.size())
-	
 func puedeComenzarNivel(valor):
 	puedeComenzarNivel = valor
 
@@ -154,18 +150,12 @@ func agregarClon():
 		new_clon.desactivar()
 	new_clon = Clon.instance()
 	new_clon.cambiarColor(colors.pop_front())
-	desactivarOrbe()
+	orbes[clones.size()].hide() 
 	clones.append(new_clon)
 	get_parent().add_child(new_clon)
 	new_clon.position = $PosicionClon.global_position
 	desactivar()
 	new_clon.activar()
-	setLabelText()
-
-func desactivarOrbe():
-	clonesActivos += 1
-	if clonesActivos <= cantLimite - clonesMuertos:
-		orbes[clones.size() + clonesMuertos].hide()
 
 func desactivar():
 	activo = false
@@ -184,6 +174,7 @@ func aparecerTodosLosOrbes():
 	clonesMuertos = 0
 	clonesActivos = 0
 	for num in range(cantLimite):
+		orbes[num].play("default")
 		orbes[num].show()
 		
 func remove_clon(clon):
@@ -192,16 +183,8 @@ func remove_clon(clon):
 		activar()
 	colors.append(clon.modulate.to_html())
 	clones.erase(clon)
-	activarOrbe()
+	orbes[clones.size()].show()
 	clon.morir()
-	setLabelText()
-
-func activarOrbe():
-	clonesActivos -= 1
-	orbes[clones.size() + clonesMuertos].show()
-	clonesMuertos += 1 
-	if (clonesMuertos == cantLimite - clonesActivos):
-		clonesMuertos = 0
 
 func activar():
 	activo = true
