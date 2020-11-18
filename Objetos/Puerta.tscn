@@ -18,6 +18,7 @@ func _on_Puerta_body_entered(body):
 extents = Vector2( 13.4492, 16.2495 )
 
 [node name="Puerta" type="Area2D"]
+collision_layer = 2
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

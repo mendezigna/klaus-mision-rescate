@@ -32,11 +32,13 @@ animations = [ {
 extents = Vector2( 7.98707, 6.44012 )
 
 [node name="Lava" type="Area2D"]
+collision_layer = 16
+collision_mask = 5
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -219,7 +219,7 @@ position = Vector2( 711.588, 295.569 )
 next_level = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 508.902, 378.01 )
+position = Vector2( 39.1457, 462.838 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 15 )]
 

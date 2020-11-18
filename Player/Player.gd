@@ -12,6 +12,7 @@ var velocity = Vector2()
 export var run_speed = 50
 export var jump_speed = -50
 export var gravity = 98
+var puedeMoverse = true
 
 ##Crear clones
 var Clon = preload("res://Player/clon.tscn")
@@ -93,18 +94,18 @@ func siEstaEnElPiso(delta):
 
 func clonar():
 	if Input.is_action_just_pressed("clonar") and clones.size() < cantLimite and is_on_floor():
-			agregarClon()
-			sprite.play("summon")
+		agregarClon()
+		sprite.play("summon")
 
 func manejarPlayer():
 	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
-			activar()
-			if new_clon != null:
-				new_clon.desactivar()
+		activar()
+		if new_clon != null:
+			new_clon.desactivar()
 
 func reiniciarClones():
 	if Input.is_action_just_pressed("reiniciar_clones") and clones.size() > 0:
-			remover_clones()
+		remover_clones()
 
 func parar():
 	sprite.play("stop")
@@ -120,11 +121,17 @@ func caer():
 			sprite.offset.x = 2
 		sprite.offset.y = 3.5
 
+func seApretoUnaTecla():
+	return Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_up")
+
 func get_input():
-	if (estaVivo):
+	if(!puedeMoverse and seApretoUnaTecla()):
+		puedeMoverse = true
+	if (estaVivo and puedeMoverse):
 		var right = Input.is_action_pressed('ui_right')
 		var left = Input.is_action_pressed('ui_left')
 		var jump = Input.is_action_just_pressed('ui_up')
+		
 		if right:
 			velocity.x += run_speed
 			if is_on_floor() and sprite.animation != "land" and sprite.animation != "summon":
@@ -185,7 +192,7 @@ func aparecerTodosLosOrbes():
 func remove_clon(clon):
 	if clon == new_clon:
 		new_clon = null
-		$ColdDown.start()
+		activar()
 	colors.append(clon.modulate.to_html())
 	clones.erase(clon)
 	orbes[clones.size()].show()
@@ -222,5 +229,3 @@ func _on_AnimatedSprite_animation_finished():
 	sprite.stop()
 
 
-func _on_ColdDown_timeout():
-	activar()

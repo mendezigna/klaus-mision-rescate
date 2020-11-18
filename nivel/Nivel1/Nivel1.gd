@@ -52,4 +52,5 @@ func _on_TimerDead_timeout():
 
 ##Se borra el clon tras su muerte.
 func _on_delete_clone(clone):
+	player.puedeMoverse = false
 	player.remove_clon(clone)
