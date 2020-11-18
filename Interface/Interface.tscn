@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Interface/Interface.gd" type="Script" id=1]
 [ext_resource path="res://assets/Letras/3Dventure.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://BoosAssets/Entorno/buttons/play2.png" type="Texture" id=3]
 [ext_resource path="res://assets/Letras/baby blocks.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/Letras/gameovercre1.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=7]
@@ -11,13 +12,13 @@
 size = 25
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 50
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 4 )
 
 [node name="Interface" type="Node2D"]
 script = ExtResource( 1 )
@@ -40,14 +41,11 @@ scale = Vector2( 1.07497, 1.29602 )
 position = Vector2( 515.657, 308.64 )
 scale = Vector2( 1.07749, 1.31403 )
 
-[node name="CanvasModulate" parent="Background" index="4"]
-visible = false
-
 [node name="Label" type="Label" parent="."]
-margin_left = 368.0
-margin_top = 368.0
-margin_right = 665.0
-margin_bottom = 432.0
+margin_left = 375.894
+margin_top = 313.855
+margin_right = 672.894
+margin_bottom = 377.855
 custom_fonts/font = SubResource( 1 )
 text = "Ayuda a Klaus a 
 rescatar a su mascota"
@@ -67,6 +65,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 388.0
+margin_top = 436.75
+margin_right = 571.0
+margin_bottom = 511.75
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+margin_left = 472.436
+margin_top = 469.473
+margin_right = 578.436
+margin_bottom = 524.473
+custom_fonts/font = SubResource( 3 )
+text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameName" type="Label" parent="."]
 margin_left = 328.0
 margin_top = 184.0
@@ -82,6 +103,7 @@ __meta__ = {
 }
 
 [node name="StartBtn" type="Button" parent="."]
+visible = false
 margin_left = 384.0
 margin_top = 512.0
 margin_right = 640.0
@@ -109,6 +131,7 @@ pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="TextureButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CheckButton" to="." method="_on_CheckButton_pressed"]
 

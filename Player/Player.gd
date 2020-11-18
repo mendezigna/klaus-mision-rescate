@@ -185,7 +185,7 @@ func aparecerTodosLosOrbes():
 func remove_clon(clon):
 	if clon == new_clon:
 		new_clon = null
-		activar()
+		$ColdDown.start()
 	colors.append(clon.modulate.to_html())
 	clones.erase(clon)
 	orbes[clones.size()].show()
@@ -220,3 +220,7 @@ func _on_AnimatedSprite_animation_finished():
 		sprite.offset.x = 0
 		sprite.offset.y = 0
 	sprite.stop()
+
+
+func _on_ColdDown_timeout():
+	activar()
