@@ -273,7 +273,7 @@ mode = 2
 scale = Vector2( 0.739044, 0.744656 )
 frames = SubResource( 61 )
 animation = "fuego"
-frame = 50
+frame = 21
 playing = true
 flip_h = true
 

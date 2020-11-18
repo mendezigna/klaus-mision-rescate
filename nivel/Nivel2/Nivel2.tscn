@@ -34,6 +34,11 @@ flip_v = true
 position = Vector2( 518.854, 504.137 )
 scale = Vector2( 0.58522, 0.815465 )
 
+[node name="props4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 360.186, 295.569 )
+scale = Vector2( 0.58522, 0.815465 )
+flip_v = true
+
 [node name="Antorcha" parent="." instance=ExtResource( 8 )]
 position = Vector2( 168, 384 )
 

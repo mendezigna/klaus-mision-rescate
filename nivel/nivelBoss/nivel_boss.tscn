@@ -463,6 +463,10 @@ one_shot = true
 [node name="Boss" parent="." instance=ExtResource( 5 )]
 position = Vector2( 136.19, 385.792 )
 
+[node name="Puerta" parent="." instance=ExtResource( 16 )]
+position = Vector2( 3317.14, 358.809 )
+next_level = ExtResource( 19 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 452.5, 428.992 )
 
@@ -470,10 +474,6 @@ position = Vector2( 452.5, 428.992 )
 position = Vector2( 453.885, 428.992 )
 zoom = Vector2( 0.45, 0.45 )
 limit_right = 3500
-
-[node name="Puerta" parent="." instance=ExtResource( 16 )]
-position = Vector2( 3317.14, 358.809 )
-next_level = ExtResource( 19 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 8 )]
 

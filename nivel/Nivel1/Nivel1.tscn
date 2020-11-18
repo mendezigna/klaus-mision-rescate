@@ -514,11 +514,26 @@ points = PoolVector2Array( 0, 0.5, 32, 0.5, 32, 32.5, 0, 32.5 )
 font_data = ExtResource( 11 )
 
 [node name="Nivel1" type="Node2D"]
-position = Vector2( 6.17355, 0 )
 script = ExtResource( 7 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( -7.07049, 13.3543 )
+
+[node name="background1" parent="Background" index="0"]
+position = Vector2( 516.01, 245 )
+scale = Vector2( 1.07406, 1.00295 )
+
+[node name="background2" parent="Background" index="1"]
+position = Vector2( 514.596, 245 )
+scale = Vector2( 1.07407, 1.01362 )
+
+[node name="background3" parent="Background" index="2"]
+position = Vector2( 520.253, 245 )
+scale = Vector2( 1.08749, 1.06621 )
+
+[node name="background4a" parent="Background" index="3"]
+position = Vector2( 514.95, 245 )
+scale = Vector2( 1.07601, 1.04887 )
 
 [node name="Daño" type="Node2D" parent="."]
 position = Vector2( 968.854, 338.297 )
@@ -703,9 +718,6 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
 
-[node name="AnimatedSprite" parent="Player" index="0"]
-frame = 2
-
 [node name="Orbe0" parent="Player" index="7"]
 playing = false
 
@@ -774,5 +786,7 @@ one_shot = true
 [connection signal="apretado" from="Plataformas/plataforma2/Boton" to="." method="_on_Boton2_apretado"]
 [connection signal="suelto" from="Plataformas/plataforma2/Boton" to="." method="_on_Boton2_suelto"]
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
+
+[editable path="Background"]
 
 [editable path="Player"]
