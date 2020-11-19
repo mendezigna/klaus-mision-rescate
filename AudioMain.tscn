@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://BoosAssets/Entorno/audio/main/Ludum Dare 30 - Track 5.wav" type="AudioStream" id=1]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -7.0
+autoplay = true

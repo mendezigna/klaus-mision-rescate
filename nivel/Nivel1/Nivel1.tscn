@@ -718,6 +718,9 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.4766, 381.39 )
 
+[node name="AnimatedSprite" parent="Player" index="0"]
+frame = 3
+
 [node name="Orbe0" parent="Player" index="7"]
 playing = false
 

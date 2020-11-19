@@ -1,27 +1,37 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Interface/Interface.gd" type="Script" id=1]
-[ext_resource path="res://assets/Letras/3Dventure.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/Letras/riverflows/RIVERFLOWS.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://BoosAssets/Entorno/buttons/play3.png" type="Texture" id=3]
-[ext_resource path="res://assets/Letras/baby blocks.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/Letras/gameovercre1.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/Letras/riverflows/RIVERFLOWS Italic.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://BoosAssets/Entorno/buttons/play3press.png" type="Texture" id=5]
+[ext_resource path="res://BoosAssets/Entorno/buttons/play3.Mouse.png" type="Texture" id=6]
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://BoosAssets/player/main.png" type="Texture" id=8]
+[ext_resource path="res://BoosAssets/background/mainlev_build.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 25
-font_data = ExtResource( 6 )
+size = 26
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 40
+size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 50
-font_data = ExtResource( 4 )
+size = 37
+font_data = ExtResource( 2 )
 
-[node name="Interface" type="Node2D"]
+[sub_resource type="DynamicFont" id=4]
+size = 54
+font_data = ExtResource( 2 )
+
+[node name="Interface" type="Control"]
+rect_pivot_offset = Vector2( -818.015, 609.574 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 
@@ -42,10 +52,10 @@ position = Vector2( 515.657, 308.64 )
 scale = Vector2( 1.07749, 1.31403 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 375.894
-margin_top = 313.855
-margin_right = 672.894
-margin_bottom = 377.855
+margin_left = 350.951
+margin_top = 234.476
+margin_right = 672.951
+margin_bottom = 299.476
 custom_fonts/font = SubResource( 1 )
 text = "Ayuda a Klaus a 
 rescatar a su mascota"
@@ -56,60 +66,56 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 78.8938
-margin_top = 554.555
+margin_top = 554.29
 margin_right = 375.894
-margin_bottom = 618.555
-custom_fonts/font = SubResource( 1 )
+margin_bottom = 618.29
+custom_fonts/font = SubResource( 2 )
 text = "Luces"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 388.0
-margin_top = 436.75
-margin_right = 571.0
-margin_bottom = 511.75
+margin_left = 371.719
+margin_top = 393.719
+margin_right = 558.719
+margin_bottom = 468.719
 rect_scale = Vector2( 1.5, 1.5 )
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Label" parent="."]
-visible = false
-margin_left = 472.436
-margin_top = 469.473
-margin_right = 578.436
-margin_bottom = 524.473
-custom_fonts/font = SubResource( 2 )
-text = "play"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GameName" type="Label" parent="."]
-margin_left = 328.0
-margin_top = 184.0
-margin_right = 711.0
-margin_bottom = 289.0
+margin_left = 450.957
+margin_top = 422.368
+margin_right = 576.957
+margin_bottom = 469.368
 custom_fonts/font = SubResource( 3 )
-text = "KLAUS 
-mision rescate"
+custom_colors/font_color = Color( 0.136276, 0.109497, 0.152344, 1 )
+custom_colors/font_outline_modulate = Color( 0.196078, 0.156863, 0.219608, 1 )
+custom_colors/font_color_shadow = Color( 0.187687, 0.151377, 0.209473, 1 )
+text = "Jugar"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartBtn" type="Button" parent="."]
-visible = false
-margin_left = 384.0
-margin_top = 512.0
-margin_right = 640.0
-margin_bottom = 576.0
-custom_fonts/font = SubResource( 2 )
-text = "JUGAR"
+[node name="GameName" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 318.672
+margin_top = 98.5699
+margin_right = 733.672
+margin_bottom = 227.57
+custom_fonts/font = SubResource( 4 )
+text = "KLAUS 
+mision rescate"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -131,8 +137,25 @@ pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="TextureButton" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="StartBtn" to="." method="_on_Button_pressed"]
+
+[node name="mainlev_build2" type="Sprite" parent="."]
+position = Vector2( 876.473, 345.401 )
+rotation = -1.57079
+scale = Vector2( 5.828, 4.247 )
+texture = ExtResource( 10 )
+flip_v = true
+vframes = 9
+hframes = 10
+frame = 26
+
+[node name="mainlev_build" type="Sprite" parent="."]
+position = Vector2( 987.749, 468.782 )
+scale = Vector2( 5.828, 4.247 )
+texture = ExtResource( 10 )
+vframes = 9
+hframes = 10
+frame = 26
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="CheckButton" to="." method="_on_CheckButton_pressed"]
 
 [editable path="Background"]
