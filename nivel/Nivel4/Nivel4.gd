@@ -8,6 +8,14 @@ onready var plataformaV2 = $Plataformas/PlataformasMoviles/PlatBot3/Plataforma
 onready var global = get_node("/root/Global")
 
 func _ready():
+	if global.inicioNivel:
+		$CheckPoint/Position2D.global_position = global.positionCheckPoint
+		$CheckPoint/CheckPoint.play($CheckPoint/Position2D.global_position)
+	else:
+		global.positionCheckPoint = $CheckPoint/Position2D.global_position
+	player.global_position = $CheckPoint/Position2D.global_position
+	global.inicioNivel = true
+	
 	player.setCantLimiteClones(cantDeClones)
 	plataformaH.start(0, 0, 0, 140)
 	plataformaV1.start(95, 0, 0, 0)

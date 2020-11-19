@@ -190,13 +190,15 @@ func aparecerTodosLosOrbes():
 		orbes[num].show()
 		
 func remove_clon(clon):
-	if clon == new_clon:
-		new_clon = null
-		activar()
-	colors.append(clon.modulate.to_html())
-	clones.erase(clon)
-	orbes[clones.size()].show()
-	clon.morir()
+	if clon.estaVivo:
+		if clon == new_clon:
+			new_clon = null
+			activar()
+		print(clon.modulate.to_html())
+		colors.append(clon.modulate.to_html())
+		clones.erase(clon)
+		orbes[clones.size()].show()
+		clon.morir()
 
 func activar():
 	activo = true

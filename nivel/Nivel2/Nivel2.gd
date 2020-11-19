@@ -5,6 +5,14 @@ export var cantDeClones = 3
 onready var global = get_node("/root/Global")
 
 func _ready():
+	if global.inicioNivel:
+		$CheckPoint/Position2D.global_position = global.positionCheckPoint
+		$CheckPoint/CheckPoint.play($CheckPoint/Position2D.global_position)
+	else:
+		global.positionCheckPoint = $CheckPoint/Position2D.global_position
+	player.global_position = $CheckPoint/Position2D.global_position
+	global.inicioNivel = true
+	
 	player.setCantLimiteClones(cantDeClones)
 	if !global.musicaActiva:
 		global.activarMusica()
@@ -36,3 +44,6 @@ func _on_delete_clone(clone):
 
 func _on_body_entered(viewport, event, shape_idx):
 	pass # Replace with function body.
+
+
+

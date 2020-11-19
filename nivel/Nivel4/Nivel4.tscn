@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://BoosAssets/Entorno/warning.webp" type="Texture" id=14]
 [ext_resource path="res://BoosAssets/wall.tscn" type="PackedScene" id=15]
 [ext_resource path="res://nivel/Piso.tscn" type="PackedScene" id=16]
+[ext_resource path="res://nivel/CheckPoint.tscn" type="PackedScene" id=17]
 
 [node name="Nivel3" type="Node2D"]
 script = ExtResource( 12 )
@@ -246,6 +247,16 @@ position = Vector2( -3.39458, 270.815 )
 
 [node name="Plataforma" parent="Plataformas/PlataformasMoviles/PlatBot3" instance=ExtResource( 7 )]
 position = Vector2( 194.683, 364.605 )
+
+[node name="CheckPoint" type="Node2D" parent="."]
+position = Vector2( 759.597, 232.049 )
+scale = Vector2( 0.03, 0.03 )
+
+[node name="Position2D" type="Position2D" parent="CheckPoint"]
+position = Vector2( -23289, 7735.75 )
+
+[node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 17 )]
+position = Vector2( -1534.7, 294.226 )
 
 [node name="TimerDead" type="Timer" parent="." groups=[
 "time",

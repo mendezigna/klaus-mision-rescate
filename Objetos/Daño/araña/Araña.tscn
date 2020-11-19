@@ -47,7 +47,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 7.0
+radius = 5.90314
 height = 0.0
 
 [node name="Araña" type="Area2D"]
@@ -61,10 +61,11 @@ script = ExtResource( 1 )
 [node name="Spider" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 8 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.117985, 0.353954 )
 shape = SubResource( 9 )
-[connection signal="body_entered" from="." to="." method="_on_body_entered2"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered2"]

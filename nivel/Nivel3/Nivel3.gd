@@ -9,6 +9,14 @@ onready var plataformaV3 = $Plataformas/Plataforma3/Plataforma
 onready var global = get_node("/root/Global")
 
 func _ready():
+	if global.inicioNivel:
+		$CheckPoint/Position2D.global_position = global.positionCheckPoint
+		$CheckPoint/CheckPoint.play($CheckPoint/Position2D.global_position)
+	else:
+		global.positionCheckPoint = $CheckPoint/Position2D.global_position
+	player.global_position = $CheckPoint/Position2D.global_position
+	global.inicioNivel = true
+	
 	player.setCantLimiteClones(cantDeClones)
 	plataformaH.start(0, 0, 195, 0)
 	plataformaV1.start(176, 0, 0, 0)
