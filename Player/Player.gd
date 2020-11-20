@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var sprite = $AnimatedSprite
 onready var interface = $Perdiste/GameOver
 onready var interfaceLabel = $Perdiste/GameOver/GameOver
+onready var interfaceLabelM = $Perdiste/GameOver/Menu
 onready var interfaceTimer = $Perdiste/GameOver/MostrarReloj
 onready var playAgain = $Perdiste/GameOver/TextureButton
 onready var collision = $CollisionShape2D
@@ -231,6 +232,7 @@ func morir():
 		apagarTodosLosOrbes()
 		remover_clones()
 		interface.show()
+		interfaceLabelM.hide()
 		playAgain.hide()
 		pararMusica()
 		$AudioMuerte.play()

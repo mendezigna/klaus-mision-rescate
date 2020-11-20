@@ -378,7 +378,7 @@ position = Vector2( 1860.65, 152.963 )
 next_level = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 830.072, 233.077 )
+position = Vector2( 1109.8, 261.831 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 14 )]
 position = Vector2( 70.6392, 471.359 )
