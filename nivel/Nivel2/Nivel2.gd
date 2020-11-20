@@ -8,10 +8,9 @@ func _ready():
 	if global.inicioNivel:
 		$CheckPoint/Position2D.global_position = global.positionCheckPoint
 		$CheckPoint/CheckPoint.play($CheckPoint/Position2D.global_position)
-		player.global_position = $CheckPoint/Position2D.global_position
 	else:
 		global.positionCheckPoint = $CheckPoint/Position2D.global_position
-		
+	player.global_position = $CheckPoint/Position2D.global_position
 	global.inicioNivel = true
 	
 	player.setCantLimiteClones(cantDeClones)
