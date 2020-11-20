@@ -4,37 +4,36 @@
 [ext_resource path="res://nivel/Nivel1/4-colors-of-glowing-balls-2.png" type="Texture" id=2]
 [ext_resource path="res://nivel/Nivel1/4-colors-of-glowing-balls-1.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=39]
-flags = 4
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 352, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=36]
-flags = 4
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=37]
-flags = 4
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 352, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=38]
-flags = 4
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 160, 128, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=40]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 39 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
 } ]
 
-[node name="Orbe1" type="AnimatedSprite"]
-position = Vector2( -19.4602, -11.25 )
+[node name="Node2D" type="Node2D"]
+
+[node name="Orbe1" type="AnimatedSprite" parent="."]
+position = Vector2( -0.0374469, -0.0415 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 40 )
+frames = SubResource( 5 )
+frame = 2
 playing = true
 script = ExtResource( 1 )

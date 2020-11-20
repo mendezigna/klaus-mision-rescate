@@ -4,9 +4,9 @@ onready var sprite = $AnimatedSprite
 onready var interface = $Perdiste/GameOver
 onready var interfaceLabel = $Perdiste/GameOver/GameOver
 onready var interfaceTimer = $Perdiste/GameOver/MostrarReloj
-onready var playAgain = $Perdiste/GameOver/Button
+onready var playAgain = $Perdiste/GameOver/TextureButton
 onready var collision = $CollisionShape2D
-
+onready var orbe0 = $Orbe0
 ##Moviemiento
 var velocity = Vector2()
 export var run_speed = 50
@@ -30,7 +30,6 @@ var activo = true
 var puedeComenzarNivel = true
 
 ##Orbe
-var Orbe = preload("res://Player/Orbe.tscn")
 var orbes = []
 var clonesMuertos = 0
 var clonesActivos = 0
@@ -40,12 +39,13 @@ var estaVivo = true
 var algo
 func _ready():
 	interface.hide()
-	orbes = [$Orbe0, $Orbe1, $Orbe2, $Orbe3]
+	orbes = [ orbe0, $Orbe1, $Orbe2, $Orbe3]
 
 ##Se limita la cantidad de clones
 func setCantLimiteClones(numero):
 	cantLimite = numero
 	aparecerTodosLosOrbes()
+	$AnimationPlayer.play("OrbAnimation")
 	if colors.size() > cantLimite:
 		colors.pop_back()
 

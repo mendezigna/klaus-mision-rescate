@@ -20,7 +20,6 @@ func _physics_process(delta):
 	elif player.new_clon != null:
 		$Camera2D.position =  player.new_clon.position
 
-
 func _on_game_over():
 	$TimerDead.start()
 	player.morir()
@@ -39,14 +38,11 @@ func _win_game(body):
 	if body.is_in_group("player"):
 		player.win()
 
-
 func _on_colision1_body_entered(body):
 	$Player.remover_clones()
 	if body.is_in_group("player"):
 		$Player.puedeComenzarNivel(false)
 		$Mascota.caminar()
-
-
 
 func _on_colision2_entered(area):
 	$Mascota.correr()

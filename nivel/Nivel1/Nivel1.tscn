@@ -719,19 +719,19 @@ __meta__ = {
 position = Vector2( 73.4766, 381.39 )
 
 [node name="AnimatedSprite" parent="Player" index="0"]
-frame = 3
+frame = 2
 
 [node name="Orbe0" parent="Player" index="7"]
-playing = false
+frame = 1
 
 [node name="Orbe1" parent="Player" index="8"]
-playing = false
+frame = 1
 
 [node name="Orbe2" parent="Player" index="9"]
-playing = false
+frame = 1
 
 [node name="Orbe3" parent="Player" index="10"]
-playing = false
+frame = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 73.0896, 401.169 )

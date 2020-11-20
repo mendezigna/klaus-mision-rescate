@@ -81,6 +81,7 @@ margin_top = 393.719
 margin_right = 558.719
 margin_bottom = 468.719
 rect_scale = Vector2( 1.5, 1.5 )
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 6 )

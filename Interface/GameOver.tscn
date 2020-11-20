@@ -26,7 +26,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 300.134 ],
 "_edit_vertical_guides_": [ 511.81 ]
 }
-next_scene_path = "res://nivel/Nivel1/Nivel1.tscn"
+next_scene_path = "res://Main/Main.tscn"
 
 [node name="GameOver" type="Label" parent="."]
 margin_left = 320.283
@@ -54,11 +54,12 @@ __meta__ = {
 }
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 372.931
-margin_top = 396.239
-margin_right = 559.931
-margin_bottom = 463.239
+margin_left = 368.0
+margin_top = 400.0
+margin_right = 555.0
+margin_bottom = 467.0
 rect_scale = Vector2( 1.5, 1.5 )
+action_mode = 0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 2 )
