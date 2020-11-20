@@ -162,13 +162,24 @@ func agregarClon():
 		new_clon.desactivar()
 	new_clon = Clon.instance()
 	new_clon.cambiarColor(colors.pop_front())
-	orbes[clones.size()].hide() 
+	orbesSegunColorDesaparecer(new_clon)
+	##orbes[clones.size()].hide() 
 	clones.append(new_clon)
 	get_parent().add_child(new_clon)
 	new_clon.position = $PosicionClon.global_position
 	desactivar()
 	new_clon.activar()
-
+	
+func orbesSegunColorDesaparecer(clon1):
+	if (clon1.modulate.to_html() == "ffff3737"):
+		$Orbe0.hide()
+	elif  clon1.modulate.to_html() == "ff4f7ddf":
+		$Orbe1.hide()
+	elif clon1.modulate.to_html() == "ff00ff00":
+		$Orbe2.hide()
+	else:
+		$Orbe3.hide()
+		
 func desactivar():
 	activo = false
 	if sprite.animation != "land" and sprite.animation != "summon":
@@ -194,12 +205,22 @@ func remove_clon(clon):
 		if clon == new_clon:
 			new_clon = null
 			activar()
-		print(clon.modulate.to_html())
+		print(clon.modulate)
 		colors.append(clon.modulate.to_html())
+		orbesSegunColorAparecer(clon)
 		clones.erase(clon)
-		orbes[clones.size()].show()
+		##orbes[clones.size()].show()
 		clon.morir()
 
+func orbesSegunColorAparecer(clon1):
+	if (clon1.modulate.to_html() == "ffff3737"):
+		$Orbe0.show()
+	elif  clon1.modulate.to_html() == "ff4f7ddf":
+		$Orbe1.show()
+	elif clon1.modulate.to_html() == "ff00ff00":
+		$Orbe2.show()
+	else:
+		$Orbe3.show()
 func activar():
 	activo = true
 
@@ -207,12 +228,17 @@ func morir():
 	if estaVivo:
 		sprite.play("dead")
 		estaVivo = false
+		apagarTodosLosOrbes()
 		remover_clones()
 		interface.show()
 		playAgain.hide()
 		pararMusica()
 		$AudioMuerte.play()
-	
+
+func apagarTodosLosOrbes():
+	for orbe in orbes:
+		orbe.hide()
+
 func win():
 	interfaceLabel.text = "Ganaste!!"
 	interface.show()

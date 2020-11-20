@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://BoosAssets/player/main2.1.png" type="Texture" id=2]
@@ -10,6 +10,140 @@
 [ext_resource path="res://Objetos/Light.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nivel/Nivel1/4-colors-of-glowing-balls-2.png" type="Texture" id=11]
 [ext_resource path="res://nivel/Nivel1/4-colors-of-glowing-balls-1.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=35]
+resource_name = "OrbAnimation"
+length = 1.14286
+loop = true
+step = 0.142857
+tracks/0/type = "value"
+tracks/0/path = NodePath("Orbe0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1, 1.14286 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -12.37, -9.88988 ), Vector2( -8.37004, -14.8899 ), Vector2( -0.814485, -16.3343 ), Vector2( 7.74107, -15.5288 ), Vector2( 11.8681, -9.72322 ), Vector2( 7.82837, -4.75099 ), Vector2( 0.788687, -3.77877 ), Vector2( -8.501, -4.30655 ), Vector2( -12.37, -9.88988 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Orbe1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1, 1.14286 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -8.37004, -14.8899 ), Vector2( -0.811982, -16.3318 ), Vector2( 7.76169, -15.4479 ), Vector2( 11.9159, -9.70269 ), Vector2( 7.85008, -4.66456 ), Vector2( 0.602233, -3.78068 ), Vector2( -8.50177, -4.311 ), Vector2( -12.3909, -9.87947 ), Vector2( -8.37004, -14.8899 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Orbe2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1, 1.14286 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.723595, -16.2989 ), Vector2( 7.76168, -15.3873 ), Vector2( 11.9917, -9.59079 ), Vector2( 7.93215, -4.72472 ), Vector2( 0.79416, -3.80266 ), Vector2( -8.56427, -4.24761 ), Vector2( -12.3025, -9.84654 ), Vector2( -8.41339, -14.9453 ), Vector2( -0.723595, -16.2989 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Orbe3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1, 1.14286 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.6915, -15.4246 ), Vector2( 12.0225, -9.41421 ), Vector2( 7.94193, -4.58231 ), Vector2( 0.555616, -3.65718 ), Vector2( -8.70896, -4.21256 ), Vector2( -12.4345, -9.89446 ), Vector2( -8.47031, -14.9576 ), Vector2( -0.726968, -16.3366 ), Vector2( 7.6915, -15.4246 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 11 )
+region = Rect2( 32, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 11 )
+region = Rect2( 64, 160, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 12 )
+region = Rect2( 288, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 12 )
+region = Rect2( 320, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 12 )
+region = Rect2( 352, 160, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=45]
+animations = [ {
+"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 11 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 11 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=50]
+animations = [ {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 11 )
+region = Rect2( 192, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 11 )
+region = Rect2( 224, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 11 )
+region = Rect2( 256, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=55]
+animations = [ {
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -181,171 +315,56 @@ animations = [ {
 radius = 5.72308
 height = 17.0759
 
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 12 )
-region = Rect2( 352, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 11 )
-region = Rect2( 256, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=40]
-animations = [ {
-"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
-"loop": true,
-"name": "default",
-"speed": 4.0
-} ]
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 11 )
-region = Rect2( 352, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 12 )
-region = Rect2( 352, 128, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=45]
-animations = [ {
-"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
-"loop": true,
-"name": "default",
-"speed": 4.0
-} ]
-
-[sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 12 )
-region = Rect2( 352, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 11 )
-region = Rect2( 352, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 11 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 128, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=50]
-animations = [ {
-"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
-"loop": true,
-"name": "default",
-"speed": 4.0
-} ]
-
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 12 )
-region = Rect2( 352, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 11 )
-region = Rect2( 352, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 11 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=55]
-animations = [ {
-"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ) ],
-"loop": true,
-"name": "default",
-"speed": 4.0
-} ]
-
-[sub_resource type="Animation" id=35]
-resource_name = "OrbAnimation"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Orbe0:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.7, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -16, -8 ), Vector2( -16, -16 ), Vector2( -8, -16 ), Vector2( 8, -16 ), Vector2( 16, -16 ), Vector2( 16, -8 ), Vector2( -16, -8 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Orbe1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.7, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -8, -16 ), Vector2( 8, -16 ), Vector2( 16, -16 ), Vector2( 16, -8.00002 ), Vector2( -16, -8.00002 ), Vector2( -16, -16 ), Vector2( -8, -16 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Orbe2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.7, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 8, -16 ), Vector2( 16, -16 ), Vector2( 16, -8.00002 ), Vector2( -16, -8 ), Vector2( -16, -16 ), Vector2( -8, -16 ), Vector2( 8, -16 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Orbe3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.7, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 16, -8 ), Vector2( -16, -8 ), Vector2( -16, -16 ), Vector2( -7.99996, -16 ), Vector2( 8.00004, -16 ), Vector2( 16, -16 ), Vector2( 16, -8 ) ]
-}
-
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 5.71314, 0.774254 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
-position = Vector2( -0.629959, 1.88988 )
+position = Vector2( 0.370041, 1.88988 )
 collision_mask = 2147483674
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 598.658 ]
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
+anims/OrbAnimation = SubResource( 35 )
+
+[node name="Orbe0" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -12.37, -9.88988 )
+scale = Vector2( 0.114, 0.114 )
+frames = SubResource( 40 )
+frame = 2
+playing = true
+
+[node name="Orbe1" type="AnimatedSprite" parent="."]
+modulate = Color( 0.137255, 0.160784, 0.486275, 1 )
+position = Vector2( -8.37004, -14.8899 )
+scale = Vector2( 0.134, 0.134 )
+frames = SubResource( 45 )
+frame = 1
+playing = true
+
+[node name="Orbe2" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -0.723595, -16.2989 )
+scale = Vector2( 0.114, 0.114 )
+frames = SubResource( 50 )
+playing = true
+
+[node name="Orbe3" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 7.6915, -15.4246 )
+scale = Vector2( 0.114, 0.114 )
+frames = SubResource( 55 )
+playing = true
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 33 )
 animation = "stop"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -371,44 +390,7 @@ position = Vector2( -0.280327, 16.4853 )
 scale_amount = 1.4
 
 [node name="Light2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 0.420448, 0 )
-
-[node name="Orbe0" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -16, -8.66602 )
-scale = Vector2( 0.201002, 0.201002 )
-frames = SubResource( 40 )
-frame = 2
-playing = true
-
-[node name="Orbe1" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -6.66796, -16 )
-scale = Vector2( 0.183594, 0.171875 )
-frames = SubResource( 45 )
-frame = 2
-playing = true
-
-[node name="Orbe2" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 8.66602, -16 )
-scale = Vector2( 0.201, 0.201 )
-frames = SubResource( 50 )
-frame = 2
-playing = true
-
-[node name="Orbe3" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 13.3359, -8 )
-scale = Vector2( 0.201, 0.201 )
-frames = SubResource( 55 )
-frame = 1
-playing = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "OrbAnimation"
-playback_process_mode = 0
-anims/OrbAnimation = SubResource( 35 )
+position = Vector2( -0.22139, -1.88988 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." groups=[
 "player",
@@ -417,7 +399,7 @@ collision_layer = 32
 collision_mask = 37
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, -10.6066 )
+position = Vector2( -0.370041, -9.88988 )
 shape = SubResource( 56 )
 one_way_collision = true
 

@@ -22,6 +22,7 @@
 
 [node name="Nivel2" type="Node2D"]
 script = ExtResource( 11 )
+cantDeClones = 4
 
 [node name="Background" parent="." instance=ExtResource( 14 )]
 position = Vector2( -17.9148, 62.5935 )
