@@ -68,10 +68,10 @@ __meta__ = {
 }
 
 [node name="Menu" type="Label" parent="."]
-margin_left = 327.888
-margin_top = 413.561
-margin_right = 698.888
-margin_bottom = 477.561
+margin_left = 323.888
+margin_top = 418.561
+margin_right = 694.888
+margin_bottom = 482.561
 custom_fonts/font = SubResource( 3 )
 text = "Menu"
 align = 1

@@ -8,5 +8,5 @@ func _on_ResertButton_pressed():
 
 func _on_HomeButton_pressed():
 	get_tree().change_scene(next_scene_path)
-	
+	get_node("/root/Global").inicioNivel = false
 

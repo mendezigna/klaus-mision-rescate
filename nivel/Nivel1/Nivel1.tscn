@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Objetos/Daño/murcielago/murcielago.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objetos/Daño/araña/Araña.tscn" type="PackedScene" id=15]
 [ext_resource path="res://nivel/CheckPoint.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Ayudante/Guia.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0.5, 32, 0.5, 32, 32.5, 0, 32.5 )
@@ -683,7 +684,7 @@ position = Vector2( 68.8003, 1.70593 )
 position = Vector2( 21.0791, 1.8548 )
 
 [node name="Pinches" type="Node2D" parent="Daño"]
-position = Vector2( 126.037, -86.5149 )
+position = Vector2( 123.79, -84.2674 )
 
 [node name="Pinche" parent="Daño/Pinches" instance=ExtResource( 9 )]
 position = Vector2( -70.049, -0.552004 )
@@ -727,7 +728,7 @@ position = Vector2( -11.2109, 57.7019 )
 position = Vector2( -92.5625, -8.20723 )
 
 [node name="plataforma2" type="Node2D" parent="Plataformas"]
-position = Vector2( 524.323, 350.741 )
+position = Vector2( 547.323, 349.741 )
 
 [node name="Plataforma" parent="Plataformas/plataforma2" instance=ExtResource( 5 )]
 position = Vector2( -25.3682, 121.361 )
@@ -750,6 +751,7 @@ position = Vector2( 574.634, 235.799 )
 position = Vector2( 622.108, 237.419 )
 
 [node name="Instrucciones" type="Node2D" parent="."]
+visible = false
 position = Vector2( -6.34961, -60.3212 )
 
 [node name="Caminar" type="Label" parent="Instrucciones"]
@@ -829,23 +831,72 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChekPoint" type="Node2D" parent="."]
-position = Vector2( 145.994, -122.684 )
+[node name="CheckPoint" type="Node2D" parent="."]
+position = Vector2( 131.836, -120.324 )
 
-[node name="Position2D" type="Position2D" parent="ChekPoint"]
-position = Vector2( 656.937, 338.851 )
+[node name="Position2D" type="Position2D" parent="CheckPoint"]
+position = Vector2( -59.2424, 522.463 )
 
-[node name="CheckPoint" parent="ChekPoint" instance=ExtResource( 16 )]
+[node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 16 )]
 position = Vector2( 695.256, 341.871 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 656.578, 268.153 )
+[node name="Guia" type="Node2D" parent="."]
+position = Vector2( 48.1376, -6.60712 )
 
-[node name="Orbe1" parent="Player" index="2"]
+[node name="Node2D" type="Node2D" parent="Guia"]
+position = Vector2( 61.2693, 408.499 )
+
+[node name="Guia" parent="Guia/Node2D" instance=ExtResource( 17 )]
+position = Vector2( 0, -5.99323 )
+texto = "Hola, yo sere tu guia en esta aventura. "
+
+[node name="TiempoDeEspera " type="Timer" parent="Guia/Node2D"]
+wait_time = 3.0
+autostart = true
+
+[node name="Guia2" parent="Guia" instance=ExtResource( 17 )]
+position = Vector2( 224.341, 400.74 )
+texto = "Presioná la 'E' para invocar minions, intentalo."
+
+[node name="Guia3" parent="Guia" instance=ExtResource( 17 )]
+position = Vector2( 413.5, 401.739 )
+texto = "Presioná 'R' para borrar a todos los minions."
+
+[node name="Guia4" parent="Guia" instance=ExtResource( 17 )]
+position = Vector2( 508.23, 272.091 )
+texto = "Apretá 'shift' con los minions en el aire"
+offsetx = -80
+fliph = true
+
+[node name="Guia5" parent="Guia" instance=ExtResource( 17 )]
+position = Vector2( 632.964, 272.329 )
+texto = "Atraviesa la plataforma por abajo con minions"
+offsetx = -80
+fliph = true
+
+[node name="Guia6" parent="Guia" instance=ExtResource( 17 )]
+position = Vector2( 804.52, 209.026 )
+texto = "Es un punto de control, iniciaras aqui cuando mueras"
+offsetx = -80
+fliph = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 748.724, 245.678 )
+
+[node name="Orbe0" parent="Player" index="1"]
+frame = 1
+
+[node name="Orbe2" parent="Player" index="3"]
 frame = 2
 
-[node name="AnimatedSprite" parent="Player" index="5"]
-frame = 1
+[node name="Orbe3" parent="Player" index="4"]
+frame = 2
+
+[node name="OptionButtons" parent="Player/Perdiste" index="0"]
+margin_left = 5.0
+margin_top = 27.9087
+margin_right = 5.0
+margin_bottom = 27.9087
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 73.0896, 401.169 )
@@ -926,6 +977,7 @@ one_shot = true
 [connection signal="hitClone" from="Insectos/Araña" to="." method="_on_delete_clone"]
 [connection signal="hit" from="Insectos/Araña2" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Insectos/Araña2" to="." method="_on_delete_clone"]
+[connection signal="timeout" from="Guia/Node2D/TiempoDeEspera " to="." method="_on_TiempoDeEspera__timeout"]
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
 
 [editable path="Background"]

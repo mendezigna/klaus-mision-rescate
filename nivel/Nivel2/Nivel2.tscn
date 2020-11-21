@@ -220,13 +220,13 @@ next_level = ExtResource( 12 )
 position = Vector2( 440.146, 298.838 )
 
 [node name="Position2D" type="Position2D" parent="CheckPoint"]
-position = Vector2( 173.225, 106.794 )
+position = Vector2( -389.587, 162.45 )
 
 [node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 19 )]
 position = Vector2( 122.871, 91.5669 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40, 464 )
+position = Vector2( 36.6964, 463.528 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 15 )]
 

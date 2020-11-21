@@ -59,9 +59,9 @@ func puedeComenzarNivel(valor):
 		
 
 func _physics_process(delta):
+	velocity.x = 0
+	var snap = 3
 	if (puedeComenzarNivel):
-		velocity.x = 0
-		var snap = 3
 		siEstaActivo()
 		if estaVivo:
 			if velocity.y != 0:
@@ -73,9 +73,9 @@ func _physics_process(delta):
 			manejarPlayer()
 			reiniciarClones()
 		# warning-ignore:return_value_discarded
-		move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
-		siEstaEnElPiso(delta)
-		interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
+	move_and_slide_with_snap(velocity, Vector2.DOWN * snap, Vector2(0, -1), false)
+	siEstaEnElPiso(delta)
+	interfaceTimer.text = "Revivir en: " + str((ceil(get_tree().get_nodes_in_group("time")[0].get_time_left())))
 
 func siEstaActivo():
 	if activo:

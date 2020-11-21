@@ -7,6 +7,15 @@ onready var plataforma2 = $Plataformas/plataforma2/Plataforma
 onready var global = get_node("/root/Global")
 
 func _ready():
+	if global.inicioNivel:
+		$CheckPoint/Position2D.global_position = global.positionCheckPoint
+		$CheckPoint/CheckPoint.play($CheckPoint/Position2D.global_position)
+	else:
+		global.positionCheckPoint = $CheckPoint/Position2D.global_position
+	player.global_position = $CheckPoint/Position2D.global_position
+	global.inicioNivel = true
+	
+	
 	player.setCantLimiteClones(cantDeClones)
 	plataforma1.start(50, 0, 0, 0)
 	plataforma2.start(115, 0, 0, 0)
@@ -21,7 +30,7 @@ func _ready():
 # warning-ignore:unused_argument
 func _physics_process(delta):
 		if Input.is_action_just_pressed("clonar"):
-			get_tree().get_nodes_in_group("label")[0].text = "SHIFT: \nvolver a klaus"
+			$Guia/Guia2.setTexto("Presioná 'SHIFT' para volves a Klaus.")
 		if player.activo:
 			$Camera2D.position =  player.position
 		elif player.new_clon != null:
@@ -54,3 +63,7 @@ func _on_TimerDead_timeout():
 func _on_delete_clone(clone):
 	player.puedeMoverse = false
 	player.remove_clon(clone)
+
+
+func _on_TiempoDeEspera__timeout():
+	$Guia/Node2D/Guia.setTexto("Utiliza las teclas 'A' 'W' 'D' para moverte")

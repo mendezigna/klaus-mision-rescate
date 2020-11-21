@@ -10,3 +10,4 @@ func _on_CheckButton_pressed():
 func _on_TextureButton_pressed():
 	$TextureButton.hide()
 	emit_signal("start")
+	get_node("/root/Global").inicioNivel = false

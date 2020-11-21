@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ghost-idle.png-e602fe2cb41503de1bae4c9fd144948e.stex"
+path="res://.import/dialogo.png-8a3915b3d72be0a3fb7a69100bc13826.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BoosAssets/ayudante/Ghost-Files/PNG/ghost-idle.png"
-dest_files=[ "res://.import/ghost-idle.png-e602fe2cb41503de1bae4c9fd144948e.stex" ]
+source_file="res://BoosAssets/ayudante/dialogo.png"
+dest_files=[ "res://.import/dialogo.png-8a3915b3d72be0a3fb7a69100bc13826.stex" ]
 
 [params]
 

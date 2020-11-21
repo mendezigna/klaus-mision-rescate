@@ -360,7 +360,7 @@ position = Vector2( 1124.58, 617.677 )
 position = Vector2( 1637.15, 265.346 )
 
 [node name="Position2D" type="Position2D" parent="CheckPoint"]
-position = Vector2( -503.956, 5.5988 )
+position = Vector2( -1588.89, 184.249 )
 
 [node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 18 )]
 position = Vector2( -873.74, -17.7643 )
