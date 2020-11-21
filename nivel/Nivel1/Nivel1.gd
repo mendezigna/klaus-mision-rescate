@@ -51,6 +51,8 @@ func _on_Boton2_suelto():
 	plataforma2.bajar(0.5)
 ##Se le informa al jugador que murio.
 func _on_game_over():
+	if !global.tocoElCheckPoint:
+		global.inicioNivel = false
 	$TimerDead.start()
 	player.morir()
 

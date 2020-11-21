@@ -154,6 +154,7 @@ position = Vector2( 1015.02, 395.54 )
 
 [node name="Fuego3" parent="Daño/Fuegos" instance=ExtResource( 11 )]
 position = Vector2( 1068.53, 395.554 )
+velocidadAnimacion = 1.5
 
 [node name="Fuego" parent="Daño/Fuegos" instance=ExtResource( 11 )]
 position = Vector2( 324.226, 232.58 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/Letras/gameovercre1.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Letras/riverflows/RIVERFLOWS Italic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://BoosAssets/Entorno/buttons/play3.Mouse.png" type="Texture" id=2]
 [ext_resource path="res://Interface/InterfaceWO.gd" type="Script" id=3]
 [ext_resource path="res://assets/Letras/riverflows/RIVERFLOWS.ttf" type="DynamicFontData" id=4]

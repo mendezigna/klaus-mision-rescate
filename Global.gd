@@ -5,6 +5,7 @@ var musicaActiva = false
 var animacionBossHecha = false
 var inicioNivel = false
 var positionCheckPoint 
+var tocoElCheckPoint = false
 
 func desactivarMusica():
 	musicaActiva = false

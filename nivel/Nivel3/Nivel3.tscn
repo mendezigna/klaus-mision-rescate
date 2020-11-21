@@ -243,18 +243,22 @@ position = Vector2( 752.111, 585.894 )
 
 [node name="Fuego3" parent="Daño/Fuegos" instance=ExtResource( 9 )]
 position = Vector2( 1040.76, 554.767 )
+velocidadAnimacion = 2.0
 
 [node name="Fuego9" parent="Daño/Fuegos" instance=ExtResource( 9 )]
 position = Vector2( 1050.3, 554.767 )
 
 [node name="Fuego4" parent="Daño/Fuegos" instance=ExtResource( 9 )]
 position = Vector2( 1145.89, 554.712 )
+velocidadAnimacion = 1.5
 
 [node name="Fuego10" parent="Daño/Fuegos" instance=ExtResource( 9 )]
 position = Vector2( 1137.43, 554.915 )
+velocidadAnimacion = 0.5
 
 [node name="Fuego5" parent="Daño/Fuegos" instance=ExtResource( 9 )]
 position = Vector2( 1481.51, 556.211 )
+velocidadAnimacion = 0.5
 
 [node name="Fuego6" parent="Daño/Fuegos" instance=ExtResource( 9 )]
 position = Vector2( 1489.75, 556.211 )

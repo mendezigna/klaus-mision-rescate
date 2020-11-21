@@ -97,6 +97,8 @@ func _physics_process(delta):
 
 
 func _on_game_over():
+	if !global.tocoElCheckPoint:
+		global.inicioNivel = false
 	$TimerDead.start()
 	boss.playerMurio()
 	player.morir()

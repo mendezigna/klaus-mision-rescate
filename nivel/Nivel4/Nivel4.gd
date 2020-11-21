@@ -43,6 +43,8 @@ func _on_Boton_suelto():
 	plataformaH.izquierda(0.5)
 
 func _on_game_over():
+	if !global.tocoElCheckPoint:
+		global.inicioNivel = false
 	$TimerDead.start()
 	player.morir()
 

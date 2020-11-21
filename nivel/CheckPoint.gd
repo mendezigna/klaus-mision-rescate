@@ -1,12 +1,5 @@
 extends Area2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.hide()
 
@@ -19,6 +12,7 @@ func play(nivelPosition):
 func _on_CheckPoint_body_entered(body):
 	if body.is_in_group("player"):
 		get_node("/root/Global").positionCheckPoint = global_position
+		get_node("/root/Global").tocoElCheckPoint = true
 		$EfectoCheckPoint.play("activo")
 
 

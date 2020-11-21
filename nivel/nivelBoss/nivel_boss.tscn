@@ -181,24 +181,28 @@ __meta__ = {
 
 [node name="Fuego" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 1727.91, 538.857 )
+velocidadAnimacion = 1.5
 
 [node name="Fuego2" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 1637.4, 538.87 )
 
 [node name="Fuego3" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 1864.92, 507.446 )
+velocidadAnimacion = 2.1
 
 [node name="Fuego5" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 1909.15, 507.446 )
 
 [node name="Fuego7" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 1952.79, 507.459 )
+velocidadAnimacion = 0.3
 
 [node name="Fuego8" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 1994.81, 508.309 )
 
 [node name="Fuego10" parent="Fuegos" instance=ExtResource( 14 )]
 position = Vector2( 2035.81, 507.459 )
+velocidadAnimacion = 1.6
 
 [node name="Antorchas" type="Node2D" parent="."]
 

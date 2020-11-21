@@ -21,6 +21,8 @@ func _physics_process(delta):
 		$Camera2D.position =  player.new_clon.position
 
 func _on_game_over():
+	if !global.tocoElCheckPoint:
+		global.inicioNivel = false
 	$TimerDead.start()
 	player.morir()
 

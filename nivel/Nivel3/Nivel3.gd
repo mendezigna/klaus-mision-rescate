@@ -83,6 +83,8 @@ func _on_delete_clone(clone):
 	player.remove_clon(clone)
 
 func _on_game_over():
+	if !global.tocoElCheckPoint:
+		global.inicioNivel = false
 	$TimerDead.start()
 	player.morir()
 
