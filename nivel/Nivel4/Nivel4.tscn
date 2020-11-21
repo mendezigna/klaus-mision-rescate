@@ -251,13 +251,12 @@ position = Vector2( 194.683, 364.605 )
 
 [node name="CheckPoint" type="Node2D" parent="."]
 position = Vector2( 759.597, 232.049 )
-scale = Vector2( 0.03, 0.03 )
 
 [node name="Position2D" type="Position2D" parent="CheckPoint"]
-position = Vector2( -23466.9, 7646.77 )
+position = Vector2( -700, 233 )
 
 [node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 17 )]
-position = Vector2( -1534.7, 294.226 )
+position = Vector2( -42.6863, 15.4246 )
 
 [node name="TimerDead" type="Timer" parent="." groups=[
 "time",

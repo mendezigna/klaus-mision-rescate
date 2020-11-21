@@ -435,10 +435,14 @@ position = Vector2( 1616.95, 536.006 )
 position = Vector2( 0, 0 )
 
 [node name="Murcielago2" parent="Murcielagos" instance=ExtResource( 20 )]
-position = Vector2( 1006.48, -98.139 )
+position = Vector2( 1003.2, -92.427 )
+
+[node name="Bat" parent="Murcielagos/Murcielago2" index="0"]
+frame = 3
+flip_h = true
 
 [node name="Murcielago3" parent="Murcielagos" instance=ExtResource( 20 )]
-position = Vector2( 875.15, -97.745 )
+position = Vector2( 884.039, -92.427 )
 gravedadX = 1.1
 
 [node name="PresentarElNivel" type="Node2D" parent="."]
@@ -586,3 +590,5 @@ autoplay = true
 [editable path="Background"]
 
 [editable path="Background2"]
+
+[editable path="Murcielagos/Murcielago2"]

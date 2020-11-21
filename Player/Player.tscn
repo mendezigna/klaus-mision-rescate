@@ -338,6 +338,7 @@ visible = false
 position = Vector2( -12.37, -9.88988 )
 scale = Vector2( 0.114, 0.114 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="Orbe1" type="AnimatedSprite" parent="."]
@@ -346,7 +347,7 @@ modulate = Color( 0.137255, 0.160784, 0.486275, 1 )
 position = Vector2( -8.37004, -14.8899 )
 scale = Vector2( 0.134, 0.134 )
 frames = SubResource( 9 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Orbe2" type="AnimatedSprite" parent="."]
@@ -354,7 +355,6 @@ visible = false
 position = Vector2( -0.723595, -16.2989 )
 scale = Vector2( 0.114, 0.114 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="Orbe3" type="AnimatedSprite" parent="."]
@@ -362,12 +362,12 @@ visible = false
 position = Vector2( 7.6915, -15.4246 )
 scale = Vector2( 0.114, 0.114 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 50 )
 animation = "stop"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -26,11 +26,12 @@ func _ready():
 		for light in get_tree().get_nodes_in_group("light"):
 			light.enabled = false
 			$Background/CanvasModulate.visible = false
+			$Background2/CanvasModulate.visible = false
 	
 # warning-ignore:unused_argument
 func _physics_process(delta):
 		if Input.is_action_just_pressed("clonar"):
-			$Guia/Guia2.setTexto("Presioná 'SHIFT' para volves a Klaus.")
+			$Guia/Guia2.setTexto("Presioná 'SHIFT' para volver a Klaus.")
 		if player.activo:
 			$Camera2D.position =  player.position
 		elif player.new_clon != null:
@@ -63,7 +64,8 @@ func _on_TimerDead_timeout():
 
 ##Se borra el clon tras su muerte.
 func _on_delete_clone(clone):
-	player.puedeMoverse = false
+	if !player.activo:
+		player.puedeMoverse = false
 	player.remove_clon(clone)
 
 

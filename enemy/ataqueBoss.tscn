@@ -273,7 +273,7 @@ mode = 2
 scale = Vector2( 0.739044, 0.744656 )
 frames = SubResource( 61 )
 animation = "fuego"
-frame = 39
+frame = 4
 playing = true
 flip_h = true
 
@@ -282,7 +282,7 @@ position = Vector2( 24.3756, 0.0214481 )
 shape = SubResource( 62 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 21.0462, 0 )
+position = Vector2( 20.1087, 0.0625 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hit" from="." to="." method="_on_Area2D_hit"]
 [connection signal="hitClone" from="." to="." method="_on_Area2D_hitClone"]

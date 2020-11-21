@@ -47,7 +47,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 5.90314
+radius = 5.25702
 height = 0.0
 
 [node name="Araña" type="Area2D"]
@@ -65,7 +65,7 @@ frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.117985, 0.353954 )
+position = Vector2( 0, 1.85395 )
 shape = SubResource( 9 )
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered2"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

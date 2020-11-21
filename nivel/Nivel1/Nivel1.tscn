@@ -772,7 +772,7 @@ texto = "Presioná 'R' para borrar a todos los minions."
 
 [node name="Guia4" parent="Guia" instance=ExtResource( 17 )]
 position = Vector2( 508.23, 272.091 )
-texto = "Apretá 'shift' con los minions en el aire"
+texto = "Apretá 'shift' con el minions en el aire"
 offsetx = -80
 fliph = true
 
@@ -792,7 +792,10 @@ fliph = true
 position = Vector2( 748.724, 245.678 )
 
 [node name="Orbe1" parent="Player" index="2"]
-frame = 1
+frame = 2
+
+[node name="AnimatedSprite" parent="Player" index="5"]
+frame = 2
 
 [node name="OptionButtons" parent="Player/Perdiste" index="0"]
 margin_left = 5.0

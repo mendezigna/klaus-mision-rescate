@@ -101,6 +101,7 @@ func clonar():
 func manejarPlayer():
 	if Input.is_action_just_pressed("interactuar") and clones.size() > 0:
 		activar()
+		puedeMoverse = false
 		if new_clon != null:
 			new_clon.desactivar()
 

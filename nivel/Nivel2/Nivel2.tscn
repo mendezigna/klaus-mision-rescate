@@ -199,6 +199,7 @@ collision_mask = 3
 
 [node name="Murcielago" parent="Daño/Murcielago" instance=ExtResource( 17 )]
 position = Vector2( 487.55, 326.33 )
+gravedadX = 1.1
 
 [node name="Plataformas" type="Node2D" parent="."]
 position = Vector2( 333.458, 315.566 )
