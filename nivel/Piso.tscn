@@ -598,7 +598,9 @@ points = PoolVector2Array( 0, 0.5, 32, 0.5, 32, 32.5, 0, 32.5 )
 } ]
 22/z_index = 0
 
-[node name="Piso" type="TileMap"]
+[node name="Piso" type="TileMap" groups=[
+"paredes",
+]]
 tile_set = SubResource( 41 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 2

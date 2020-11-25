@@ -54,7 +54,7 @@ position = Vector2( 442.812, 476.231 )
 velocidadAnimacion = 0.6
 
 [node name="Fuego2" parent="Daño/Fuego" instance=ExtResource( 9 )]
-position = Vector2( 103.11, 362.394 )
+position = Vector2( 103.11, 364.077 )
 velocidadAnimacion = 0.8
 
 [node name="Fuego3" parent="Daño/Fuego" instance=ExtResource( 9 )]
@@ -77,11 +77,11 @@ scale = Vector2( 0.7, 0.7 )
 velocidadAnimacion = 1.2
 
 [node name="Fuego5" parent="Daño/Fuego" instance=ExtResource( 9 )]
-position = Vector2( 381.478, 316.003 )
+position = Vector2( 381.478, 316.71 )
 velocidadAnimacion = 1.6
 
 [node name="Fuego9" parent="Daño/Fuego" instance=ExtResource( 9 )]
-position = Vector2( 405.532, 315.112 )
+position = Vector2( 405.532, 316.173 )
 velocidadAnimacion = 1.8
 
 [node name="Pinches" type="Node2D" parent="Daño"]
@@ -231,7 +231,7 @@ position = Vector2( 440.146, 298.838 )
 position = Vector2( -389.587, 162.45 )
 
 [node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 19 )]
-position = Vector2( 122.871, 91.5669 )
+position = Vector2( 175.246, 110.331 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 36.6964, 463.528 )

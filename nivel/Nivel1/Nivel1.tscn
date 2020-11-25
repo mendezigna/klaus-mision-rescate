@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://nivel/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Boton.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Objetos/Daño/lava/Lava.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objetos/Daño/pinches/Pinches.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objetos/Daño/fuego/Fuego.tscn" type="PackedScene" id=10]
+[ext_resource path="res://BoosAssets/wall.tscn" type="PackedScene" id=11]
 [ext_resource path="res://nivel/PlataformasFlotantes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://BoosAssets/background/mainlev_build.png" type="Texture" id=13]
 [ext_resource path="res://Objetos/Daño/murcielago/murcielago.tscn" type="PackedScene" id=14]
@@ -687,11 +688,17 @@ position = Vector2( 24.5513, -1.17987 )
 [node name="Fuego" parent="Daño" instance=ExtResource( 10 )]
 position = Vector2( -793.815, 78.7394 )
 
+[node name="props2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 615.664, 380.579 )
+scale = Vector2( 0.946352, 1.99655 )
+
 [node name="Puerta" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1206.38, 202.072 )
+position = Vector2( 1207.38, 207.072 )
 next_level = ExtResource( 6 )
 
-[node name="Piso" type="TileMap" parent="."]
+[node name="Piso" type="TileMap" parent="." groups=[
+"paredes",
+]]
 position = Vector2( -11.2246, -59.4604 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 32, 32 )
@@ -732,6 +739,7 @@ position = Vector2( 722.441, 304.935 )
 
 [node name="Murcielago" parent="Insectos" instance=ExtResource( 14 )]
 position = Vector2( 896.238, 244.549 )
+gravedadX = 1.1
 
 [node name="Araña" parent="Insectos" instance=ExtResource( 15 )]
 position = Vector2( 574.634, 235.799 )
@@ -789,13 +797,19 @@ offsetx = -80
 fliph = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 748.724, 245.678 )
+position = Vector2( 73.724, 400.678 )
 
-[node name="Orbe1" parent="Player" index="2"]
+[node name="Orbe0" parent="Player" index="1"]
+frame = 1
+
+[node name="Orbe2" parent="Player" index="3"]
+frame = 2
+
+[node name="Orbe3" parent="Player" index="4"]
 frame = 2
 
 [node name="AnimatedSprite" parent="Player" index="5"]
-frame = 2
+frame = 0
 
 [node name="OptionButtons" parent="Player/Perdiste" index="0"]
 margin_left = 5.0

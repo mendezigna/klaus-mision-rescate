@@ -8,8 +8,6 @@ func _process(delta):
 		vel = min(vel+3,80)
 
 func _on_body_entered2(body):
-	if(not body.is_in_group("player")):
+	if(body.is_in_group("paredes")):
 		gravedadX = gravedadX * -1
 		$Bat.flip_h = not $Bat.flip_h
-	else:
-		gravedadX = 0

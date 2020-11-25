@@ -7,6 +7,7 @@ onready var global = get_node("/root/Global")
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	global.desactivarMusica()
+	$Player/Perdiste/OptionButtons.hide()
 	
 	if global.test:
 		for light in get_tree().get_nodes_in_group("light"):
