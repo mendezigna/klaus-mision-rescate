@@ -3,12 +3,14 @@ export  (String, FILE) var next_scene_path: = ""
 
 
 func _on_ResertButton_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	get_node("/root/Global").inicioNivel = false
 	get_tree().paused = false
 
 
 func _on_HomeButton_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(next_scene_path)
 	get_node("/root/Global").inicioNivel = false
 	get_tree().paused = false

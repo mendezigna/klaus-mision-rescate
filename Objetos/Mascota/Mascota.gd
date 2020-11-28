@@ -17,6 +17,7 @@ func caminar():
 	sprite.offset.y = -15
 	estaSentado = false
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	if (!estaSentado):
 		if (estaCaminando):

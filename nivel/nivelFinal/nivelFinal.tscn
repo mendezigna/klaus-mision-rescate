@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://nivel/nivelFinal/nivelFinal.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Objetos/Antorchas/Antorcha.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objetos/Mascota/Mascota.tscn" type="PackedScene" id=10]
 [ext_resource path="res://BoosAssets/Entorno/audio/final/VGMA Challenge - July 12th.wav" type="AudioStream" id=11]
+[ext_resource path="res://BoosAssets/wall.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 79.9249 )
@@ -21,6 +22,9 @@ script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -6.4138 )
+
+[node name="props2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 216.672, 274.576 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 353.43, 325.147 )

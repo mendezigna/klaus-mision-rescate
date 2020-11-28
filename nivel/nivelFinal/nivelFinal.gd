@@ -49,5 +49,6 @@ func _on_colision1_body_entered(body):
 		player.puedeComenzarNivel(false)
 		mascota.caminar()
 
+# warning-ignore:unused_argument
 func _on_colision2_entered(area):
 	mascota.correr()

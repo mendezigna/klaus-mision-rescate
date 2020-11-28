@@ -2,7 +2,6 @@ extends Control
 
 signal start
 
-
 func _on_CheckButton_pressed():
 	get_node("/root/Global").test = !get_node("/root/Global").test
 

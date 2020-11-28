@@ -7,6 +7,7 @@ func _ready():
 func start(positionx, positiony):
 	global_position = Vector2(positionx, positiony)
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	position.x += 1.1
 

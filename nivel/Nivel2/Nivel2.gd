@@ -47,6 +47,9 @@ func _on_delete_clone(clone):
 		player.puedeMoverse = false
 	player.remove_clon(clone)
 
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
 func _on_body_entered(viewport, event, shape_idx):
 	pass # Replace with function body.
 

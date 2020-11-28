@@ -14,6 +14,7 @@ func _ready():
 	else:
 		$TiempoParaEmpezar.start()
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	if yaSeMostro or global.animacionBossHecha:
 		if playerVivo and !atacando:

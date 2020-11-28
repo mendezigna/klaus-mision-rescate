@@ -15,8 +15,10 @@ func _on_Puerta_body_entered(body):
 		get_node(\"/root/Global\").inicioNivel = false
 		get_node(\"/root/Global\").tocoElCheckPoint = false
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	if (Input.is_action_just_pressed(\"pasarNivel\")):
+# warning-ignore:return_value_discarded
 		get_tree().change_scene_to(next_level)
 		get_node(\"/root/Global\").inicioNivel = false
 		get_node(\"/root/Global\").tocoElCheckPoint = false

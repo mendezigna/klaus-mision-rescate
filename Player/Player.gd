@@ -53,6 +53,7 @@ func setCantLimiteClones(numero):
 	if colors.size() > cantLimite:
 		colors.pop_back()
 
+# warning-ignore:function_conflicts_variable
 func puedeComenzarNivel(valor):
 	puedeComenzarNivel = valor
 	if(!valor):
