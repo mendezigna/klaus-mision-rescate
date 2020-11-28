@@ -6,11 +6,12 @@ var animacionBossHecha = false
 var inicioNivel = false
 var positionCheckPoint 
 var tocoElCheckPoint = false
+onready var musicaDeFondo = $MusicaDeFondo
 
 func desactivarMusica():
 	musicaActiva = false
-	$MusicaDeFondo.playing = false
+	musicaDeFondo.playing = false
 	
 func activarMusica():
 	musicaActiva = true
-	$MusicaDeFondo.playing = true
+	musicaDeFondo.playing = true

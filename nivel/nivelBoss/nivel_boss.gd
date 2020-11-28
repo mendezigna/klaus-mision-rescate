@@ -7,6 +7,7 @@ onready var plataforma1 = $plataformas/plataforma1/Plataforma
 var yaSePresentoElNivel = false
 var aumentandoZoom = false
 var disminuyendoZoom = false
+onready var camara = $Camera2D
 onready var global = get_node("/root/Global")
 
 func _ready():
@@ -31,13 +32,13 @@ func _ready():
 
 
 func enfocar_al_boss_y_mostrar_el_nivel():
-	$Camera2D.position =  player.position
+	camara.position =  player.position
 	$PresentarElNivel/TiempoDePresentacionDelPersonaje.start()
 	
 
 
 func _on_TiempoDePresentacionDelPersonaje_timeout():
-	$Camera2D.position =  boss.position
+	camara.position =  boss.position
 	boss.reir()
 	$PresentarElNivel/TiempoDePresentacionDelBoss.start()
 
@@ -47,25 +48,25 @@ func _on_TiempoDePresentacionDelBoss_timeout():
 
 
 func mostrar_el_nivel():
-	$Camera2D.limit_smoothed = false
-	$Camera2D.smoothing_speed = 0.3
+	camara.limit_smoothed = false
+	camara.smoothing_speed = 0.3
 	aumentandoZoom = true
-	$Camera2D.position = $Puerta.position
+	camara.position = $Puerta.position
 	$PresentarElNivel/TiempoDePresentacionDelNivel.start()
 	
 	
 func aumentar_zoom():
-	if (aumentandoZoom && $Camera2D.zoom.x <= 0.8):
-		$Camera2D.zoom.x += 0.01
-		$Camera2D.zoom.y += 0.01
+	if (aumentandoZoom && camara.zoom.x <= 0.8):
+		camara.zoom.x += 0.01
+		camara.zoom.y += 0.01
 	else:
 		aumentandoZoom = false
 	
 
 func disminuirZoom():
-	if (disminuyendoZoom && $Camera2D.zoom.x >= 0.45):
-		$Camera2D.zoom.x -= 0.01
-		$Camera2D.zoom.y -= 0.01
+	if (disminuyendoZoom && camara.zoom.x >= 0.45):
+		camara.zoom.x -= 0.01
+		camara.zoom.y -= 0.01
 	else:
 		disminuyendoZoom = false
 	
@@ -73,8 +74,8 @@ func disminuirZoom():
 
 
 func _on_TiempoDePresentacionDelNivel_timeout():
-	$Camera2D.limit_smoothed = true
-	$Camera2D.smoothing_speed = 5
+	camara.limit_smoothed = true
+	camara.smoothing_speed = 5
 	disminuyendoZoom = true
 	yaSePresentoElNivel = true
 	player.puedeComenzarNivel(true)
@@ -90,9 +91,9 @@ func _physics_process(delta):
 	disminuirZoom()
 	if yaSePresentoElNivel or global.animacionBossHecha:
 		if player.activo:
-			$Camera2D.position =  player.position
+			camara.position =  player.position
 		elif player.new_clon != null:
-			$Camera2D.position =  player.new_clon.position
+			camara.position =  player.new_clon.position
 		boss.personaje_Position(player.position)
 
 
@@ -116,11 +117,6 @@ func _on_delete_clone(clone):
 		player.puedeMoverse = false
 	player.remove_clon(clone)
 
-
-func _win_game(body):
-	if body.is_in_group("player"):
-		player.win()
-		$win.play()
 
 func _on_Boton_apretado():
 	plataforma1.subir(0.5)

@@ -6,6 +6,7 @@ export var run_speed = 50
 export var jump_speed = -50
 export var gravity = 100
 onready var sprite = $AnimatedSprite
+onready var aparicionSprite = $Aparicion
 var activo = true
 var estaVivo = true
 var jumping = false	
@@ -23,6 +24,8 @@ func get_input():
 				sprite.offset.y = 0
 				sprite.offset.x = 0
 			sprite.set_flip_h(false)
+			if(jumping):
+				sprite.offset.x = 0
 		if left:
 			velocity.x -= run_speed
 			if is_on_floor():
@@ -30,6 +33,8 @@ func get_input():
 				sprite.offset.y = 0
 				sprite.offset.x = 0
 			sprite.set_flip_h(true)
+			if(jumping):
+				sprite.offset.x = -14
 		if is_on_floor() and jump:
 			velocity.y = jump_speed
 			sprite.play("jump")
@@ -48,8 +53,8 @@ func get_input():
 			sprite.play("stop")
 
 func morir():
-	$Aparicion.show()
-	$Aparicion.play("dead")
+	aparicionSprite.show()
+	aparicionSprite.play("dead")
 	sprite.hide()
 	estaVivo = false
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -107,10 +112,10 @@ func _on_Muerte_timeout():
 	queue_free()
 	
 func _ready():
-	$Aparicion.play("aparecer")
+	aparicionSprite.play("aparecer")
 	if get_node("/root/Global").test:
 		$Light2D.enabled = false
 
 
 func _on_Aparicion_animation_finished():
-	$Aparicion.hide()
+	aparicionSprite.hide()

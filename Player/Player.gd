@@ -8,6 +8,9 @@ onready var interfaceTimer = $Perdiste/GameOver/MostrarReloj
 onready var playAgain = $Perdiste/GameOver/TextureButton
 onready var collision = $CollisionShape2D
 onready var orbe0 = $Orbe0
+onready var orbe1 = $Orbe1
+onready var orbe2 = $Orbe2
+onready var orbe3 = $Orbe3
 ##Moviemiento
 var velocity = Vector2()
 export var run_speed = 50
@@ -53,9 +56,9 @@ func setCantLimiteClones(numero):
 func puedeComenzarNivel(valor):
 	puedeComenzarNivel = valor
 	if(!valor):
-		$AnimatedSprite.play("stop")
-		$AnimatedSprite.offset.x = 0
-		$AnimatedSprite.offset.y = 0
+		sprite.play("stop")
+		sprite.offset.x = 0
+		sprite.offset.y = 0
 		
 
 func _physics_process(delta):
@@ -174,13 +177,13 @@ func agregarClon():
 	
 func orbesSegunColorDesaparecer(clon1):
 	if (clon1.modulate.to_html() == "ffff3737"):
-		$Orbe0.hide()
+		orbe0.hide()
 	elif  clon1.modulate.to_html() == "ff4f7ddf":
-		$Orbe1.hide()
+		orbe1.hide()
 	elif clon1.modulate.to_html() == "ff00ff00":
-		$Orbe2.hide()
+		orbe2.hide()
 	else:
-		$Orbe3.hide()
+		orbe3.hide()
 		
 func desactivar():
 	activo = false
@@ -207,7 +210,6 @@ func remove_clon(clon):
 		if clon == new_clon:
 			new_clon = null
 			activar()
-		print(clon.modulate)
 		colors.append(clon.modulate.to_html())
 		orbesSegunColorAparecer(clon)
 		clones.erase(clon)
@@ -216,13 +218,13 @@ func remove_clon(clon):
 
 func orbesSegunColorAparecer(clon1):
 	if (clon1.modulate.to_html() == "ffff3737"):
-		$Orbe0.show()
+		orbe0.show()
 	elif  clon1.modulate.to_html() == "ff4f7ddf":
-		$Orbe1.show()
+		orbe1.show()
 	elif clon1.modulate.to_html() == "ff00ff00":
-		$Orbe2.show()
+		orbe2.show()
 	else:
-		$Orbe3.show()
+		orbe3.show()
 func activar():
 	activo = true
 

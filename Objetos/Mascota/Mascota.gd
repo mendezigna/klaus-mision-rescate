@@ -2,17 +2,19 @@ extends Area2D
 
 var estaSentado = true
 var estaCaminando = false
+onready var sprite = $Mascota
 
 func _ready():
-	$Mascota.play("quieto")
+	sprite.play("quieto")
+	sprite.offset.y = -15
 	
 func correr():
-	$Mascota.play("correr")
-	$Mascota.offset.y = -15
+	sprite.play("correr")
+	sprite.offset.y = -15
 	
 func caminar():
-	$Mascota.play("caminar")
-	$Mascota.offset.y = -15
+	sprite.play("caminar")
+	sprite.offset.y = -15
 	estaSentado = false
 
 func _physics_process(delta):
@@ -24,7 +26,7 @@ func _physics_process(delta):
 
 
 func rencuentro():
-	$Mascota.play("rencuentro")
+	sprite.play("rencuentro")
 	estaSentado = true
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://BoosAssets/Entorno/buttons/home.png" type="Texture" id=1]
 [ext_resource path="res://BoosAssets/Entorno/buttons/optionButton.png" type="Texture" id=2]
@@ -6,10 +6,15 @@
 [ext_resource path="res://BoosAssets/Entorno/buttons/optionButtonHover.png" type="Texture" id=4]
 [ext_resource path="res://Interface/OptionButtons.gd" type="Script" id=5]
 [ext_resource path="res://BoosAssets/Entorno/buttons/reset.webp" type="Texture" id=6]
+[ext_resource path="res://BoosAssets/Entorno/buttons/pause.png" type="Texture" id=7]
+[ext_resource path="res://BoosAssets/Entorno/buttons/playb.png" type="Texture" id=8]
 
 [node name="OptionButtons" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 3.38336
+margin_bottom = 3.38336
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -21,13 +26,44 @@ margin_left = 847.973
 margin_top = 4.09046
 margin_right = 916.973
 margin_bottom = 71.0905
+hint_tooltip = "RESET LEVEL"
+focus_mode = 0
 mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 759.973
+margin_top = 4.09046
+margin_right = 828.973
+margin_bottom = 71.0905
+hint_tooltip = "PAUSE"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Sprite" parent="PauseButton"]
+position = Vector2( 34.3472, 32.9095 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="playb" type="Sprite" parent="PauseButton"]
+visible = false
+position = Vector2( 37.3477, 33.5262 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 8 )
 
 [node name="Resert" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -41,7 +77,10 @@ margin_left = 932.681
 margin_top = 3.38336
 margin_right = 1001.68
 margin_bottom = 70.3834
+hint_tooltip = "HOME"
+focus_mode = 0
 mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
@@ -54,4 +93,5 @@ position = Vector2( 966.834, 34.8835 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 1 )
 [connection signal="pressed" from="ResertButton" to="." method="_on_ResertButton_pressed"]
+[connection signal="toggled" from="PauseButton" to="." method="_on_PauseButton_toggled"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

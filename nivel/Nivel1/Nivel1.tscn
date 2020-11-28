@@ -799,14 +799,8 @@ fliph = true
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.724, 400.678 )
 
-[node name="Orbe0" parent="Player" index="1"]
+[node name="Orbe1" parent="Player" index="2"]
 frame = 1
-
-[node name="Orbe2" parent="Player" index="3"]
-frame = 2
-
-[node name="Orbe3" parent="Player" index="4"]
-frame = 2
 
 [node name="AnimatedSprite" parent="Player" index="5"]
 frame = 0

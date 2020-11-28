@@ -396,7 +396,7 @@ gravedadX = 1.1
 position = Vector2( 707.629, -92.8412 )
 
 [node name="Bat" parent="Murcielagos/Murcielago2" index="0"]
-frame = 5
+frame = 4
 flip_h = true
 
 [node name="Murcielago3" parent="Murcielagos" instance=ExtResource( 20 )]

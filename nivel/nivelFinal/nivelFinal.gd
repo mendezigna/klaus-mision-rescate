@@ -3,6 +3,8 @@ extends Node2D
 onready var player = $Player
 export var cantDeClones = 4
 onready var global = get_node("/root/Global")
+onready var camara = $Camera2D
+onready var mascota = $Mascota
 
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
@@ -17,9 +19,9 @@ func _ready():
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	if player.activo:
-		$Camera2D.position =  player.position
+		camara.position =  player.position
 	elif player.new_clon != null:
-		$Camera2D.position =  player.new_clon.position
+		camara.position =  player.new_clon.position
 
 func _on_game_over():
 	if !global.tocoElCheckPoint:
@@ -42,10 +44,10 @@ func _win_game(body):
 		player.win()
 
 func _on_colision1_body_entered(body):
-	$Player.remover_clones()
+	player.remover_clones()
 	if body.is_in_group("player"):
-		$Player.puedeComenzarNivel(false)
-		$Mascota.caminar()
+		player.puedeComenzarNivel(false)
+		mascota.caminar()
 
 func _on_colision2_entered(area):
-	$Mascota.correr()
+	mascota.correr()

@@ -3,14 +3,16 @@ extends Node2D
 onready var player = $Player
 export var cantDeClones = 3
 onready var global = get_node("/root/Global")
+onready var checkpointPosition = $CheckPoint/Position2D
+onready var camara = $Camera2D
 
 func _ready():
 	if global.inicioNivel:
-		$CheckPoint/Position2D.global_position = global.positionCheckPoint
-		$CheckPoint/CheckPoint.play($CheckPoint/Position2D.global_position)
+		checkpointPosition.global_position = global.positionCheckPoint
+		$CheckPoint/CheckPoint.play(checkpointPosition.global_position)
 	else:
-		global.positionCheckPoint = $CheckPoint/Position2D.global_position
-	player.global_position = $CheckPoint/Position2D.global_position
+		global.positionCheckPoint = checkpointPosition.global_position
+	player.global_position = checkpointPosition.global_position
 	global.inicioNivel = true
 	
 	player.setCantLimiteClones(cantDeClones)
@@ -24,9 +26,9 @@ func _ready():
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	if player.activo:
-		$Camera2D.position =  player.position
+		camara.position =  player.position
 	elif player.new_clon != null:
-		$Camera2D.position =  player.new_clon.position
+		camara.position =  player.new_clon.position
 		
 func _on_game_over():
 	if !global.tocoElCheckPoint:

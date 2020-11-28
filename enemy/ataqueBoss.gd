@@ -18,5 +18,16 @@ func _on_Area2D_hitClone(clone):
 
 
 func _on_Visibility_screen_exited():
-	print("hola")
+	queue_free()
+
+
+func _on_ataqueBoss_body_entered(body):
+	if body.is_in_group("player") or body.is_in_group("clon"):
+		$CollisionShape2D.set_deferred("disabled", true)
+		$particulas.emitting = true
+		$AnimatedSprite.hide()
+		$Timer.start()
+
+
+func _on_Timer_timeout():
 	queue_free()
