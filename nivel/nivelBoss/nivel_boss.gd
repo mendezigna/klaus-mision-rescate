@@ -13,9 +13,13 @@ onready var global = get_node("/root/Global")
 func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	global.desactivarMusica()
+	global.nivelBoss = true
 	$AudioStreamPlayer2D.playing = true
+	if global.mute:
+		$AudioStreamPlayer2D.stream_paused = true
 	boss.personaje_Position(player.position)
 	plataforma1.start(300, 0, 0, 0)
+	
 	
 	if global.test:
 		for light in get_tree().get_nodes_in_group("light"):
@@ -100,9 +104,10 @@ func _physics_process(delta):
 func _on_game_over():
 	if !global.tocoElCheckPoint:
 		global.inicioNivel = false
-	$TimerDead.start()
+	if player.estaVivo:
+		$TimerDead.start()
+		player.morir()
 	boss.playerMurio()
-	player.morir()
 	global.desactivarMusica()
 	$AudioStreamPlayer2D.playing = false
 

@@ -799,18 +799,6 @@ fliph = true
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.724, 400.678 )
 
-[node name="Orbe1" parent="Player" index="2"]
-frame = 1
-
-[node name="AnimatedSprite" parent="Player" index="5"]
-frame = 0
-
-[node name="OptionButtons" parent="Player/Perdiste" index="0"]
-margin_left = 5.0
-margin_top = 27.9087
-margin_right = 5.0
-margin_bottom = 27.9087
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 73.0896, 401.169 )
 current = true
@@ -896,5 +884,3 @@ one_shot = true
 [editable path="Background"]
 
 [editable path="Background2"]
-
-[editable path="Player"]

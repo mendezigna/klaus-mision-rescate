@@ -10,6 +10,8 @@ func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	global.desactivarMusica()
 	$Player/Perdiste/OptionButtons.hide()
+	if !global.mute:
+		$win.playing = true
 	
 	if global.test:
 		for light in get_tree().get_nodes_in_group("light"):
@@ -26,8 +28,9 @@ func _physics_process(delta):
 func _on_game_over():
 	if !global.tocoElCheckPoint:
 		global.inicioNivel = false
-	$TimerDead.start()
-	player.morir()
+	if player.estaVivo:
+		$TimerDead.start()
+		player.morir()
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://BoosAssets/Entorno/buttons/home.png" type="Texture" id=1]
 [ext_resource path="res://BoosAssets/Entorno/buttons/optionButton.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://BoosAssets/Entorno/buttons/reset.webp" type="Texture" id=6]
 [ext_resource path="res://BoosAssets/Entorno/buttons/pause.png" type="Texture" id=7]
 [ext_resource path="res://BoosAssets/Entorno/buttons/playb.png" type="Texture" id=8]
+[ext_resource path="res://BoosAssets/Entorno/buttons/pngwing.com.png" type="Texture" id=9]
+[ext_resource path="res://BoosAssets/Entorno/buttons/mute.png" type="Texture" id=10]
 
 [node name="OptionButtons" type="Control"]
 pause_mode = 2
@@ -36,6 +38,34 @@ texture_hover = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MuteButton2" type="TextureButton" parent="."]
+margin_left = 672.973
+margin_top = 3.38336
+margin_right = 741.973
+margin_bottom = 70.3834
+hint_tooltip = "MUTE"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mute" type="Sprite" parent="MuteButton2"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 35.3472, 31.2333 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 10 )
+
+[node name="sonido" type="Sprite" parent="MuteButton2"]
+position = Vector2( 34.3477, 34.2333 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 9 )
 
 [node name="PauseButton" type="TextureButton" parent="."]
 margin_left = 759.973
@@ -93,5 +123,6 @@ position = Vector2( 966.834, 34.8835 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 1 )
 [connection signal="pressed" from="ResertButton" to="." method="_on_ResertButton_pressed"]
+[connection signal="toggled" from="MuteButton2" to="." method="_on_PauseButton2_toggled"]
 [connection signal="toggled" from="PauseButton" to="." method="_on_PauseButton_toggled"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

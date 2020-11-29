@@ -6,22 +6,27 @@
 script/source = "extends Area2D
 
 export (PackedScene) var next_level
-
+onready var global = get_node(\"/root/Global\")
 
 func _on_Puerta_body_entered(body):
 	if body.is_in_group(\"player\"):
 # warning-ignore:return_value_discarded
 		get_tree().change_scene_to(next_level)
-		get_node(\"/root/Global\").inicioNivel = false
-		get_node(\"/root/Global\").tocoElCheckPoint = false
+		global.inicioNivel = false
+		global.tocoElCheckPoint = false
+		if global.nivelBoss:
+			global.nivelBoss = false
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	if (Input.is_action_just_pressed(\"pasarNivel\")):
 # warning-ignore:return_value_discarded
 		get_tree().change_scene_to(next_level)
-		get_node(\"/root/Global\").inicioNivel = false
-		get_node(\"/root/Global\").tocoElCheckPoint = false
+		global.inicioNivel = false
+		global.tocoElCheckPoint = false
+		if global.nivelBoss:
+			global.nivelBoss = false
+			
 "
 
 [sub_resource type="RectangleShape2D" id=2]

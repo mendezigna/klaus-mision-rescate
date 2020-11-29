@@ -29,8 +29,6 @@ func _ready():
 	if !global.musicaActiva:
 		global.activarMusica()
 	
-	if !global.musicaActiva:
-		global.activarMusica()
 		
 	if global.test:
 		for light in get_tree().get_nodes_in_group("light"):
@@ -89,6 +87,7 @@ func _on_delete_clone(clone):
 func _on_game_over():
 	if !global.tocoElCheckPoint:
 		global.inicioNivel = false
-	$TimerDead.start()
-	player.morir()
+	if player.estaVivo:
+		$TimerDead.start()
+		player.morir()
 

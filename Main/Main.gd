@@ -9,6 +9,8 @@ func _ready():
 	global.inicioNivel = false
 	global.animacionBossHecha = false
 	global.tocoElCheckPoint = false
+	global.nivelBoss = false
+	global.mute = false
 
 	$Interface/Background/CanvasModulate.hide()
 

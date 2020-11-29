@@ -33,8 +33,9 @@ func _physics_process(delta):
 func _on_game_over():
 	if !global.tocoElCheckPoint:
 		global.inicioNivel = false
-	$TimerDead.start()
-	player.morir()
+	if player.estaVivo:
+		$TimerDead.start()
+		player.morir()
 
 ##Cuando el tiempo se termine, reinicia el nivel.
 func _on_TimerDead_timeout():

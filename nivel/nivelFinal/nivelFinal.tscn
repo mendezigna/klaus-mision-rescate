@@ -54,7 +54,6 @@ position = Vector2( 461.947, 287.5 )
 [node name="win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -12.0
-autoplay = true
 
 [node name="Colisiones" type="Node2D" parent="."]
 position = Vector2( -4.23785, -63.5678 )
