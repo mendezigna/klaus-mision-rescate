@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 
 [node name="MusicaDeFondo" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
