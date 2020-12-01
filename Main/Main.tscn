@@ -3,14 +3,15 @@
 [ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
 [ext_resource path="res://AudioMain.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nivel/Nivel1/Nivel1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nivel/NivelIntro/NivelIntro.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 position = Vector2( 0, 0.943848 )
 script = ExtResource( 2 )
-firstLevel = ExtResource( 5 )
+firstLevel = ExtResource( 4 )
 
 [node name="Interface" parent="." instance=ExtResource( 1 )]
+focus_mode = 1
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 3 )]
 [connection signal="start" from="Interface" to="." method="_on_Interface_start"]

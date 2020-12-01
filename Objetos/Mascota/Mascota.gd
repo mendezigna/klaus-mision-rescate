@@ -3,6 +3,8 @@ extends Area2D
 var estaSentado = true
 var estaCaminando = false
 onready var sprite = $Mascota
+export var dir = 1
+export var velCorrer = 0.7
 
 func _ready():
 	sprite.play("quieto")
@@ -21,9 +23,9 @@ func caminar():
 func _physics_process(delta):
 	if (!estaSentado):
 		if (estaCaminando):
-			position.x -= 0.4
+			position.x -= 0.4 * dir
 		else: 
-			position.x -= 0.7
+			position.x -= velCorrer * dir
 
 
 func rencuentro():

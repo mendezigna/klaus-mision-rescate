@@ -51,6 +51,9 @@ scale = Vector2( 1.07497, 1.29602 )
 position = Vector2( 515.657, 308.64 )
 scale = Vector2( 1.07749, 1.31403 )
 
+[node name="CanvasModulate" parent="Background" index="4"]
+visible = false
+
 [node name="Label" type="Label" parent="."]
 margin_left = 350.951
 margin_top = 234.476
@@ -82,6 +85,7 @@ margin_right = 558.719
 margin_bottom = 468.719
 rect_scale = Vector2( 1.5, 1.5 )
 mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 6 )

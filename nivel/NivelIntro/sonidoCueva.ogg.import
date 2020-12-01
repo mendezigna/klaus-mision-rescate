@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sonidoCueva.ogg-51e02121fa392dd00e973e8871eef774.oggstr"
+
+[deps]
+
+source_file="res://nivel/NivelIntro/sonidoCueva.ogg"
+dest_files=[ "res://.import/sonidoCueva.ogg-51e02121fa392dd00e973e8871eef774.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

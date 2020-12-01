@@ -516,6 +516,7 @@ points = PoolVector2Array( 0, 0.5, 32, 0.5, 32, 32.5, 0, 32.5 )
 
 [node name="Nivel1" type="Node2D"]
 script = ExtResource( 7 )
+cantDeClones = 4
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( -7.07049, 13.3543 )
@@ -751,7 +752,7 @@ position = Vector2( 622.108, 237.419 )
 position = Vector2( 131.836, -120.324 )
 
 [node name="Position2D" type="Position2D" parent="CheckPoint"]
-position = Vector2( -59.2424, 522.463 )
+position = Vector2( -159.242, 525.463 )
 
 [node name="CheckPoint" parent="CheckPoint" instance=ExtResource( 16 )]
 position = Vector2( 695.256, 341.871 )
@@ -760,14 +761,14 @@ position = Vector2( 695.256, 341.871 )
 position = Vector2( 48.1376, -6.60712 )
 
 [node name="Node2D" type="Node2D" parent="Guia"]
-position = Vector2( 61.2693, 408.499 )
+position = Vector2( 75.2693, 410.499 )
 
 [node name="Guia" parent="Guia/Node2D" instance=ExtResource( 17 )]
 position = Vector2( 0, -5.99323 )
 texto = "Hola, yo sere tu guia en esta aventura. "
 
 [node name="TiempoDeEspera " type="Timer" parent="Guia/Node2D"]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="Guia2" parent="Guia" instance=ExtResource( 17 )]
@@ -797,7 +798,12 @@ offsetx = -80
 fliph = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 73.724, 400.678 )
+position = Vector2( -28.276, 405.678 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 73.0896, 401.169 )
@@ -879,6 +885,7 @@ one_shot = true
 [connection signal="hit" from="Insectos/Araña2" to="." method="_on_game_over"]
 [connection signal="hitClone" from="Insectos/Araña2" to="." method="_on_delete_clone"]
 [connection signal="timeout" from="Guia/Node2D/TiempoDeEspera " to="." method="_on_TiempoDeEspera__timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerDead" to="." method="_on_TimerDead_timeout"]
 
 [editable path="Background"]

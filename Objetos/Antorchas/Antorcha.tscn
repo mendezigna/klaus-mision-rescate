@@ -52,6 +52,7 @@ color = Color( 0.976471, 0.984314, 0.729412, 1 )
 position = Vector2( 4.17053, 26.4318 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 8 )
+frame = 4
 playing = true
 
 [node name="groundtorch2" type="Sprite" parent="."]

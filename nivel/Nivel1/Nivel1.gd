@@ -8,6 +8,7 @@ onready var global = get_node("/root/Global")
 onready var guia2 = $Guia/Guia2
 onready var checkpointPosition = $CheckPoint/Position2D
 onready var camara = $Camera2D
+var bla = true
 
 func _ready():
 	if global.inicioNivel:
@@ -20,6 +21,7 @@ func _ready():
 	
 	
 	player.setCantLimiteClones(cantDeClones)
+
 	plataforma1.start(50, 0, 0, 0)
 	plataforma2.start(115, 0, 0, 0)
 	if !global.musicaActiva:
@@ -31,14 +33,17 @@ func _ready():
 			$Background/CanvasModulate.visible = false
 			$Background2/CanvasModulate.visible = false
 	
+	
 # warning-ignore:unused_argument
 func _physics_process(delta):
-		if Input.is_action_just_pressed("clonar"):
-			guia2.setTexto("Presioná 'SHIFT' para volver a Klaus.")
-		if player.activo:
-			camara.position =  player.position
-		elif player.new_clon != null:
-			camara.position =  player.new_clon.position
+	if Input.is_action_just_pressed("clonar"):
+		guia2.setTexto("Presioná 'SHIFT' para volver a Klaus.")
+	if player.activo:
+		camara.position =  player.position
+	elif player.new_clon != null:
+		camara.position =  player.new_clon.position
+	if bla:
+		Input.action_press("ui_right")
 
 ##Cuando el boton se apreta, la  plataforma sube.
 ##Cada boton interactua con su plataforma.
@@ -75,3 +80,8 @@ func _on_delete_clone(clone):
 
 func _on_TiempoDeEspera__timeout():
 	$Guia/Node2D/Guia.setTexto("Utiliza las teclas 'A' 'W' 'D' para moverte")
+
+
+func _on_Timer_timeout():
+	bla = false
+	Input.action_release("ui_right")
