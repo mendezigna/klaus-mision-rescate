@@ -15,8 +15,10 @@ func _ready():
 	global.desactivarMusica()
 	global.nivelBoss = true
 	$AudioStreamPlayer2D.playing = true
+
 	if global.mute:
-		$AudioStreamPlayer2D.stream_paused = true
+		for i in get_tree().get_nodes_in_group("musica"):
+			i.stream_paused = true
 	boss.personaje_Position(player.position)
 	plataforma1.start(300, 0, 0, 0)
 	

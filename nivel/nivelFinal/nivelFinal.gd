@@ -10,7 +10,10 @@ func _ready():
 	player.setCantLimiteClones(cantDeClones)
 	global.desactivarMusica()
 	$Player/Perdiste/OptionButtons.hide()
-	if !global.mute:
+	if global.mute:
+		for i in get_tree().get_nodes_in_group("musica"):
+			i.stream_paused = true
+	else:
 		$win.playing = true
 	
 	if global.test:

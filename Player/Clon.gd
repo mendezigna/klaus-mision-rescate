@@ -94,8 +94,8 @@ func _physics_process(delta):
 	else:
 		velocity.y += gravity * delta
 
-	if is_on_ceiling():
-		velocity.y = 0 
+	#if is_on_ceiling():
+	#	velocity.y = 0 
 	
 	if estaVivo and velocity.y > 0 :
 		sprite.play("land")

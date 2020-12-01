@@ -11,6 +11,7 @@ onready var orbe0 = $Orbe0
 onready var orbe1 = $Orbe1
 onready var orbe2 = $Orbe2
 onready var orbe3 = $Orbe3
+onready var global = get_node("/root/Global")
 ##Moviemiento
 var velocity = Vector2()
 export var run_speed = 50
@@ -239,7 +240,8 @@ func morir():
 		interfaceLabelM.hide()
 		playAgain.hide()
 		pararMusica()
-		$AudioMuerte.play()
+		if !global.mute:
+			$AudioMuerte.play()
 
 func apagarTodosLosOrbes():
 	for orbe in orbes:

@@ -33,7 +33,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 	mascota.hide()
 	player.flip_h = false
 	player.play("walk")
-	$pasos.play()
+	$Player/pasos.play()
 	camaraPerro = false
 	seFuePogo = true
 	

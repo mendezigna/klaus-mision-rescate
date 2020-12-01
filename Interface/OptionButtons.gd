@@ -10,6 +10,7 @@ func _on_ResertButton_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	global.inicioNivel = false
+	global.tocoElCheckPoint = false
 	get_tree().paused = false
 
 
@@ -24,10 +25,16 @@ func _on_PauseButton_toggled(button_pressed):
 		$PauseButton/pause.hide()
 		$PauseButton/playb.show()
 		get_tree().paused = true
+		if !global.mute:
+			get_tree().get_nodes_in_group("musica")[0].stream_paused = false
 	else: 
 		$PauseButton/pause.show()
 		$PauseButton/playb.hide()
 		get_tree().paused = false
+		if global.mute:
+			get_tree().get_nodes_in_group("musica")[0].stream_paused = true
+	
+
 
 
 func _on_PauseButton2_toggled(button_pressed):

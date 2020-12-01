@@ -435,7 +435,7 @@ limit_right = 3350
 [node name="TimerDead" parent="." instance=ExtResource( 8 )]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." groups=[
-"musicaBoss",
+"musica",
 ]]
 pause_mode = 2
 stream = ExtResource( 13 )

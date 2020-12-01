@@ -26,6 +26,9 @@ func _ready():
 	plataforma2.start(115, 0, 0, 0)
 	if !global.musicaActiva:
 		global.activarMusica()
+	if global.mute:
+		for i in get_tree().get_nodes_in_group("musica"):
+			i.stream_paused = true
 	
 	if global.test:
 		for light in get_tree().get_nodes_in_group("light"):

@@ -22,6 +22,9 @@ func _ready():
 		for light in get_tree().get_nodes_in_group("light"):
 			light.enabled = false
 			$Background/CanvasModulate.visible = false
+	if global.mute:
+		for i in get_tree().get_nodes_in_group("musica"):
+			i.stream_paused = true
 	
 # warning-ignore:unused_argument
 func _physics_process(delta):

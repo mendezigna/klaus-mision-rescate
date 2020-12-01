@@ -51,7 +51,9 @@ position = Vector2( 461.947, 287.5 )
 
 [node name="TimerDead" parent="." instance=ExtResource( 5 )]
 
-[node name="win" type="AudioStreamPlayer" parent="."]
+[node name="win" type="AudioStreamPlayer" parent="." groups=[
+"musica",
+]]
 stream = ExtResource( 11 )
 volume_db = -12.0
 
