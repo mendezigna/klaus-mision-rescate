@@ -629,79 +629,79 @@ region = Rect2( 150, 0, 50, 44 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 34 )
-region = Rect2( 0, 37, 50, 37 )
+region = Rect2( 0, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 34 )
-region = Rect2( 50, 37, 50, 37 )
+region = Rect2( 50, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 34 )
-region = Rect2( 100, 37, 50, 37 )
+region = Rect2( 100, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 34 )
-region = Rect2( 150, 37, 50, 37 )
+region = Rect2( 150, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 34 )
-region = Rect2( 200, 37, 50, 37 )
+region = Rect2( 200, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 34 )
-region = Rect2( 250, 37, 50, 37 )
+region = Rect2( 250, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 34 )
-region = Rect2( 0, 111, 50, 37 )
+region = Rect2( 300, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 34 )
-region = Rect2( 50, 111, 50, 37 )
+region = Rect2( 150, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 34 )
-region = Rect2( 100, 111, 50, 37 )
+region = Rect2( 200, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 34 )
-region = Rect2( 150, 111, 50, 37 )
+region = Rect2( 250, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 34 )
-region = Rect2( 200, 111, 50, 37 )
+region = Rect2( 300, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 34 )
-region = Rect2( 250, 111, 50, 37 )
+region = Rect2( 350, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 34 )
-region = Rect2( 300, 111, 50, 37 )
+region = Rect2( 400, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 34 )
-region = Rect2( 150, 111, 50, 37 )
+region = Rect2( 0, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 34 )
-region = Rect2( 200, 111, 50, 37 )
+region = Rect2( 50, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 34 )
-region = Rect2( 250, 111, 50, 37 )
+region = Rect2( 100, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 34 )
-region = Rect2( 300, 111, 50, 37 )
+region = Rect2( 150, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 34 )
-region = Rect2( 350, 111, 50, 37 )
+region = Rect2( 200, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 34 )
-region = Rect2( 400, 111, 50, 37 )
+region = Rect2( 250, 37, 50, 37 )
 
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
@@ -710,15 +710,15 @@ animations = [ {
 "name": "stop",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "walk",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "invocar",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
 } ]
 
 [sub_resource type="TileSet" id=29]
@@ -789,7 +789,6 @@ firstLevel = ExtResource( 3 )
 
 [node name="Fondo3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = 7.0
 autoplay = true
 
 [node name="Fondo" type="Node2D" parent="."]
@@ -862,6 +861,7 @@ dir = -1
 velCorrer = 1.0
 
 [node name="Mascota" parent="Mascota" index="0"]
+frame = 3
 flip_h = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Mascota"]
@@ -873,7 +873,7 @@ position = Vector2( 881.75, 470.751 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 28 )
 animation = "invocar"
-frame = 11
+frame = 15
 playing = true
 flip_h = true
 
@@ -885,7 +885,7 @@ scale = Vector2( 1.11785, 1.16499 )
 position = Vector2( -2.56934, 40.464 )
 scale = Vector2( 0.666667, 0.666667 )
 stream = ExtResource( 6 )
-volume_db = -8.0
+volume_db = -15.0
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource( 29 )
@@ -893,9 +893,10 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 1179726, 1610612736, 0, 1310801, 1610612739, 0, 1441870, 1610612739, 0, 1441872, 0, 0, 1507405, 0, 0, 1572940, 0, 0 )
 
-[node name="SonidoCueva" type="AudioStreamPlayer" parent="."]
+[node name="SonidoCueva" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1316, 464 )
 stream = ExtResource( 4 )
-volume_db = -15.0
+volume_db = -10.0
 [connection signal="timeout" from="Timers/MascotaCorre" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timers/Sonido" to="." method="_on_Timer2_timeout"]
 [connection signal="screen_exited" from="Mascota/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -45,7 +45,7 @@ func _physics_process(delta):
 		camara.position =  player.position
 	elif player.new_clon != null:
 		camara.position =  player.new_clon.position
-	if bla:
+	if bla and !global.tocoElCheckPoint:
 		Input.action_press("ui_right")
 
 ##Cuando el boton se apreta, la  plataforma sube.
@@ -87,4 +87,5 @@ func _on_TiempoDeEspera__timeout():
 
 func _on_Timer_timeout():
 	bla = false
-	Input.action_release("ui_right")
+	if !global.tocoElCheckPoint:
+		Input.action_release("ui_right")
