@@ -1,9 +1,11 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://BoosAssets/background/props1.png" type="Texture" id=1]
 [ext_resource path="res://Objetos/Mascota/Mascota.tscn" type="PackedScene" id=2]
 [ext_resource path="res://nivel/Nivel1/Nivel1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nivel/NivelIntro/sonidoCueva.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/intro.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Intro2.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/pasos.wav" type="AudioStream" id=6]
 [ext_resource path="res://BoosAssets/background/Background/PFantasy_SET1_v1.0/bakcground_night2.png" type="Texture" id=10]
 [ext_resource path="res://BoosAssets/background/Background/PFantasy_SET1_v1.0/bakcground_night1.png" type="Texture" id=17]
 [ext_resource path="res://BoosAssets/background/Background/PFantasy_SET1_v1.0/mainlevbuild.png" type="Texture" id=24]
@@ -785,38 +787,47 @@ __meta__ = {
 }
 firstLevel = ExtResource( 3 )
 
-[node name="Node2D4" type="Node2D" parent="."]
+[node name="pasos" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 877.896, 531.447 )
+stream = ExtResource( 6 )
+
+[node name="Fondo3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 7.0
+autoplay = true
+
+[node name="Fondo" type="Node2D" parent="."]
 position = Vector2( 3076, -224.929 )
 
-[node name="bakcground_night1" type="Sprite" parent="Node2D4"]
+[node name="bakcground_night1" type="Sprite" parent="Fondo"]
 position = Vector2( -2562, 530 )
 scale = Vector2( 1.6125, 1.61957 )
 texture = ExtResource( 17 )
 
-[node name="bakcground_night2" type="Sprite" parent="Node2D4/bakcground_night1"]
+[node name="bakcground_night2" type="Sprite" parent="Fondo/bakcground_night1"]
 position = Vector2( -1.43051e-06, 66.6844 )
 scale = Vector2( 1, 1.04027 )
 texture = ExtResource( 10 )
 
-[node name="bakcground_night3" type="Sprite" parent="Node2D4/bakcground_night1"]
+[node name="bakcground_night3" type="Sprite" parent="Fondo/bakcground_night1"]
 position = Vector2( 2.48062, 48.161 )
 scale = Vector2( 1, 1.08054 )
 texture = ExtResource( 25 )
 
-[node name="Node2D5" type="Node2D" parent="."]
+[node name="Fondo2" type="Node2D" parent="."]
 position = Vector2( 3856.65, -224.929 )
 
-[node name="bakcground_night1" type="Sprite" parent="Node2D5"]
+[node name="bakcground_night1" type="Sprite" parent="Fondo2"]
 position = Vector2( -2562, 530 )
 scale = Vector2( 1.6125, 1.61957 )
 texture = ExtResource( 17 )
 
-[node name="bakcground_night2" type="Sprite" parent="Node2D5/bakcground_night1"]
+[node name="bakcground_night2" type="Sprite" parent="Fondo2/bakcground_night1"]
 position = Vector2( -6.13916, 64.938 )
 scale = Vector2( 1, 1.04027 )
 texture = ExtResource( 10 )
 
-[node name="bakcground_night3" type="Sprite" parent="Node2D5/bakcground_night1"]
+[node name="bakcground_night3" type="Sprite" parent="Fondo2/bakcground_night1"]
 position = Vector2( -6.2897, 47.2878 )
 scale = Vector2( 1, 1.08054 )
 texture = ExtResource( 25 )
@@ -841,11 +852,10 @@ smoothing_speed = 3.0
 
 [node name="Timers" type="Node2D" parent="."]
 
-[node name="Timer" type="Timer" parent="Timers"]
-wait_time = 2.0
+[node name="MascotaCorre" type="Timer" parent="Timers"]
 one_shot = true
 
-[node name="Timer2" type="Timer" parent="Timers"]
+[node name="Sonido" type="Timer" parent="Timers"]
 wait_time = 2.0
 one_shot = true
 autostart = true
@@ -868,7 +878,6 @@ position = Vector2( 881.75, 470.751 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 28 )
 animation = "invocar"
-frame = 13
 playing = true
 flip_h = true
 
@@ -884,10 +893,10 @@ tile_data = PoolIntArray( 1179726, 1610612736, 0, 1310801, 1610612739, 0, 144187
 
 [node name="SonidoCueva" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-[connection signal="timeout" from="Timers/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timers/Timer2" to="." method="_on_Timer2_timeout"]
+volume_db = -15.0
+[connection signal="timeout" from="Timers/MascotaCorre" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timers/Sonido" to="." method="_on_Timer2_timeout"]
 [connection signal="screen_exited" from="Mascota/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="screen_exited" from="Player/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D2_screen_exited"]
-[connection signal="finished" from="SonidoCueva" to="." method="_on_SonidoCueva_finished"]
 
 [editable path="Mascota"]
