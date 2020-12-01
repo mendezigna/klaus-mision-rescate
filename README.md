@@ -6,4 +6,4 @@
 3.	Bloques o plataformas que causan daño.
 
 Pitch:
-"Klaus: misión rescate" es un juego de plataformas y puzzles, el cual relata la historia de Klaus, un mago con la capacidad de invocar minions. Nuestro protagonista está en la búsqueda de su mascota perdida Pogo, que se encuentra en las profundidades de una caverna habitada por un temible Demonio. Con tu ayuda, Klaus deberá sortear trampas, abismos, lava, engendros de la noche y a éste mismísimo Demonio para poder recuperar a su fiel compañero.
+Klaus mision rescate es un juego de plataformas y puzzles el cual relata la historia de Klaus, un mago que se encuentra en la búsqueda de su mascota, Pogo, la cual se halla perdida en las profundidades de una temible cueva habitada por un aterrador Demonio. Nuestro protagonista posee la habilidad de invocar minions que podrás manejar durante el tiempo que desees, una vez que abandones su control, este quedara estático en la ultima posición y no podrás volver a utilizarlo. Junto a ellos deberás ayudar a Klaus a atravesar los diferentes desafíos como sortear trampas, abismos, lava, engendros de la noche y al mismísimo demonio para poder recuperar a su fiel compañero.
